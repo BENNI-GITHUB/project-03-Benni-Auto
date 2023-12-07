@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="row">
+    <div class="col img s12 m12 l8 ">
+        <img src="{{ url_for('static', filename='images/main.jpg')}}" alt="">
+    </div>
+    <div class="col brown-text s12 m12 l4 center-align title">
+        <h1> Benni Auto</h1>
+        <h4>Revitalize Your Ride with us: Where Expertise Meets Exceptional Care</h4>
+    </div>
+</div>
+
+<div class="row pad-bot">
+    <div class="col">
+        <h3 class="brown-text">About-us</h3>
+        <hr class="teal lighten-2 hr-under-title">
+    </div>
+    <p class="col brown-text about-us">
+        Benni Auto Services is your premier destination for comprehensive automotive solutions.
+        Our expert technicians provide high-quality repair,
+        maintenance, and diagnostic services to keep your vehicle in optimal condition.
+        With years of experience and cutting-edge technology, we ensure efficient and reliable service,
+        catering to a wide range of vehicle makes and models.
+        Contact Benni Auto Services today and let us enhance your driving experience with our unmatched automotive
+        expertise.
+    </p>
+</div>
+
+<div class="row pad-bot">
+    <div class="col">
+        <a href="{{ url_for('services') }}">
+            <h3 class="brown-text">Our Services</h3>
+        </a>
+        <hr class="teal lighten-2 hr-under-title">
+    </div>
+    <p class="col brown-text about-us">
+        Benni Auto is your trusted partner for comprehensive and reliable auto services.
+        With a commitment to excellence and customer satisfaction,
+        we offer a wide range of automotive solutions tailored to meet your vehicle's needs.
+    </p>
+    <div class="row">
+        <div class="col s6 m4 l2">
+
+        </div>
+    </div>
+    <div class="row center-align">
+        <a href="{{ url_for('orders') }}" class="waves-effect waves-light btn">Book Now</a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <h3 class="brown-text" id="contact">Contact Us</h3>
+        <hr class="teal lighten-2 hr-under-title">
+    </div>
+
+</div>
+<div class="row pad-bot">
+    <div class="col s12 l6">
+        <div class="col contact-us">
+            <h4 class="brown-text">Benni Auto Services</h4>
+            <i class="fas fa-compass left teal-text lighten-2 add-loc"></i><h5 class="brown-text">Address:</h5>
+            <p class="brown-text">
+                Watford Campus, Hempstead Rd, Watford<br>
+                Hertfordshire, United Kingdom <br>
+                WD17 3EZ</p>
+            <a class="brown-text" href="mailto: behnampordavam@gmail.com"><i class="fas fa-envelope left teal-text lighten-2"></i>Email: behnampordavam@gmail.com</a><br>
+            <a class="brown-text" href="mailto: 22009741@student.westherts.ac.uk"><i class="fas fa-envelope left teal-text lighten-2"></i>Email: 22009741@student.westherts.ac.uk</a><br>
+            <a class="brown-text" href="tel:+447383782175"><i class="fas fa-phone left teal-text lighten-2"></i>Phone: +44 738 3782175</a>
+        </div>
+    </div>
+    <div class="col s12 l6">
+        <div class="map teal lighten-2">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9899.923246954544!2d-0.4059573!3d51.6601877!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48766b660a28be1b%3A0x751c56ee846232bd!2sWest%20Herts%20College!5e0!3m2!1sen!2suk!4v1701958627940!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
