@@ -1,14 +1,16 @@
 from benniauto import db
 import datetime
 
-
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(15), unique=True, nullable=False)
-    email = db.Column(db.String(40), unique=True, nullable=False)
+    username = db.Column(db.String(20), unique=True, nullable=False)
+    email = db.Column(db.String(30), unique=True, nullable=False)
     password = db.Column(db.String(255), nullable=False)
     password_confirmation = db.Column(db.String(255), nullable=False)
-    # reviews = db.relationship("Review", backref="user_reviews", lazy=True)
+
+    def __repr__(self):
+        return "Username: {0} , Email: {1}".format(
+            self.username, self.email)
 
 
 class Service(db.Model):
@@ -23,19 +25,19 @@ class Service(db.Model):
         return self.service_name
 
 
-
 class Order(db.Model):
     # schema for the Order model
     id = db.Column(db.Integer, primary_key=True)
-    user_car = db.Column(db.String(30), unique=True, nullable=False)
     order_title = db.Column(db.String(50), unique=True, nullable=False)
+    car_type = db.Column(db.String(30), unique=True, nullable=False)
     order_description = db.Column(db.Text, nullable=False)
     request_date = db.Column(db.Date, nullable=False)
     need_recovery = db.Column(db.Boolean, default=False, nullable=False)
     user_postcode = db.Column(db.String(12), unique=True, nullable=False)
-    user_address = db.Column(db.String(100), unique=True, nullable=False)
+    user_address = db.Column(db.String(80), unique=True, nullable=False)
     user_phone = db.Column(db.String(12), unique=True, nullable=False) 
     service_id = db.Column(db.Integer, db.ForeignKey("service.id", ondelete="CASCADE"), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
 
     def __repr__(self):
         # __repr__ to represent itself in the form of a string
@@ -46,18 +48,12 @@ class Order(db.Model):
 
 class Review(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    service_id = db.Column(db.Integer, db.ForeignKey('service.id'), nullable=False)
-    # rating = db.Column(db.Integer, nullable=False)
+    title = db.Column(db.String(40), nullable=False)
+    rating = db.Column(db.String, nullable=False)
     comment = db.Column(db.Text)
     review_date = db.Column(db.DateTime, default=datetime.datetime.utcnow)
-    user = db.relationship("User", backref='reviews')
-    service = db.relationship("Service", backref='reviews')
-
-
-
-
-
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    service_id = db.Column(db.Integer, db.ForeignKey('service.id'), nullable=False)
 
 
 

@@ -43,12 +43,35 @@
     <div class="row">
         <div class="col s6 m4 l2">
 
+
+
         </div>
     </div>
     <div class="row center-align">
         <a href="{{ url_for('orders') }}" class="waves-effect waves-light btn">Book Now</a>
     </div>
 </div>
+
+<div class="row lighten-4">
+    <div class="col">
+        <h3 class="brown-text">Reviews</h3>
+        <hr class="teal lighten-2 hr-under-title">
+    </div>
+</div>
+<ul class="row pad-bot">
+    {% for list in range(3) %}
+    <li class="col l4 m4 s12 review-box-holder">
+        <div class="review-box brown-text brown lighten-5">
+            <h5>username</h5>
+            <span>date</span>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem libero temporibus iure error ab ipsam
+                quasi deleniti rerum, nihil, illum quas, repudiandae esse. Quo totam saepe assumenda sapiente ullam
+                incidunt.</p>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+
 
 <div class="row">
     <div class="col">
@@ -61,19 +84,26 @@
     <div class="col s12 l6">
         <div class="col contact-us">
             <h4 class="brown-text">Benni Auto Services</h4>
-            <i class="fas fa-compass left teal-text lighten-2 add-loc"></i><h5 class="brown-text">Address:</h5>
+            <i class="fas fa-compass left teal-text lighten-2 add-loc"></i>
+            <h5 class="brown-text">Address:</h5>
             <p class="brown-text">
                 Watford Campus, Hempstead Rd, Watford<br>
                 Hertfordshire, United Kingdom <br>
                 WD17 3EZ</p>
-            <a class="brown-text" href="mailto: behnampordavam@gmail.com"><i class="fas fa-envelope left teal-text lighten-2"></i>Email: behnampordavam@gmail.com</a><br>
-            <a class="brown-text" href="mailto: 22009741@student.westherts.ac.uk"><i class="fas fa-envelope left teal-text lighten-2"></i>Email: 22009741@student.westherts.ac.uk</a><br>
-            <a class="brown-text" href="tel:+447383782175"><i class="fas fa-phone left teal-text lighten-2"></i>Phone: +44 738 3782175</a>
+            <a class="brown-text" href="mailto: behnampordavam@gmail.com"><i
+                    class="fas fa-envelope left teal-text lighten-2"></i>Email: behnampordavam@gmail.com</a><br>
+            <a class="brown-text" href="mailto: 22009741@student.westherts.ac.uk"><i
+                    class="fas fa-envelope left teal-text lighten-2"></i>Email: 22009741@student.westherts.ac.uk</a><br>
+            <a class="brown-text" href="tel:+447383782175"><i class="fas fa-phone left teal-text lighten-2"></i>Phone:
+                +44 738 3782175</a>
         </div>
     </div>
     <div class="col s12 l6">
         <div class="map teal lighten-2">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9899.923246954544!2d-0.4059573!3d51.6601877!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48766b660a28be1b%3A0x751c56ee846232bd!2sWest%20Herts%20College!5e0!3m2!1sen!2suk!4v1701958627940!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9899.923246954544!2d-0.4059573!3d51.6601877!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48766b660a28be1b%3A0x751c56ee846232bd!2sWest%20Herts%20College!5e0!3m2!1sen!2suk!4v1701958627940!5m2!1sen!2suk"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>
 </div>

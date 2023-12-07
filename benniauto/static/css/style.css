@@ -56,6 +56,16 @@ nav img {
   padding-bottom: 40px;
 }
 
+.review-box-holder {
+  padding: 5%;
+}
+
+.review-box {
+  border-radius: 20px;
+  border: 2px solid #4db6ac;
+  padding: 5%;
+}
+
 .add-loc {
   font-size: 25px;
   line-height: 35px;
@@ -69,6 +79,7 @@ nav img {
 .map iframe {
   width: 100%;
   border-radius: 25px;
+  height: 350px;
 }
 
 @media (max-width: 993px) {
