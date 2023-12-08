@@ -17,8 +17,9 @@ class Service(db.Model):
     # schema for the Service model
     id = db.Column(db.Integer, primary_key=True)
     service_name = db.Column(db.String(25), unique=True, nullable=False)
-    image_url = db.Column(db.String(2000), default='not-available.webp')
-    orders = db.relationship("Order", backref="service", cascade="all, delete", lazy=True)
+    image_url = db.Column(db.String(1000), default='no-image.jpg')
+    service_description = db.Column(db.Text, nullable=False)
+    # orders = db.relationship("Order", backref="service", cascade="all, delete", lazy=True)
 
     def __repr__(self):
         # __repr__ to represent itself in the form of a string

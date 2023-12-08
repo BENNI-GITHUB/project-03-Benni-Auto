@@ -4,21 +4,24 @@
 <h3 class="brown-text center-align">Our Services</h3>
 
 <div class="row">
+    {% for service in services %}
     <div class="col s12 m6 l4">
         <div class="card">
             <div class="card-image">
-                <img src="https://images.unsplash.com/photo-1429772011165-0c2e054367b8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZW5naW5lJTIwcmVwYWlyfGVufDB8fDB8fHww">       
+                <img src="{{ service.image_url }}">       
             </div>
             <div class="card-content">
-                <span class="card-title">Card Title</span>
-                <p>I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively.</p>
+                <span class="card-title">{{ service.service_name }}</span>
+                <p>{{ service.service_description }}</p>
             </div>
             <div class="card-action">
-                <a href="#">This is a link</a>
+                <a href="#" class="btn teal accent-4">Edit</a>
+                <a href="#" class="btn amber darken-4">Delete</a>
             </div>
         </div>
+
     </div>
+    {% endfor %}
 </div>
 
 
