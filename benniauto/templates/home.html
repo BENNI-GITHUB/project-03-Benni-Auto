@@ -41,12 +41,19 @@
         we offer a wide range of automotive solutions tailored to meet your vehicle's needs.
     </p>
     <div class="row">
-        <div class="col s6 m4 l2">
-
-
-
-        </div>
+        {% for service in services %}
+        <div class="col s6 m4 l4 service-box ">
+            <div class="center-align brown-text">
+                <h4>
+                    {{ service.service_name }}
+                </h4>
+            </div>
+        </div>    
+        {% endfor %}
+    
     </div>
+
+
     <div class="row center-align">
         <a href="{{ url_for('orders') }}" class="waves-effect waves-light btn">Book Now</a>
     </div>

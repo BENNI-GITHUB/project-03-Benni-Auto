@@ -1,26 +1,52 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="brown-text center-align">Our Services</h3>
+<h3 class="brown-text center-align our-services">Our Services</h3>
 
 <div class="row">
     {% for service in services %}
     <div class="col s12 m6 l4">
         <div class="card">
             <div class="card-image">
-                <img src="{{ service.image_url }}">       
+                {% if service.image_url == "" %}
+                <img src="{{ url_for('static', filename='images/no-image.jpg') }}">
+                {% else %}
+                <img src="{{ service.image_url }}">
+                {% endif %}
             </div>
             <div class="card-content">
                 <span class="card-title">{{ service.service_name }}</span>
+                <hr>
                 <p>{{ service.service_description }}</p>
             </div>
             <div class="card-action">
-                <a href="#" class="btn teal accent-4">Edit</a>
-                <a href="#" class="btn amber darken-4">Delete</a>
+
+
+                <a href="{{ url_for('edit_service' , service_id = service.id) }}" class="btn lime darken-4">Edit</a>
+                <a href="#modal-{{ service.id }}" class="btn brown modal-trigger">Delete</a>
+
+
+                <a href="{{ url_for('orders') }}" class="waves-effect waves-light btn right">Book Now</a>
             </div>
         </div>
 
     </div>
+
+    <!-- Modal -->
+    <div id="modal-{{ service.id }}" class="modal modal-box brown lighten-5 brown-text">
+        <div class="modal-content">
+            <h4>Are you sure you want to delete {{ service.service_name }}?</h4>
+            <p><i class="fa fa-exclamation-circle"></i> This action cannot be undone.</p>
+        </div>
+        <div class="progress brown">
+            <div class="indeterminate"></div>
+        </div>
+        <div class="modal-footer brown lighten-5">
+            <a href="{{ url_for('delete_service' , service_id = service.id) }}" class="btn brown">Delete</a>
+            <a href="{{ url_for('services') }}" class="btn teal lighten-2">Cancel</a>
+        </div>
+    </div>
+
     {% endfor %}
 </div>
 

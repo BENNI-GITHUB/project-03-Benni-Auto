@@ -1,31 +1,30 @@
-
 body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
 
-  main {
-    flex: 1 0 auto;
-  }
+main {
+  flex: 1 0 auto;
+}
 
 nav {
-    padding: 0 5%;
+  padding: 0 5%;
 }
 
 nav img {
   width: 25%;
 }
 
-.img{
+.img {
   margin: 20px 0;
 }
 
-.img img{
+.img img {
   width: 100%;
 }
 
-.title  {
+.title {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,25 +38,26 @@ nav img {
   height: 4px;
 }
 
-.about-us{
+.about-us {
   font-size: 22px;
   text-align: justify;
 }
 
 .contact-us a,
-.contact-us p{
+.contact-us p {
   font-size: 20px;
   text-align: left;
   margin: 10px 0;
   display: inline-block;
 }
 
-.pad-bot{
+.pad-bot {
   padding-bottom: 40px;
 }
 
 .review-box-holder {
   padding: 5%;
+  margin-bottom: 10px;
 }
 
 .review-box {
@@ -82,22 +82,61 @@ nav img {
   height: 350px;
 }
 
+.card-image img {
+  height: 250px;
+}
+
+.card-content p {
+  display: inline-block;
+  height: 200px;
+  
+}
+
+.modal-box {
+  border-radius: 25px;
+  margin-top: 20%;
+  padding: 20px;
+}
+
+.modal-box p{
+  border-radius: 25px;
+  font-size: 18px;
+}
+
+
+.card {
+  overflow: hidden;
+}
+
+.our-services{
+  margin: 40px 0;
+}
+
+.service-box {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid #4db6ac;
+}
+
+
 .active {
   font-weight: bolder;
   color: #4db6ac;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 @media (max-width: 993px) {
 
   nav img {
-  width: 60%;
-  margin-left: 25%;
-  margin-top: 10px;
-}
-.title  {
-  margin-top: 0;
-}
+    width: 60%;
+    margin-left: 25%;
+    margin-top: 10px;
+  }
+
+  .title {
+    margin-top: 0;
+  }
 
 
 }
@@ -105,19 +144,19 @@ nav img {
 @media (max-width: 450px) {
 
   nav img {
-  width: 75%;
-  margin-left: 17.5%;
-}
+    width: 75%;
+    margin-left: 17.5%;
+  }
 
-.about-us{
-  font-size: 20px;
-  text-align: left;
-}
+  .about-us {
+    font-size: 20px;
+    text-align: left;
+  }
 
-.contact-us a,
-.contact-us p{
-  font-size: 15px;
-  text-align: left;
-}
+  .contact-us a,
+  .contact-us p {
+    font-size: 15px;
+    text-align: left;
+  }
 
 }
