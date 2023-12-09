@@ -42,21 +42,24 @@
     </p>
     <div class="row">
         {% for service in services %}
-        <div class="col s6 m4 l4 service-box ">
-            <div class="center-align brown-text">
+        <div class="col s12 m6 l4 home-service">
+            <div class="center-align brown-text service-box brown lighten-5">
+                <span> <i class="fas fa-tools brown-text medium"></i> </span>
                 <h4>
                     {{ service.service_name }}
                 </h4>
             </div>
-        </div>    
+            <div class="center-align">
+                <a class="btn-floating btn-large waves-effect waves-light teal lighten-2 text-large service-book"><i class="fas fa-plus"></i></a>
+            </div>
+        </div>
+
         {% endfor %}
-    
+
     </div>
 
 
-    <div class="row center-align">
-        <a href="{{ url_for('orders') }}" class="waves-effect waves-light btn">Book Now</a>
-    </div>
+
 </div>
 
 <div class="row lighten-4">

@@ -1,6 +1,6 @@
-from flask import render_template, request, redirect, url_for
+from flask import render_template, request, redirect, url_for, session, flash
 from benniauto import app, db
-from benniauto.models import Service, Order
+from benniauto.models import Service, Order, User
 
 
 @app.route("/")
@@ -8,6 +8,18 @@ def home():
     active = 'home'
     services = list(Service.query.order_by(Service.service_name).all())
     return render_template("home.html" , active=active, services=services )
+
+
+@app.route("/login")
+def login():
+    active = 'login'
+    return render_template("login.html" , active=active)
+
+
+@app.route("/register")
+def register():
+    active = 'login'
+    return render_template("register.html", active=active)
 
 
 @app.route("/services")
@@ -53,4 +65,29 @@ def delete_service(service_id):
 
 @app.route("/orders")
 def orders():
-    return render_template("orders.html")
+    orders = list(Order.query.order_by(Order.id).all())
+    return render_template("orders.html" , orders=orders)
+
+
+@app.route("/add_order", methods=["GET", "POST"])
+def add_order():
+    services = list(Service.query.order_by(Service.service_name).all())
+    if request.method == "POST":
+        order = Order(
+            order_title = request.form.get("order_title"),
+            car_type = request.form.get("car_type"),
+            order_description = request.form.get("order_description"),
+            request_date = request.form.get("request_date"), 
+            need_recovery = bool(True if request.form.get("need_recovery") else False),
+            user_postcode = request.form.get("user_postcode"),
+            user_address = request.form.get("user_address"),
+            user_phone = request.form.get("user_phone"),
+            service_id = request.form.get("service_id"),
+            user_id = request.form.get("user_id")
+        )
+        db.session.add(order)
+        db.session.commit()
+        return redirect(url_for("orders"))
+    return render_template("add_order.html", services=services)
+
+

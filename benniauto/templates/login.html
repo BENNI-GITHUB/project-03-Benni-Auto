@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="brown-text center-align our-services">Login Now</h3>
+
+<div class="login-page container brown lighten-5">
+  <div class="row">
+    <form class="col s12" method="POST" action="{{ url_for('login') }}">
+
+      <!-- Username -->
+      <div class="row">
+        <div class="input-field col s10 offset-s1">
+          <input id="username" name="username" type="text" class="validate brown-text"
+            required>
+          <label for="username">Username</label>
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="row">
+        <div class="input-field col s10 offset-s1">
+          <input id="password" name="password" type="password" class="validate brown-text" required>
+          <label for="password">Password</label>
+        </div>
+      </div>
+
+      <!-- Register Link -->
+      <div class="row">
+        <div class="input-field col s8 offset-s4">
+          <a href="{{ url_for('register') }}" class="brown-text">Don't have an account? Register now!</a>
+        </div>
+      </div>
+
+        <!-- submit button -->
+        <div class="row">
+          <div class="col s12 center-align">
+              <button type="submit" class="btn-large teal lighten-2">
+                  Login <i class="fas fa-login right"></i>
+              </button>
+          </div>
+      </div>
+    </form>
+  </div>
+
+</div>
+
+
+
+{% endblock %}

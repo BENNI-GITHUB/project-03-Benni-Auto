@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="brown-text center-align our-services">Register Now</h3>
+
+<div class="login-page container brown lighten-5">
+  <div class="row">
+    <form class="col s12" method="POST" action="{{ url_for('register') }}">
+
+      <div class="row">
+        <div class="input-field col s10 offset-s1">
+          <input placeholder="Your First Name" id="first_name" name="first_name" type="text" class="validate brown-text" required>
+          <label for="first_name">First Name</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s10 offset-s1">
+          <input placeholder="Your Last Name" id="last_name" name="last_name" type="text" class="validate brown-text" required>
+          <label for="last_name">Last Name</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s5 offset-s1">
+          <select id="gender" name="gender" class="validate brown-text" required>
+            <option value="" selected disabled>Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+          <label for="gender">Gender</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s10 offset-s1">
+          <input id="email" name="email" placeholder="Example: John@gmail.com" type="email" class="validate" required>
+          <label for="email">Email</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s10 offset-s1">
+          <input placeholder="Example: John1990" id="username" name="username" type="text" class="validate brown-text" required>
+          <label for="username">Username</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s10 offset-s1">
+          <input id="password" name="password" type="password" class="validate" required>
+          <label for="password">Password</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s10 offset-s1">
+          <input id="password_confirmation" name="password_confirmation" type="password" class="validate" required>
+          <label for="password_confirmation">Confirm Password</label>
+        </div>
+      </div>
+
+
+
+    </form>
+  </div>
+
+</div>
+
+
+
+{% endblock %}

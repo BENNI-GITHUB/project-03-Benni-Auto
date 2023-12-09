@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+{% block content %}
+<h3 class="brown-text center-align">Book A New Appointment</h3>
+
+
+<div class="row card-panel brown lighten-5 our-services">
+    <form class="col s12" method="POST" action="{{ url_for('add_order') }}">
+
+
+        <!-- User id -->
+        <!-- <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-user prefix teal-text text-lighten-2"></i>
+                <select id="user_id" name="user_id" class="validate brown-text" required>
+                    <option value="{{ user.id }}" selected>{{ user.username }}</option>
+                </select>
+                <label for="user_id">Username</label>
+            </div>
+        </div> -->
+
+        <!-- Service id -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-tools prefix teal-text text-lighten-2"></i>
+                <select id="service_id" name="service_id" class="validate brown-text" required>
+                    <option value="" disabled selected>Choose Services</option>
+                    {% for service in services %}
+                    <option value="{{ service.id }}">{{ service.service_name }}</option>
+                    {% endfor %}
+                </select>
+                <label for="service_id">Service Category</label>
+            </div>
+        </div>
+
+        <!-- Order Title -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-exclamation prefix teal-text text-lighten-2"></i>
+                <input id="order_title" name="order_title" minlength="5" maxlength="25" type="text"
+                    class="validate brown-text" required>
+                <label for="order_title">Order Title</label>
+            </div>
+        </div>
+
+        <!-- Car Brand -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-car prefix teal-text text-lighten-2"></i>
+                <select id="car_type" name="car_type" class="validate brown-text" required>
+                    <option value="" disabled selected>Choose Car Brand</option>
+                    {% with cars = ['Ford','Vauxhall','Volkswagen','BMW','Mercedes-Benz','Toyota','Audi','Renault','Mini','Suzuki','Peugeot','Hyundai','Nissan','Citroën','Honda','Skoda','Volvo','Fiat','SEAT','Mazda','Mitsubishi','Dacia','Lexus','Kia','Land-Rover','Porsche','MG','Smart','Jaguar','Other'] %}
+                    {% for car in cars %}
+                    <option value="{{ car }}">{{ car }}</option>
+                    {% endfor %}
+                    {% endwith %}
+                </select>
+                <label for="car_type">Car Brand</label>
+            </div>
+        </div>
+
+        <!-- Order Description -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-align-left prefix teal-text text-lighten-2"></i>
+                <textarea id="order_description" name="order_description" minlength="20" maxlength="500" type="text"
+                    class="materialize-textarea validate brown-text" required></textarea>
+                <label for="order_description">Order Description</label>
+            </div>
+        </div>
+
+        <!-- Request date -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-calendar-alt prefix teal-text text-lighten-2"></i>
+                <input id="request_date" name="request_date" type="text" class="datepicker validate" required>
+                <label for="request_date">Request Date</label>
+            </div>
+        </div>
+
+        <!-- Need Recover -->
+        <div class="row">
+            <div class="input-field col s12">
+                <div class="switch">
+                    <i class="fas fa-exclamation-circle prefix teal-text text-lighten-2"></i>
+                    <label for="need_recovery">
+                        <input id="need_recovery" name="need_recovery" type="checkbox">
+                        <span class="lever"></span>
+                        Need Recovery
+                    </label>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="address">
+            <!-- User Address -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-compass prefix teal-text text-lighten-2"></i>
+                    <input id="user_postcode" name="user_postcode" minlength="5" maxlength="12" type="text"
+                        placeholder="Example: WD17 3EZ" class="validate brown-text" required>
+                    <label for="user_postcode">Post Code</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-home prefix teal-text text-lighten-2"></i>
+                    <input id="user_address" name="user_address" minlength="10" maxlength="80" type="text"
+                        placeholder="Example: 8 Hempstead Rd, Watford" class="validate brown-text" required>
+                    <label for="user_address">Address/Flat No.</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- User Phone -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-phone prefix teal-text text-lighten-2"></i>
+                <input id="user_phone" name="user_phone" minlength="5" maxlength="12" type="text"
+                    placeholder="Example: 07891234567" class="validate brown-text" required>
+                <label for="user_phone">Phone Number</label>
+            </div>
+        </div>
+
+        <!-- submit button -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <button type="submit" class="btn-large teal lighten-2">
+                    Book Appointment <i class="fas fa-check right"></i>
+                </button>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+{% endblock %}
