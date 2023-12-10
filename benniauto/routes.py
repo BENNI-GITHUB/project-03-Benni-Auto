@@ -10,16 +10,76 @@ def home():
     return render_template("home.html" , active=active, services=services )
 
 
-@app.route("/login")
-def login():
-    active = 'login'
-    return render_template("login.html" , active=active)
-
-
-@app.route("/register")
+@app.route("/register", methods=['GET', 'POST'])
 def register():
     active = 'login'
+    if request.method == "POST":
+        first_name = request.form.get("first_name"),
+        last_name = request.form.get("last_name"),
+        username = request.form.get("username"),
+        gender = request.form.get("gender"),
+        email = request.form.get("email"),
+        password = request.form.get("password"),
+        password_confirmation = request.form.get("password_confirmation")
+
+        # Check Passwords similarity
+        if password != password_confirmation:
+            flash('Passwords are not same. Please try again', 'error')
+            return render_template('register.html')
+
+        # Check non-reiterativity of username
+        user_username = User.query.filter_by(username=username).first()
+        if user_username:
+            flash('Username already in use. Please Choose another one', 'error')
+            return render_template('register.html')
+
+        # Check non-reiterativity of email
+        user_email = User.query.filter_by(email=email).first()
+        if user_email:
+            flash('User with this email is already registered', 'error')
+            return render_template('register.html')
+        
+        user = User(
+            first_name=first_name, 
+            last_name=last_name, 
+            username=username, 
+            gender=gender, 
+            email=email, 
+            password=password, 
+            password_confirmation=password_confirmation
+            )
+
+        db.session.add(user)
+        db.session.commit()
+
+        flash('Welcome to Benni Auto')
+        return redirect('login')
+
     return render_template("register.html", active=active)
+
+
+@app.route("/login", methods=['GET', 'POST'])
+def login():
+    active = 'login'
+    if request.method == "POST":
+        username = request.form.get('username')
+        password = request.form.get('password')
+
+        user_username = User.query.filter_by(username=username).first()
+        user_password = user_username.password
+    
+            # login Successful 
+        if user_username and (user_password == password):
+            session['logged_in'] = True
+            session['user_id'] = user.id
+            session['username'] = username
+            return redirect(url_for('home'))
+
+        else:
+            # login Unsuccessful 
+            flash('Username or Password are not correct. Please try again.', 'error')
+
+    return render_template("login.html" , active=active)
 
 
 @app.route("/services")

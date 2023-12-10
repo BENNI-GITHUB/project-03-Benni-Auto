@@ -152,6 +152,14 @@ input:checked #address {
   margin: 30px auto;
   }
 
+.register-btn-1 {
+  text-align: right;
+}
+
+.register-btn-2 {
+  text-align: left;
+} 
+
 .active {
   font-weight: bolder;
   color: #4db6ac;
@@ -191,4 +199,10 @@ input:checked #address {
     text-align: left;
   }
 
+  .register-btn-1 ,
+  .register-btn-2 {
+    text-align: center;
+    margin-bottom: 10px;
+    transform: scale(.8);
+  } 
 }
