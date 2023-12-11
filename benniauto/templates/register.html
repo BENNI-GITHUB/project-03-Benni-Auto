@@ -3,6 +3,21 @@
 
 <h3 class="brown-text center-align our-services">Register Now</h3>
 
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <div class="row">
+    <div class="flash-box col m4 offset-m4 s10 offset-s1 brown-text teal lighten-4">
+      <h3 class="center-align">ERROR!</h3>
+      <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% endif %}
+{% endwith %}
+
 <div class="login-page container brown lighten-5">
   <div class="row">
     <form class="col s12" method="POST" action="{{ url_for('register') }}">
@@ -19,7 +34,7 @@
       <!-- Last Name -->
       <div class="row">
         <div class="input-field col s10 offset-s1">
-          <input id="last_name" name="last_name" type="text" class="validate brown-text"  maxlength="30" required>
+          <input id="last_name" name="last_name" type="text" class="validate brown-text" maxlength="30" required>
           <label for="last_name">Last Name</label>
           <span class="helper-text" data-error="Not Accepted" data-success="Approved">Your Last Name</span>
         </div>
@@ -34,6 +49,7 @@
             <option value="Female">Female</option>
           </select>
           <label for="gender">Gender</label>
+          <span class="helper-text" data-error="Choose Gender" data-success="Approved">Choose your gender</span>
         </div>
       </div>
 
@@ -42,14 +58,16 @@
         <div class="input-field col s10 offset-s1">
           <input id="email" name="email" type="email" class="validate" maxlength="30" required>
           <label for="email">Email</label>
-          <span class="helper-text" data-error="Not Accepted" data-success="Initially Accepted">Example: John@gmail.com</span>
+          <span class="helper-text" data-error="Not Accepted" data-success="Initially Accepted">Example:
+            John@gmail.com</span>
         </div>
       </div>
 
       <!-- Username -->
       <div class="row">
         <div class="input-field col s10 offset-s1">
-          <input id="username" name="username" type="text" minlength="5" maxlength="30" class="validate brown-text" required>
+          <input id="username" name="username" type="text" minlength="5" maxlength="30" class="validate brown-text"
+            required>
           <label for="username">Username</label>
           <span class="helper-text" data-error="Not Accepted" data-success="Initially Accepted">Example: John1990</span>
         </div>
@@ -60,30 +78,33 @@
         <div class="input-field col s10 offset-s1">
           <input id="password" name="password" type="password" minlength="8" maxlength="30" class="validate" required>
           <label for="password">Password</label>
-          <span class="helper-text" data-error="Not Accepted" data-success="Initially Accepted">َAt least 8 Character</span>
+          <span class="helper-text" data-error="Not Accepted" data-success="Initially Accepted">َAt least 8
+            Character</span>
         </div>
       </div>
 
       <!-- Confirm Password -->
       <div class="row">
         <div class="input-field col s10 offset-s1">
-          <input id="password_confirmation" name="password_confirmation" type="password" minlength="8" maxlength="30" class="validate" required>
+          <input id="password_confirmation" name="password_confirmation" type="password" minlength="8" maxlength="30"
+            class="validate" required>
           <label for="password_confirmation">Confirm Password</label>
-          <span class="helper-text" data-error="Not Accepted" data-success="Initially Accepted">Enter your password again</span>
+          <span class="helper-text" data-error="Not Accepted" data-success="Initially Accepted">Enter your password
+            again</span>
         </div>
       </div>
 
-        <!-- submit button -->
-        <div class="row">
-          <div class="col m6 s12 register-btn-1">
-              <button type="submit" class="btn-large teal lighten-2">
-                  Register <i class="fas fa-user-plus right"></i>
-              </button>
-          </div>
-          <div class="col m6 s12 register-btn-2">
-            <button type="reset" class="btn-large brown lighten-2">
-                Reset Form <i class="fas fa-eraser right"></i>
-            </button>
+      <!-- submit button -->
+      <div class="row">
+        <div class="col m6 s12 register-btn-1">
+          <button type="submit" class="btn-large teal lighten-2">
+            Register <i class="fas fa-user-plus right"></i>
+          </button>
+        </div>
+        <div class="col m6 s12 register-btn-2">
+          <button type="reset" class="btn-large brown lighten-2">
+            Reset Form <i class="fas fa-eraser right"></i>
+          </button>
         </div>
       </div>
 

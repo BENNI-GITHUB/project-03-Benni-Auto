@@ -13,6 +13,7 @@ def home():
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     active = 'login'
+    error = None
     if request.method == "POST":
         first_name = request.form.get("first_name")
         last_name = request.form.get("last_name")
@@ -21,25 +22,26 @@ def register():
         email = request.form.get("email")
         password = request.form.get("password")
         password_confirmation = request.form.get("password_confirmation")
-        print(password)
-        print(password_confirmation)
-        # Check Passwords similarity
-        if password != password_confirmation:
-            flash('Passwords are not same. Please try again')
+
+        # Check non-reiterativity of email
+        user_email = User.query.filter_by(email=email).first()
+        if user_email:
+            flash('User with this email is already registered', 'register')
             return render_template('register.html')
 
         # Check non-reiterativity of username
         user_username = User.query.filter_by(username=username).first()
         if user_username:
-            flash('Username already in use. Please Choose another one')
+            flash('Username already in use. Please Choose another one', 'register')
             return render_template('register.html')
 
-        # Check non-reiterativity of email
-        user_email = User.query.filter_by(email=email).first()
-        if user_email:
-            flash('User with this email is already registered')
+        # Check Passwords similarity
+        if password != password_confirmation:
+            print("passwords are not same")
+            flash('Passwords are not same. Please try again', 'register')
             return render_template('register.html')
-        
+
+
         user = User(
             first_name=first_name,
             last_name=last_name,
@@ -53,7 +55,7 @@ def register():
         db.session.add(user)
         db.session.commit()
 
-        flash('Welcome to Benni Auto')
+        flash('Welcome to Benni Auto', 'login')
         return redirect('login')
 
     return render_template("register.html", active=active)
@@ -62,25 +64,35 @@ def register():
 @app.route("/login", methods=['GET', 'POST'])
 def login():
     active = 'login'
+    users = list(User.query.order_by(User.username).all())
     if request.method == "POST":
         username = request.form.get('username')
-        password = request.form.get('password')
-
-        user_username = User.query.filter_by(username=username).first()
-        user_password = user_username.password
-    
+        password_requested = request.form.get('password')
+        print("login")
+        user = User.query.filter_by(username=username).first()
+        if user:
+            user_password = user.password
             # login Successful 
-        if user_username and (user_password == password):
-            session['logged_in'] = True
-            session['user_id'] = user.id
-            session['username'] = username
-            return redirect(url_for('home'))
-
-        else:
+            if user_password == password_requested:
+                session['user_login'] = True
+                session['user_id'] = user.id
+                session['username'] = username
+                print("login-session")
+                return redirect(url_for('home'))
+            else:
             # login Unsuccessful 
-            flash('Username or Password are not correct. Please try again.')
+                flash('Password is not correct. Please try again.' , 'login')    
+        else:
+            flash('Username is not found. Please try again.' , 'login')
 
-    return render_template("login.html" , active=active)
+    return render_template("login.html" , active=active, users=users)
+
+
+@app.route("/logout")
+def logout():
+    session.clear()
+    flash('You are logged out' , 'home')
+    return redirect(url_for('home'))
 
 
 @app.route("/services")

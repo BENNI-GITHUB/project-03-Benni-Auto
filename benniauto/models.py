@@ -3,9 +3,9 @@ import datetime
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    first_name = db.Column(db.String(30), unique=True, nullable=False)
-    last_name = db.Column(db.String(30), unique=True, nullable=False)
-    gender = db.Column(db.String(10), unique=True, nullable=False)
+    first_name = db.Column(db.String(30), nullable=False)
+    last_name = db.Column(db.String(30), nullable=False)
+    gender = db.Column(db.String(10), nullable=False)
     username = db.Column(db.String(30), unique=True, nullable=False)
     email = db.Column(db.String(30), unique=True, nullable=False)
     password = db.Column(db.String(255), nullable=False)
@@ -40,9 +40,9 @@ class Order(db.Model):
     order_description = db.Column(db.Text, nullable=False)
     request_date = db.Column(db.Date, nullable=False)
     need_recovery = db.Column(db.Boolean, default=False, nullable=False)
-    user_postcode = db.Column(db.String(12), unique=True, nullable=False)
-    user_address = db.Column(db.String(80), unique=True, nullable=False)
-    user_phone = db.Column(db.String(12), unique=True, nullable=False) 
+    user_postcode = db.Column(db.String(12), nullable=False)
+    user_address = db.Column(db.String(80), nullable=False)
+    user_phone = db.Column(db.String(12), nullable=False) 
     service_id = db.Column(db.Integer, db.ForeignKey("service.id", ondelete="CASCADE"), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=True)
 

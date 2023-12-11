@@ -3,6 +3,21 @@
 
 <h3 class="brown-text center-align our-services">Login Now</h3>
 
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <div class="row">
+    <div class="flash-box col m4 offset-m4 s10 offset-s1 brown-text teal lighten-4">
+      <h5 class="center-align">Error!</h5>
+      <ul>
+        {% for message in messages %}
+        <li class="center-align">{{ message }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  {% endif %}
+{% endwith %}
+
 <div class="login-page container brown lighten-5">
   <div class="row">
     <form class="col s12" method="POST" action="{{ url_for('login') }}">
