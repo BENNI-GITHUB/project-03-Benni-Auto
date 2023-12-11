@@ -14,40 +14,41 @@ def home():
 def register():
     active = 'login'
     if request.method == "POST":
-        first_name = request.form.get("first_name"),
-        last_name = request.form.get("last_name"),
-        username = request.form.get("username"),
-        gender = request.form.get("gender"),
-        email = request.form.get("email"),
-        password = request.form.get("password"),
+        first_name = request.form.get("first_name")
+        last_name = request.form.get("last_name")
+        gender = request.form.get("gender")
+        username = request.form.get("username")
+        email = request.form.get("email")
+        password = request.form.get("password")
         password_confirmation = request.form.get("password_confirmation")
-
+        print(password)
+        print(password_confirmation)
         # Check Passwords similarity
         if password != password_confirmation:
-            flash('Passwords are not same. Please try again', 'error')
+            flash('Passwords are not same. Please try again')
             return render_template('register.html')
 
         # Check non-reiterativity of username
         user_username = User.query.filter_by(username=username).first()
         if user_username:
-            flash('Username already in use. Please Choose another one', 'error')
+            flash('Username already in use. Please Choose another one')
             return render_template('register.html')
 
         # Check non-reiterativity of email
         user_email = User.query.filter_by(email=email).first()
         if user_email:
-            flash('User with this email is already registered', 'error')
+            flash('User with this email is already registered')
             return render_template('register.html')
         
         user = User(
-            first_name=first_name, 
-            last_name=last_name, 
+            first_name=first_name,
+            last_name=last_name,
+            gender=gender,
             username=username, 
-            gender=gender, 
             email=email, 
             password=password, 
             password_confirmation=password_confirmation
-            )
+        )
 
         db.session.add(user)
         db.session.commit()
@@ -77,7 +78,7 @@ def login():
 
         else:
             # login Unsuccessful 
-            flash('Username or Password are not correct. Please try again.', 'error')
+            flash('Username or Password are not correct. Please try again.')
 
     return render_template("login.html" , active=active)
 
