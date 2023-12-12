@@ -22,7 +22,7 @@ class Service(db.Model):
     service_name = db.Column(db.String(25), unique=True, nullable=False)
     image_url = db.Column(db.String(1000), default='no-image.jpg')
     service_description = db.Column(db.Text, nullable=True)
-    # orders = db.relationship("Order", backref="service", cascade="all, delete", lazy=True)
+    orders = db.relationship("Order", backref="service", cascade="all, delete", lazy=True)
 
     def __repr__(self):
         # __repr__ to represent itself in the form of a string
@@ -44,7 +44,7 @@ class Order(db.Model):
     user_address = db.Column(db.String(80), nullable=False)
     user_phone = db.Column(db.String(12), nullable=False) 
     service_id = db.Column(db.Integer, db.ForeignKey("service.id", ondelete="CASCADE"), nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
 
     def __repr__(self):
         # __repr__ to represent itself in the form of a string

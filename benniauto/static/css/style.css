@@ -165,6 +165,12 @@ input:checked #address {
   text-align: left;
 } 
 
+.user-text {
+  margin-top: 10px;
+  display: block;
+  font-size: 18px;
+}
+
 .active {
   font-weight: bolder;
   color: #4db6ac;

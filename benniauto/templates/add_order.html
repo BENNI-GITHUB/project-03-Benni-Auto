@@ -8,15 +8,15 @@
 
 
         <!-- User id -->
-        <!-- <div class="row">
+        <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-user prefix teal-text text-lighten-2"></i>
                 <select id="user_id" name="user_id" class="validate brown-text" required>
-                    <option value="{{ user.id }}" selected>{{ user.username }}</option>
+                    <option value="{{ session['user_id'] }}" selected>{{ session['username'] }}</option>
                 </select>
                 <label for="user_id">Username</label>
             </div>
-        </div> -->
+        </div>
 
         <!-- Service id -->
         <div class="row">

@@ -1,11 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
 
-<!-- {% with messages = get_flashed_messages() %}
-    {% if messages %}
-    You are logged out
-    {% endif %}
-{% endwith %} -->
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        M.toast({html: '{{ message }}' , classes: 'rounded brown-text text-darken-3 teal lighten-5'})
+    });
+</script>
+{% endfor %}
+{% endif %}
+{% endwith %}
 
 
 <div class="row">
@@ -13,7 +19,7 @@
         <img src="{{ url_for('static', filename='images/main.jpg')}}" alt="">
     </div>
     <div class="col brown-text s12 m12 l4 center-align title">
-        <h1> Benni Auto</h1>
+        <h1><strong>Benni Auto</strong></h1>
         <h4>Revitalize Your Ride with us: Where Expertise Meets Exceptional Care</h4>
     </div>
 </div>
@@ -56,7 +62,8 @@
                 </h4>
             </div>
             <div class="center-align">
-                <a class="btn-floating btn-large waves-effect waves-light teal lighten-2 text-large service-book"><i class="fas fa-plus"></i></a>
+                <a class="btn-floating btn-large waves-effect waves-light teal lighten-2 text-large service-book"><i
+                        class="fas fa-plus"></i></a>
             </div>
         </div>
 

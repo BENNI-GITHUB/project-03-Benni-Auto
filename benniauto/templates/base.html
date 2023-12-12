@@ -53,6 +53,10 @@
 
 
   <main class="container">
+
+    {% if session['user_login'] == True %}
+    <strong class="brown-text user-text">Hi {{ session['user_fname'] }}</strong>
+    {% endif %}
     {% block content %}
     {% endblock %}
   </main>

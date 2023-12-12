@@ -26,19 +26,19 @@ def register():
         # Check non-reiterativity of email
         user_email = User.query.filter_by(email=email).first()
         if user_email:
-            flash('User with this email is already registered', 'register')
+            flash('Error! User with this email is already registered', 'register')
             return render_template('register.html')
 
         # Check non-reiterativity of username
         user_username = User.query.filter_by(username=username).first()
         if user_username:
-            flash('Username already in use. Please Choose another one', 'register')
+            flash('Error! Username already in use. Please Choose another one', 'register')
             return render_template('register.html')
 
         # Check Passwords similarity
         if password != password_confirmation:
             print("passwords are not same")
-            flash('Passwords are not same. Please try again', 'register')
+            flash('Error! Passwords are not same. Please try again', 'register')
             return render_template('register.html')
 
 
@@ -75,6 +75,7 @@ def login():
             # login Successful 
             if user_password == password_requested:
                 session['user_login'] = True
+                session['user_fname'] = user.first_name
                 session['user_id'] = user.id
                 session['username'] = username
                 print("login-session")
@@ -83,7 +84,7 @@ def login():
             # login Unsuccessful 
                 flash('Password is not correct. Please try again.' , 'login')    
         else:
-            flash('Username is not found. Please try again.' , 'login')
+            flash('Error! Username is not found. Please try again.' , 'login')
 
     return render_template("login.html" , active=active, users=users)
 
@@ -156,7 +157,7 @@ def add_order():
             user_address = request.form.get("user_address"),
             user_phone = request.form.get("user_phone"),
             service_id = request.form.get("service_id"),
-            user_id = request.form.get("user_id")
+            user_id = int(request.form.get("user_id"))
         )
         db.session.add(order)
         db.session.commit()
