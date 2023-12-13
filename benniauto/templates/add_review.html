@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="brown-text center-align our-services">Leave a Review</h3>
+
+<form method="POST" action="{{ url_for('add_review') }}">
+
+  <!-- User id -->
+  <div class="row">
+    <div class="input-field col m8 offset-m2 s12">
+      <i class="fas fa-user prefix teal-text text-lighten-2"></i>
+      <select id="user_id" name="user_id" class="validate brown-text" required>
+        <option value="{{ session['user_id'] }}" selected>{{ session['username'] }}</option>
+      </select>
+      <label for="user_id">Username</label>
+    </div>
+  </div>
+
+  <!-- Service name -->
+  <div class="row">
+    <div class="input-field col m8 offset-m2 s12">
+      <i class="fas fa-tools prefix teal-text text-lighten-2"></i>
+      <select id="service_id" name="service_id" class="validate brown-text" required>
+        <option value="" disabled selected>Choose Services</option>
+        {% for service in services %}
+        <option value="{{ service.id }}">{{ service.service_name }}</option>
+        {% endfor %}
+      </select>
+      <label for="service_id">Which service did you get?</label>
+    </div>
+  </div>
+
+  <!-- Review Title -->
+  <div class="row">
+    <div class="input-field col m8 offset-m2 s12">
+      <i class="fas fa-comment prefix teal-text text-lighten-2"></i>
+      <input id="title" name="title" minlength="5" maxlength="40" type="text" class="validate brown-text" required>
+      <label for="title">Review Title</label>
+    </div>
+  </div>
+
+  <!-- Review Rating -->
+  <div class="row">
+    <div class="input-field col m8 offset-m2 s12">
+      <i class="fab fa-microblog prefix teal-text text-lighten-2"></i>
+      <div class="rating">
+        <input type="radio" id="star5" name="rating" value="5"><label class="star-label" for="star5"></label>
+        <input type="radio" id="star4" name="rating" value="4"><label class="star-label" for="star4"></label>
+        <input type="radio" id="star3" name="rating" value="3"><label class="star-label" for="star3"></label>
+        <input type="radio" id="star2" name="rating" value="2"><label class="star-label" for="star2"></label>
+        <input type="radio" id="star1" name="rating" value="1"><label class="star-label" for="star1"></label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Comment -->
+  <div class="row">
+    <div class="input-field col m8 offset-m2 s12">
+      <i class="fas fa-comment-dots prefix teal-text text-lighten-2"></i>
+      <textarea id="comment" name="comment" minlength="20" maxlength="600" type="text"
+        class="materialize-textarea validate brown-text" required></textarea>
+      <label for="comment">Comments</label>
+    </div>
+  </div>
+
+  <!-- submit button -->
+  <div class="row">
+    <div class="col s12 center-align">
+      <button type="submit" class="btn-large teal lighten-2">
+        Add Review <i class="fas fa-comment-medical right"></i>
+      </button>
+    </div>
+  </div>
+</form>
+
+
+{% endblock %}

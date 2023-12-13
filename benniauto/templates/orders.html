@@ -12,25 +12,69 @@
 
 <ul class="collapsible popout">
     {% for order in orders|sort(attribute="request_date") %}
+    {{ order.user_id }}
+    {{ session['user_id'] }}
     <li>
         <div class="row collapsible-header brown-text brown lighten-5">
-            <div class="col m6 s12">
+            <div class="col m4 s12">
                 <i class="fas fa-level-down-alt"></i>
                 <strong>{{ order.request_date.strftime("%d %B, %Y") }}</strong>
             </div>
-            <div class="col m6 s12">
+            <div class="col m4 s12 center-align">
                 {% if order.need_recovery == True %}
                 <i class="fas fa-truck-loading teal-text text-lighten-2"></i>
                 {% endif %}
                 <strong>{{ order.order_title }}</strong>
             </div>
-
+            <div class="col m4 s12 center-align">
+                <strong>{{ order.user_id }}</strong>
+            </div>
         </div>
         <div class="collapsible-body">
-            <strong>{{ order.service }}</strong>
-            <p>{{ order.order_description }}</p>
+            <p class="brown-text">Service Category: <strong class="teal-text lighten-2">{{ order.service }}</strong></p>
+            <p class="brown-text">Car Brand: <strong class="teal-text lighten-2">{{ order.car_type }}</strong></p>
+            {% if order.need_recovery == True %}
+            <p class="brown-text">Picking up Address: <strong class="teal-text lighten-2">{{ order.user_address }} ,
+                    {{ order.user_postcode }}</strong></p>
+            {% endif %}
+            <p class="brown-text">User Phonr No.: <strong class="teal-text lighten-2">{{ order.user_phone }}</strong>
+            </p>
+
+            {% if session['cancel_order'] %}
+            <p class="brown-text">Cancel Description: <strong
+                    class="teal-text lighten-2">{{- order.order_description -}}</strong></p>
+            {% else %}
+            <p class="brown-text">Order Description: <strong
+                    class="teal-text lighten-2">{{- order.order_description -}}</strong></p>
+            {% endif %}
+
+            <p><br>
+                <a href="{{ url_for('edit_order' , order_id = order.id) }}" class="btn teal lighten-2">Edit Order</a>
+                <a href="{{ url_for('cancel_order' , order_id = order.id) }}" class="btn brown lighten-2">Cancel
+                    Order</a>
+            </p>
+            <p>
+                <a href="#modal-{{ order.id }}" class="btn brown modal-trigger">Delete</a>
+            </p>
         </div>
     </li>
+
+
+    <!-- Modal -->
+    <div id="modal-{{ order.id }}" class="modal modal-box brown lighten-5 brown-text">
+        <div class="modal-content">
+            <h4>Are you sure you want to delete order: {{ order.order_title }}?</h4>
+            <p><i class="fa fa-exclamation-circle"></i> This action cannot be undone.</p>
+        </div>
+        <div class="progress brown">
+            <div class="indeterminate"></div>
+        </div>
+        <div class="modal-footer brown lighten-5">
+            <a href="{{ url_for('delete_order', order_id=order.id) }}" class="btn brown">Delete Order</a>
+            <a href="{{ url_for('orders') }}" class="btn teal lighten-2">Cancel</a>
+        </div>
+    </div>
+
     {% endfor %}
 </ul>
 

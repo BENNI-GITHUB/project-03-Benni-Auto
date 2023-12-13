@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<h3 class="brown-text center-align our-services">Costomer Reviews</h3>
+
+{% if session['user_login'] != True %}
+<h5 class="brown-text center-align">To add a review you have to <a href="{{ url_for('login') }}"><strong
+      class="teal-text">login</strong></a> first</h5>
+{% else %}
+<div class="row">
+  <div class="col s12 center-align">
+    <a href="{{ url_for('add_review') }}" class="btn-large teal lighten-2">
+      Leave A Review <i class="fas fa-comment-medical right"></i>
+    </a>
+  </div>
+</div>
+{% endif %}
+
+<div class="row">
+  {% for review in reviews %}
+  <div class="col s12">
+    <div class="card">
+      <div class="card-content">
+        <strong class="teal-text">{{ review.review_date.strftime("%d %B, %Y") }}</strong><br>
+        <span class="card-title brown-text">{{ review.title }} 
+           {% if review.rating == '5' %}  
+           <i class="fas fa-star amber-text text-accent-3"></i><i class="fas fa-star amber-text text-accent-3"></i><i class="fas fa-star amber-text text-accent-3"></i><i class="fas fa-star amber-text text-accent-3"></i><i class="fas fa-star amber-text text-accent-3"></i>
+           {% elif review.rating == '4' %}
+           <i class="fas fa-star amber-text text-accent-3"></i><i class="fas fa-star amber-text text-accent-3"></i><i class="fas fa-star amber-text text-accent-3"></i><i class="fas fa-star amber-text text-accent-3"></i>
+           {% elif review.rating == '3' %}
+           <i class="fas fa-star amber-text text-accent-3"></i><i class="fas fa-star amber-text text-accent-3"></i><i class="fas fa-star amber-text text-accent-3"></i>
+           {% elif review.rating == '2' %}
+           <i class="fas fa-star amber-text text-accent-3"></i><i class="fas fa-star amber-text text-accent-3"></i>
+           {% elif review.rating == '1' %}
+           <i class="fas fa-star amber-text text-accent-3"></i>
+           {% endif  %}
+          </span>
+        <hr>
+        <p>
+          {{ review.comment }}</p>
+        <span class="card-title">{{ review.user_id }}</span>
+      </div>
+
+      <div class="card-action">
+        <a href="" class="btn lime darken-4">Edit Review</a>
+        <a href="#modal-{{ review.id }}" class="btn brown modal-trigger">Delete</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Modal -->
+  <div id="modal-{{ review.id }}" class="modal modal-box brown lighten-5 brown-text">
+    <div class="modal-content">
+      <h4>Are you sure you want to delete your review?</h4>
+      <p><i class="fa fa-exclamation-circle"></i> This action cannot be undone.</p>
+    </div>
+    <div class="progress brown">
+      <div class="indeterminate"></div>
+    </div>
+    <div class="modal-footer brown lighten-5">
+      <a href="{{ url_for('delete_review' , review_id = review.id) }}" class="btn brown">Delete</a>
+      <a href="{{ url_for('reviews') }}" class="btn teal lighten-2">Cancel</a>
+    </div>
+  </div>
+
+  {% endfor %}
+
+</div>
+
+
+
+{% endblock %}

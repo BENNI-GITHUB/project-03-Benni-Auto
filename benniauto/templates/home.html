@@ -62,8 +62,8 @@
                 </h4>
             </div>
             <div class="center-align">
-                <a class="btn-floating btn-large waves-effect waves-light teal lighten-2 text-large service-book"><i
-                        class="fas fa-plus"></i></a>
+                <a  href="{{ url_for('add_order') }}" class="btn-floating btn-large waves-effect waves-light teal lighten-2 text-large service-book">
+                    <i class="fas fa-plus"></i></a>
             </div>
         </div>
 
@@ -77,7 +77,7 @@
 
 <div class="row lighten-4">
     <div class="col">
-        <h3 class="brown-text">Reviews</h3>
+        <a href="{{ url_for('reviews') }}"><h3 class="brown-text">Reviews</h3></a>
         <hr class="teal lighten-2 hr-under-title">
     </div>
 </div>
@@ -94,6 +94,7 @@
     </li>
     {% endfor %}
 </ul>
+<h5 class="center-align"><a href="{{ url_for('reviews') }}" class="brown-text"> See all reviews</a></h5>
 
 
 <div class="row">

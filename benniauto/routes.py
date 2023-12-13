@@ -1,6 +1,6 @@
 from flask import render_template, request, redirect, url_for, session, flash
 from benniauto import app, db
-from benniauto.models import Service, Order, User
+from benniauto.models import Service, Order, User, Review
 
 
 @app.route("/")
@@ -164,4 +164,84 @@ def add_order():
         return redirect(url_for("orders"))
     return render_template("add_order.html", services=services)
 
+
+@app.route("/edit_order/<int:order_id>", methods=["GET", "POST"])
+def edit_order(order_id):
+    order = Order.query.get_or_404(order_id)
+    services = list(Service.query.order_by(Service.service_name).all())
+    if request.method == "POST":
+        order.order_title = request.form.get("order_title")
+        order.car_type = request.form.get("car_type")
+        order.order_description = request.form.get("order_description")
+        order.request_date = request.form.get("request_date")
+        order.need_recovery = bool(True if request.form.get("need_recovery") else False)
+        order.user_postcode = request.form.get("user_postcode")
+        order.user_address = request.form.get("user_address")
+        order.user_phone = request.form.get("user_phone")
+        service_id = request.form.get("service_id")
+        db.session.commit()
+        return redirect(url_for("orders"))
+    return render_template("edit_order.html", order=order, services=services)
+
+
+@app.route("/cancel_order/<int:order_id>", methods=["GET", "POST"])
+def cancel_order(order_id):
+    order = Order.query.get_or_404(order_id)
+    services = list(Service.query.order_by(Service.service_name).all())
+    if request.method == "POST":
+        order.order_title = request.form.get("order_title")
+        order.car_type = request.form.get("car_type")
+        order.order_description = request.form.get("order_description")
+        order.request_date = request.form.get("request_date")
+        order.need_recovery = bool(True if request.form.get("need_recovery") else False)
+        order.user_postcode = request.form.get("user_postcode")
+        order.user_address = request.form.get("user_address")
+        order.user_phone = request.form.get("user_phone")
+        service_id = request.form.get("service_id")
+        db.session.commit()
+        print("cancel done")
+        session['cancel_order'] = True
+        session['order_id'] = order.id
+        return redirect(url_for("orders"))
+    return render_template("cancel_order.html", order=order, services=services)
+
+
+@app.route("/delete_order/<int:order_id>")
+def delete_order(order_id):
+    order = Order.query.get_or_404(order_id)
+    db.session.delete(order)
+    db.session.commit()
+    return redirect(url_for("orders"))
+
+
+@app.route("/reviews", methods=["GET", "POST"])
+def reviews():
+    services = list(Service.query.order_by(Service.service_name).all())
+    reviews = list(Review.query.order_by(Review.review_date).all())
+    return render_template("reviews.html" , services=services, reviews=reviews)
+
+
+@app.route("/add_review", methods=["GET","POST"])
+def add_review():
+    services = list(Service.query.order_by(Service.service_name).all())
+    if request.method == "POST":
+        review = Review(
+            title = request.form.get("title"),
+            rating = request.form.get("rating"),
+            comment = request.form.get("comment"),
+            user_id = int(request.form.get("user_id")),
+            service_id = request.form.get("service_id")
+        )
+        db.session.add(review)
+        db.session.commit()
+        return redirect(url_for("reviews"))
+    return render_template("add_review.html", services=services)
+
+
+@app.route("/delete_review/<int:review_id>")
+def delete_review(review_id):
+    review = Review.query.get_or_404(review_id)
+    db.session.delete(review)
+    db.session.commit()
+    return redirect(url_for("reviews"))
 

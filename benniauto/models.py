@@ -61,11 +61,3 @@ class Review(db.Model):
     review_date = db.Column(db.DateTime, default=datetime.datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     service_id = db.Column(db.Integer, db.ForeignKey('service.id'), nullable=False)
-
-
-
-
-
-
-
-

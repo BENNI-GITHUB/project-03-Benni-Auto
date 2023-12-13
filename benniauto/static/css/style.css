@@ -52,7 +52,7 @@ nav img {
 }
 
 .pad-bot {
-  padding-bottom: 40px;
+  padding-bottom: 5px;
 }
 
 .review-box-holder {
@@ -86,7 +86,7 @@ nav img {
   height: 250px;
 }
 
-.card-content p {
+.card-content .para-card {
   display: inline-block;
   height: 200px;
   
@@ -94,7 +94,7 @@ nav img {
 
 .modal-box {
   border-radius: 25px;
-  margin-top: 20%;
+  margin-top: 10%;
   padding: 20px;
 }
 
@@ -171,10 +171,38 @@ input:checked #address {
   font-size: 18px;
 }
 
+
+.cancel-order {
+  display: none;
+}
+
 .active {
   font-weight: bolder;
   color: #4db6ac;
   font-size: 17px;
+}
+
+.rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating .star-label {
+  cursor: pointer;
+  font-size: 35px;
+}
+
+.rating .star-label::before {
+  content: '\2605'; 
+}
+
+.rating input:checked ~ .star-label:before {
+  color: goldenrod; 
 }
 
 @media (max-width: 993px) {
