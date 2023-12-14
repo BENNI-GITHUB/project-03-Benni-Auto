@@ -29,10 +29,11 @@
           <li><a href="{{ url_for('home') }}#contact">Contact</a></li>
           {% if session['user_login'] %}
           <li><a class="{% if active == 'login' %}active{% endif %}" href="{{ url_for('logout') }}">Log out</a></li>
+          <li><a href="{{ url_for('orders') }}" class="waves-effect waves-light btn">Book Now</a></li>
           {% else %}
           <li><a class="{% if active == 'login' %}active{% endif %}" href="{{ url_for('login') }}">Login/Register</a></li>
+          <li><a href="{{ url_for('login') }}" class="waves-effect waves-light btn">Book Now</a></li>
           {% endif %}
-          <li><a href="{{ url_for('orders') }}" class="waves-effect waves-light btn">Book Now</a></li>
         </ul>
       </div>
     </nav>

@@ -10,15 +10,15 @@
     </div>
 </div>
 
+
 <ul class="collapsible popout">
     {% for order in orders|sort(attribute="request_date") %}
-    {{ order.user_id }}
-    {{ session['user_id'] }}
     <li>
         <div class="row collapsible-header brown-text brown lighten-5">
             <div class="col m4 s12">
                 <i class="fas fa-level-down-alt"></i>
-                <strong>{{ order.request_date.strftime("%d %B, %Y") }}</strong>
+                <strong>{{ order.request_date.strftime("%d %B, %Y") }}</strong>{% if order.is_cancel %} <strong
+                    class="amber-text text-darken-4">Canceled</strong> {% endif %}
             </div>
             <div class="col m4 s12 center-align">
                 {% if order.need_recovery == True %}
@@ -27,34 +27,34 @@
                 <strong>{{ order.order_title }}</strong>
             </div>
             <div class="col m4 s12 center-align">
-                <strong>{{ order.user_id }}</strong>
+                <strong>{{ order.user.first_name }} {{ order.user.last_name }}</strong>
             </div>
         </div>
         <div class="collapsible-body">
-            <p class="brown-text">Service Category: <strong class="teal-text lighten-2">{{ order.service }}</strong></p>
-            <p class="brown-text">Car Brand: <strong class="teal-text lighten-2">{{ order.car_type }}</strong></p>
-            {% if order.need_recovery == True %}
-            <p class="brown-text">Picking up Address: <strong class="teal-text lighten-2">{{ order.user_address }} ,
-                    {{ order.user_postcode }}</strong></p>
-            {% endif %}
-            <p class="brown-text">User Phonr No.: <strong class="teal-text lighten-2">{{ order.user_phone }}</strong>
-            </p>
-
-            {% if session['cancel_order'] %}
-            <p class="brown-text">Cancel Description: <strong
-                    class="teal-text lighten-2">{{- order.order_description -}}</strong></p>
+            <span class="brown-text">Car Brand: </span><strong>{{ order.car_type }}</strong><br>
+            <p class="brown-text">Service Category: <strong
+                    class="teal-text text-lighten-2">{{ order.service }}</strong></p>
+            {% if order.is_cancel %}
+            <p class="brown-text">Cancel Description: <strong class="amber-text text-darken-4">{{ order.order_description }}</strong></p>
             {% else %}
             <p class="brown-text">Order Description: <strong
-                    class="teal-text lighten-2">{{- order.order_description -}}</strong></p>
+                    class="teal-text text-lighten-2">{{ order.order_description }}</strong></p>
             {% endif %}
-
-            <p><br>
-                <a href="{{ url_for('edit_order' , order_id = order.id) }}" class="btn teal lighten-2">Edit Order</a>
-                <a href="{{ url_for('cancel_order' , order_id = order.id) }}" class="btn brown lighten-2">Cancel
-                    Order</a>
-            </p>
+            {% if order.need_recovery == True %}
+            <span class="brown-text">Picking up Address: </span><strong>{{ order.user_address }} ,
+                {{ order.user_postcode }}</strong><br>
+            {% endif %}
+            <span class="brown-text">User Phonr No.: </span><strong>{{ order.user_phone }}</strong><br>
             <p>
-                <a href="#modal-{{ order.id }}" class="btn brown modal-trigger">Delete</a>
+                {% if order.is_cancel %}
+                <a href="{{ url_for('add_order') }}" class="btn teal lighten-2">Book A New Appointment</a>
+                {% else %}
+                <a href="{{ url_for('edit_order' , order_id = order.id) }}" class="btn teal lighten-2">Edit Order</a>
+                <a href="{{ url_for('cancel_order' , order_id = order.id) }}" class="btn brown lighten-2">Cancel Order</a>
+                {% endif %}
+                {% if session['is_admin'] %}
+                <a href="#modal-{{ order.id }}" class="btn brown right  modal-trigger">Delete Order</a>
+                {% endif %}
             </p>
         </div>
     </li>

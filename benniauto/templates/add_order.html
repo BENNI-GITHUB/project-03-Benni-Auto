@@ -49,7 +49,7 @@
                 <select id="car_type" name="car_type" class="validate brown-text" required>
                     <option value="" disabled selected>Choose Car Brand</option>
                     {% with cars = ['Ford','Vauxhall','Volkswagen','BMW','Mercedes-Benz','Toyota','Audi','Renault','Mini','Suzuki','Peugeot','Hyundai','Nissan','Citroën','Honda','Skoda','Volvo','Fiat','SEAT','Mazda','Mitsubishi','Dacia','Lexus','Kia','Land-Rover','Porsche','MG','Smart','Jaguar','Other'] %}
-                    {% for car in cars %}
+                    {% for car in cars|sort %}
                     <option value="{{ car }}">{{ car }}</option>
                     {% endfor %}
                     {% endwith %}
@@ -98,7 +98,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-compass prefix teal-text text-lighten-2"></i>
                     <input id="user_postcode" name="user_postcode" minlength="5" maxlength="12" type="text"
-                        placeholder="Example: WD17 3EZ" class="validate brown-text" required>
+                        placeholder="Example: WD17 3EZ" class="validate brown-text">
                     <label for="user_postcode">Post Code</label>
                 </div>
             </div>
@@ -107,7 +107,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-home prefix teal-text text-lighten-2"></i>
                     <input id="user_address" name="user_address" minlength="10" maxlength="80" type="text"
-                        placeholder="Example: 8 Hempstead Rd, Watford" class="validate brown-text" required>
+                        placeholder="Example: 8 Hempstead Rd, Watford" class="validate brown-text">
                     <label for="user_address">Address/Flat No.</label>
                 </div>
             </div>

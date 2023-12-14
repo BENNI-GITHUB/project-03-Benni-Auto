@@ -7,7 +7,9 @@ from benniauto.models import Service, Order, User, Review
 def home():
     active = 'home'
     services = list(Service.query.order_by(Service.service_name).all())
-    return render_template("home.html" , active=active, services=services )
+    reviews = list(reversed(list(Review.query.order_by(Review.review_date).all())))[:3]
+    print(reviews)
+    return render_template("home.html" , active=active, services=services, reviews=reviews )
 
 
 @app.route("/register", methods=['GET', 'POST'])
@@ -22,6 +24,7 @@ def register():
         email = request.form.get("email")
         password = request.form.get("password")
         password_confirmation = request.form.get("password_confirmation")
+        is_admin = bool(True if request.form.get("is_admin") else False)
 
         # Check non-reiterativity of email
         user_email = User.query.filter_by(email=email).first()
@@ -49,7 +52,8 @@ def register():
             username=username, 
             email=email, 
             password=password, 
-            password_confirmation=password_confirmation
+            password_confirmation=password_confirmation,
+            is_admin=is_admin
         )
 
         db.session.add(user)
@@ -77,7 +81,8 @@ def login():
                 session['user_login'] = True
                 session['user_fname'] = user.first_name
                 session['user_id'] = user.id
-                session['username'] = username
+                session['username'] = user.username
+                session['is_admin'] = user.is_admin
                 print("login-session")
                 return redirect(url_for('home'))
             else:
@@ -87,6 +92,10 @@ def login():
             flash('Error! Username is not found. Please try again.' , 'login')
 
     return render_template("login.html" , active=active, users=users)
+
+
+    # flash('To book a service order you have to login first', 'login')
+
 
 
 @app.route("/logout")
@@ -139,7 +148,9 @@ def delete_service(service_id):
 
 @app.route("/orders")
 def orders():
-    orders = list(Order.query.order_by(Order.id).all())
+    orders = list(Order.query.filter_by(user_id=session['user_id']).all())
+    if session['is_admin']:
+        orders = list(Order.query.order_by(Order.request_date).all())
     return render_template("orders.html" , orders=orders)
 
 
@@ -198,10 +209,9 @@ def cancel_order(order_id):
         order.user_address = request.form.get("user_address")
         order.user_phone = request.form.get("user_phone")
         service_id = request.form.get("service_id")
+        order.is_cancel = True
         db.session.commit()
         print("cancel done")
-        session['cancel_order'] = True
-        session['order_id'] = order.id
         return redirect(url_for("orders"))
     return render_template("cancel_order.html", order=order, services=services)
 
@@ -217,7 +227,7 @@ def delete_order(order_id):
 @app.route("/reviews", methods=["GET", "POST"])
 def reviews():
     services = list(Service.query.order_by(Service.service_name).all())
-    reviews = list(Review.query.order_by(Review.review_date).all())
+    reviews = reversed(list(Review.query.order_by(Review.review_date).all()))
     return render_template("reviews.html" , services=services, reviews=reviews)
 
 

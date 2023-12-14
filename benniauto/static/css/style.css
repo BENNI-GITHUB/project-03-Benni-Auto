@@ -142,13 +142,9 @@ nav img {
   border: 3px solid #795548;
 }
 
-/* #address {
+#address {
   display: none;
 }
-
-input:checked #address {
-  display: block;
-} */
 
 .login-page {
   border: 2px solid #4db6ac;
@@ -170,7 +166,6 @@ input:checked #address {
   display: block;
   font-size: 18px;
 }
-
 
 .cancel-order {
   display: none;

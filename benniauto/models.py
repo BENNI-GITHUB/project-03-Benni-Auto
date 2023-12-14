@@ -7,9 +7,10 @@ class User(db.Model):
     last_name = db.Column(db.String(30), nullable=False)
     gender = db.Column(db.String(10), nullable=False)
     username = db.Column(db.String(30), unique=True, nullable=False)
-    email = db.Column(db.String(30), unique=True, nullable=False)
+    email = db.Column(db.String(50), unique=True, nullable=False)
     password = db.Column(db.String(255), nullable=False)
     password_confirmation = db.Column(db.String(255), nullable=False)
+    is_admin = db.Column(db.Boolean, nullable=True)
 
     def __repr__(self):
         return "Username: {0} , Email: {1}".format(
@@ -45,6 +46,8 @@ class Order(db.Model):
     user_phone = db.Column(db.String(12), nullable=False) 
     service_id = db.Column(db.Integer, db.ForeignKey("service.id", ondelete="CASCADE"), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
+    is_cancel = db.Column(db.Boolean, default=False, nullable=True)
+    user = db.relationship('User', foreign_keys='Order.user_id')
 
     def __repr__(self):
         # __repr__ to represent itself in the form of a string
@@ -61,3 +64,5 @@ class Review(db.Model):
     review_date = db.Column(db.DateTime, default=datetime.datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     service_id = db.Column(db.Integer, db.ForeignKey('service.id'), nullable=False)
+    user = db.relationship('User', foreign_keys='Review.user_id')
+    service = db.relationship('Service', foreign_keys='Review.service_id')

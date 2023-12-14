@@ -23,6 +23,7 @@
     <div class="card">
       <div class="card-content">
         <strong class="teal-text">{{ review.review_date.strftime("%d %B, %Y") }}</strong><br>
+        <h6 class="brown-text">{{ review.service.service_name }}</h6>
         <span class="card-title brown-text">{{ review.title }} 
            {% if review.rating == '5' %}  
            <i class="fas fa-star amber-text text-accent-3"></i><i class="fas fa-star amber-text text-accent-3"></i><i class="fas fa-star amber-text text-accent-3"></i><i class="fas fa-star amber-text text-accent-3"></i><i class="fas fa-star amber-text text-accent-3"></i>
@@ -37,15 +38,14 @@
            {% endif  %}
           </span>
         <hr>
-        <p>
-          {{ review.comment }}</p>
-        <span class="card-title">{{ review.user_id }}</span>
+        <p class="brown-text" style="font-size: 17px;">{{ review.comment }}</p>
+        <cite class="card-title"> <small>{{ review.user.username}}</small> </cite>
       </div>
-
+      {% if session['user_id'] == review.user_id %}
       <div class="card-action">
-        <a href="" class="btn lime darken-4">Edit Review</a>
-        <a href="#modal-{{ review.id }}" class="btn brown modal-trigger">Delete</a>
+        <a href="#modal-{{ review.id }}" class="btn brown modal-trigger">Delete Comment</a>
       </div>
+      {% endif %}
     </div>
 
   </div>
