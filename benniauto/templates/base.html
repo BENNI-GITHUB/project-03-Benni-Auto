@@ -56,7 +56,7 @@
   <main class="container">
 
     {% if session['user_login'] == True %}
-    <strong class="brown-text user-text">Hi {{ session['user_fname'] }}</strong>
+    <strong class="brown-text user-text">Hi {{ session['user_fname'] }}{% if session['is_admin'] %}, You are logged in as ADMIN{% endif %}</strong>
     {% endif %}
     {% block content %}
     {% endblock %}

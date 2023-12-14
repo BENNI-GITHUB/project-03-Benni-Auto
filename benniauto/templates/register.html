@@ -76,7 +76,8 @@
       <!-- Password -->
       <div class="row">
         <div class="input-field col s10 offset-s1">
-          <input id="password" name="password" type="password" minlength="8" maxlength="30" class="validate" required>
+          <input id="password" name="password" type="password" minlength="8" maxlength="30" class="input-group validate" required>
+          <i id="togglePassword" class="fas fa-eye-slash brown-text text-lighten-2 input-group-icon"></i>
           <label for="password">Password</label>
           <span class="helper-text" data-error="Not Accepted" data-success="Initially Accepted">َAt least 8
             Character</span>
@@ -86,13 +87,14 @@
       <!-- Confirm Password -->
       <div class="row">
         <div class="input-field col s10 offset-s1">
-          <input id="password_confirmation" name="password_confirmation" type="password" minlength="8" maxlength="30"
-            class="validate" required>
+          <input id="password_confirmation" name="password_confirmation" type="password" minlength="8" maxlength="30" class="input-group validate" required>
+          <i id="togglePassword2" class="fas fa-eye-slash brown-text text-lighten-2 input-group-icon"></i>
           <label for="password_confirmation">Confirm Password</label>
           <span class="helper-text" data-error="Not Accepted" data-success="Initially Accepted">Enter your password
             again</span>
         </div>
       </div>
+
       {% if session['is_admin'] %}
       <!-- is_admin -->
       <div class="row">
@@ -108,6 +110,7 @@
         </div>
       </div>
       {% endif %}
+      
       <!-- submit button -->
       <div class="row">
         <div class="col m6 s12 register-btn-1">

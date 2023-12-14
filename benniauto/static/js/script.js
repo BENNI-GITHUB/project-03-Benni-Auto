@@ -25,10 +25,10 @@ document.addEventListener('DOMContentLoaded', function () {
   let collapsibles = document.querySelectorAll(".collapsible");
   M.Collapsible.init(collapsibles);
 
-
+  // need recovery toggle
   const needRecoveryToggle = document.getElementById('need_recovery');
   const addressFields = document.getElementById('address');
- 
+
   needRecoveryToggle.addEventListener('change', function () {
     if (this.checked) {
       addressFields.style.display = 'block';
@@ -40,5 +40,34 @@ document.addEventListener('DOMContentLoaded', function () {
       document.getElementById('user_address').removeAttribute('required');
     }
   });
+
+  // passwords view toggle
+  document.getElementById('togglePassword').addEventListener('click', function () {
+    const passwordInput = document.getElementById('password');
+    if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+      this.classList.remove('fa-eye-slash');
+      this.classList.add('fa-eye');
+    } else {
+      passwordInput.type = 'password';
+      this.classList.remove('fa-eye');
+      this.classList.add('fa-eye-slash');
+    }
+  });
+
+  document.getElementById('togglePassword2').addEventListener('click', function () {
+    const passwordInput = document.getElementById('password_confirmation');
+    if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+      this.classList.remove('fa-eye-slash');
+      this.classList.add('fa-eye');
+    } else {
+      passwordInput.type = 'password';
+      this.classList.remove('fa-eye');
+      this.classList.add('fa-eye-slash');
+    }
+  });
+
+
 
 });

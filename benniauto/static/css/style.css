@@ -171,6 +171,18 @@ nav img {
   display: none;
 }
 
+.input-group {
+  position: relative;
+}
+
+.input-group-icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-100%);
+  cursor: pointer;
+}
+
 .active {
   font-weight: bolder;
   color: #4db6ac;
