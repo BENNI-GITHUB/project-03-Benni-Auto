@@ -4,17 +4,17 @@
 <h3 class="brown-text center-align our-services">Login Now</h3>
 
 {% with messages = get_flashed_messages() %}
-  {% if messages %}
-  <div class="row">
-    <div class="flash-box col m4 offset-m4 s10 offset-s1 brown-text teal lighten-4">
-      <ul>
-        {% for message in messages %}
-        <li class="center-align">{{ message }}</li>
-        {% endfor %}
-      </ul>
-    </div>
+{% if messages %}
+<div class="row">
+  <div class="flash-box col m4 offset-m4 s10 offset-s1 brown-text teal lighten-4">
+    <ul>
+      {% for message in messages %}
+      <li class="center-align">{{ message }}</li>
+      {% endfor %}
+    </ul>
   </div>
-  {% endif %}
+</div>
+{% endif %}
 {% endwith %}
 
 <div class="login-page container brown lighten-5">
@@ -24,35 +24,41 @@
       <!-- Username -->
       <div class="row">
         <div class="input-field col s10 offset-s1">
-          <input id="username" name="username" type="text" class="validate brown-text"
-            required>
+          <i class="fas fa-user prefix teal-text text-lighten-2"></i>
+          <input id="username" name="username" type="text" class="validate brown-text" required>
           <label for="username">Username</label>
+          <span class="helper-text" data-error="Not Accepted" data-success="Initially Accepted">Enter your
+            username</span>
         </div>
       </div>
 
       <!-- Password -->
       <div class="row">
         <div class="input-field col s10 offset-s1">
+          <i class="fas fa-key prefix teal-text text-lighten-2"></i>
           <input id="password" name="password" type="password" class="input-group validate brown-text" required>
           <i id="togglePassword" class="fas fa-eye-slash brown-text text-lighten-2 input-group-icon"></i>
           <label for="password">Password</label>
+          <span class="helper-text" data-error="Not Accepted" data-success="Initially Accepted">Enter your
+            username</span>
         </div>
       </div>
 
       <!-- Register Link -->
       <div class="row">
         <div class="input-field col s10 offset-s1 center-align">
-          <a href="{{ url_for('register') }}" class="brown-text">Don't have an account? <br><strong>Register now!</strong></a>
+          <a href="{{ url_for('register') }}" class="brown-text">Don't have an account? <br><h6><strong>Register
+              now!</strong></h6></a>
         </div>
       </div>
 
-        <!-- submit button -->
-        <div class="row">
-          <div class="col s12 center-align">
-              <button type="submit" class="btn-large teal lighten-2">
-                  Login <i class="fas fa-login right"></i>
-              </button>
-          </div>
+      <!-- submit button -->
+      <div class="row">
+        <div class="col s12 center-align">
+          <button type="submit" class="btn-large teal lighten-2">
+            Login <i class="fas fa-login right"></i>
+          </button>
+        </div>
       </div>
 
     </form>

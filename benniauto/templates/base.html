@@ -43,12 +43,15 @@
       <li><a href="{{ url_for('home') }}">Home</a></li>
       <li><a href="{{ url_for('services') }}">Services</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a href="{{ url_for('login') }}">Login/Register </a></li>
+      {% if session['user_login'] %}
+      <li><a href="{{ url_for('logout') }}">Log out </a></li>
       <li><a href="{{ url_for('orders') }}">Book Now</a></li>
+      {% else %}
+      <li><a href="{{ url_for('login') }}">Login/Register </a></li>
+      <li><a href="{{ url_for('login') }}">Book Now</a></li>
+      {% endif %}
     </ul>
-
-
-
+    
   </header>
 
 
@@ -67,25 +70,34 @@
   <footer class="page-footer brown lighten-1">
     <div class="container">
       <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Footer Content</h5>
-          <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+        <div class="col l6 s12 center-align">
+          <a href="{{ url_for('home') }}" class="brand-logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo"  style="width: 100%;">
+          </a>
+          <p class="grey-text text-lighten-4">Benni Auto Services is your premier destination for comprehensive automotive solutions.
+            Our expert technicians provide high-quality repair,
+            maintenance, and diagnostic services to keep your vehicle in optimal condition.</p>
         </div>
-        <div class="col l4 offset-l2 s12">
-          <h5 class="white-text">Links</h5>
+        <div class="col l4 offset-l2 s12 center-align">
+          <h4 class="brown-text text-darken-4"><strong>Links</strong></h4>
           <ul>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+            <li><a href="{{ url_for('home') }}" class="grey-text text-lighten-3 large"><h6>Home</h6></a></li>
+            <li><a href="{{ url_for('services') }}" class="grey-text text-lighten-3"><h6>Services</h6></a></li>
+            <li><a href="{{ url_for('home') }}#contact" class="grey-text text-lighten-3"><h6>Contact</h6></a></li>
+            {% if session['user_login'] %}
+            <li><a href="{{ url_for('logout') }}" class="grey-text text-lighten-3"><h6>Log out</h6></a></li>
+            <li><a href="{{ url_for('orders') }}" class="btn teal lighten-1" style="margin-top: 5px;">Book Now</a></li>
+            {% else %}
+            <li><a href="{{ url_for('login') }}" class="grey-text text-lighten-3"><h6>Login/Register</h6></a></li>
+            <li><a href="{{ url_for('login') }}" class="btn teal lighten-1" style="margin-top: 5px;">Book Now</a></li>
+            {% endif %}
           </ul>
         </div>
       </div>
     </div>
     <div class="footer-copyright">
-      <div class="container">
-        © 2014 Copyright Text
-        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+      <div class="container center-align">
+        Milestone Project 3, Designed and Developed by Behnam Pordavam Dec-2023
       </div>
     </div>
   </footer>

@@ -6,7 +6,10 @@
 {% for message in messages %}
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        M.toast({html: '{{ message }}' , classes: 'rounded brown-text text-darken-3 teal lighten-5'})
+        M.toast({
+            html: '<i class="fas fa-user-slash brown-text text-darken-3"></i> {{  message }}',
+            classes: 'rounded brown-text text-darken-3 teal lighten-5'
+        })
     });
 </script>
 {% endfor %}
@@ -15,8 +18,8 @@
 
 
 <div class="row">
-    <div class="col img s12 m12 l8 ">
-        <img src="{{ url_for('static', filename='images/main.jpg')}}" alt="">
+    <div class="col img s12 m12 l8">
+        <img src="{{ url_for('static', filename='images/main.png')}}" alt="main-image">
     </div>
     <div class="col brown-text s12 m12 l4 center-align title">
         <h1><strong>Benni Auto</strong></h1>
@@ -52,7 +55,10 @@
         With a commitment to excellence and customer satisfaction,
         we offer a wide range of automotive solutions tailored to meet your vehicle's needs.
     </p>
-    <div class="row">
+    <div class="col s12">
+        <img src="{{ url_for('static', filename='images/service.jpg')}}" alt="service-image">
+    </div>
+    <div class="row service-title-container">
         {% for service in services %}
         <div class="col s12 m6 l4 home-service">
             <div class="center-align brown-text service-box brown lighten-5">
@@ -62,34 +68,45 @@
                 </h4>
             </div>
             <div class="center-align">
-                <a  href="{{ url_for('add_order') }}" class="btn-floating btn-large waves-effect waves-light teal lighten-2 text-large service-book">
+                <a href="{{ url_for('add_order') }}"
+                    class="btn-floating btn-large waves-effect waves-light teal lighten-2 text-large service-book">
                     <i class="fas fa-plus"></i></a>
             </div>
         </div>
-
         {% endfor %}
-
     </div>
-
-
-
 </div>
 
 <div class="row lighten-4">
     <div class="col">
-        <a href="{{ url_for('reviews') }}"><h3 class="brown-text">Reviews</h3></a>
+        <a href="{{ url_for('reviews') }}">
+            <h3 class="brown-text">Reviews</h3>
+        </a>
         <hr class="teal lighten-2 hr-under-title">
     </div>
 </div>
 <ul class="row pad-bot">
-    {% for list in range(3) %}
+    {% for review in reviews %}
     <li class="col l4 m4 s12 review-box-holder">
         <div class="review-box brown-text brown lighten-5">
-            <h5>username</h5>
-            <span>date</span>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem libero temporibus iure error ab ipsam
-                quasi deleniti rerum, nihil, illum quas, repudiandae esse. Quo totam saepe assumenda sapiente ullam
-                incidunt.</p>
+            <p>{{ review.review_date.strftime("%d %B, %Y") }}</p>
+            {% if review.rating == '5' %}
+            <i class="fas fa-star amber-text text-accent-3"></i><i class="fas fa-star amber-text text-accent-3"></i><i
+                class="fas fa-star amber-text text-accent-3"></i><i class="fas fa-star amber-text text-accent-3"></i><i
+                class="fas fa-star amber-text text-accent-3"></i>
+            {% elif review.rating == '4' %}
+            <i class="fas fa-star amber-text text-accent-3"></i><i class="fas fa-star amber-text text-accent-3"></i><i
+                class="fas fa-star amber-text text-accent-3"></i><i class="fas fa-star amber-text text-accent-3"></i>
+            {% elif review.rating == '3' %}
+            <i class="fas fa-star amber-text text-accent-3"></i><i class="fas fa-star amber-text text-accent-3"></i><i
+                class="fas fa-star amber-text text-accent-3"></i>
+            {% elif review.rating == '2' %}
+            <i class="fas fa-star amber-text text-accent-3"></i><i class="fas fa-star amber-text text-accent-3"></i>
+            {% elif review.rating == '1' %}
+            <i class="fas fa-star amber-text text-accent-3"></i>
+            {% endif  %}
+            <h6><strong>{{ review.title }}</strong></h6>
+            <p>{{ review.comment }}</p>
         </div>
     </li>
     {% endfor %}
@@ -104,7 +121,7 @@
     </div>
 
 </div>
-<div class="row pad-bot">
+<div class="row pad-bot contact-container">
     <div class="col s12 l6">
         <div class="col contact-us">
             <h4 class="brown-text">Benni Auto Services</h4>
