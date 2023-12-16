@@ -72,10 +72,10 @@
                     <div class="switch">
                         <i class="fas fa-exclamation-circle prefix teal-text text-lighten-2"></i>
                         <label for="need_recovery">
-                            {% if order.request_date == True %}
+                            {% if order.need_recovery == True %}
                             <input id="need_recovery" name="need_recovery" type="checkbox" checked>
                             {% else %}
-                            <input id="need_recovery" name="need_recovery" type="checkbox" checked>
+                            <input id="need_recovery" name="need_recovery" type="checkbox">
                             {% endif %}
                             <span class="lever"></span>
                             Need Recovery
@@ -92,7 +92,7 @@
                         <i class="fas fa-compass prefix teal-text text-lighten-2"></i>
                         <input id="user_postcode" name="user_postcode" value="{{ order.user_postcode }}" minlength="5"
                             maxlength="12" type="text" placeholder="Example: WD17 3EZ" class="validate brown-text"
-                            required>
+                            >
                         <label for="user_postcode">Post Code</label>
                     </div>
                 </div>
@@ -102,7 +102,7 @@
                         <i class="fas fa-home prefix teal-text text-lighten-2"></i>
                         <input id="user_address" name="user_address" value="{{ order.user_address }}" minlength="10"
                             maxlength="80" type="text" placeholder="Example: 8 Hempstead Rd, Watford"
-                            class="validate brown-text" required>
+                            class="validate brown-text">
                         <label for="user_address">Address/Flat No.</label>
                     </div>
                 </div>
