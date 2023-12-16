@@ -29,17 +29,17 @@
                 <hr>
                 <p class="para-card">{{ service.service_description }}</p>
             </div>
-            {% if session['is_admin'] %}
+
             <div class="card-action">
-
-
+                {% if session['user_login'] %}
+                <a href="{{ url_for('orders') }}" class="waves-effect waves-light btn {% if session['is_admin'] %}right{% endif %}">Book Now</a>
+                {% endif %}
+                {% if session['is_admin'] %}
                 <a href="{{ url_for('edit_service' , service_id = service.id) }}" class="btn lime darken-4">Edit</a>
                 <a href="#modal-{{ service.id }}" class="btn brown modal-trigger">Delete</a>
-
-
-                <a href="{{ url_for('orders') }}" class="waves-effect waves-light btn right">Book Now</a>
+                {% endif %}
             </div>
-            {% endif %}
+
         </div>
 
     </div>
