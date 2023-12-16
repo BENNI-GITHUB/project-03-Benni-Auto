@@ -67,11 +67,19 @@
                     {{ service.service_name }}
                 </h4>
             </div>
+            {% if session['user_login'] %}
             <div class="center-align">
                 <a href="{{ url_for('add_order') }}"
                     class="btn-floating btn-large waves-effect waves-light teal lighten-2 text-large service-book">
                     <i class="fas fa-plus"></i></a>
             </div>
+            {% else %}
+            <div class="center-align">
+                <a href="{{ url_for('login') }}"
+                    class="btn-floating btn-large waves-effect waves-light teal lighten-2 text-large service-book">
+                    <i class="fas fa-plus"></i></a>
+            </div>
+            {% endif %}
         </div>
         {% endfor %}
     </div>
