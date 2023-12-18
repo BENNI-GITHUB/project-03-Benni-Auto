@@ -1,110 +1,455 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Benni Auto
+benni auto is a sample website for an auto service shop to manage their orders and develope their business.
+Also, It has an oppurtunate for users to view the reviews or login to the website and book their service orders and leave comment.  
 
-Welcome Behnam Pordavam,
-
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
-
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
-
-## Gitpod Reminders
-
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
-
-`python3 -m http.server`
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**September 20 2023:** Update Python version to 3.9.17.
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+You can find the live site [here](https://cocktail-hour-ms3.herokuapp.com/)
+![Main site image](static/images/README/readme-main-img.png)
 
 ---
+---
+# Contents
++ [User Experience](#user-experience)
+  + [User Stories](#user-stories)
+  + [Design](#design)
+    + [Overall Feel](#overall-feel)
+    + [Color Scheme](#color-scheme)
+    + [Typography](#typography)
+    + [Imagery](#imagery)
+  + [Wireframes](#wireframes)
+    + [Wireframes](#wireframes)
++ [Features](#features)
+  + [Current Features](#current-features)
+  + [Possible Future Features](#possible-future-features)
++ [Database](#database)
++ [Technologies Used](#technologies-used)
+  + [Languages](#languages)
+  + [Frameworks and Libraries](#frameworks-and-libraries)
+  + [All Others](#all-others)
++ [Testing](#testing)
++ [Deployment](#deployment)
+  + [Deployment through GitHub Pages](#deployment-through-gitHub-pages)
+  + [Forking the Repository](#forking-the-repository)
+  + [Cloning Project](#cloning-project)
++ [Credits](#credits)
+  + [Content](#content)
+  + [Media](#media)
+  + [Acknowledgements](#acknowledgements)
+---
+---
+# User Experience
+## User Stories
+### As a casual user: 
++ I want to be able to view services without having to register and account. 
++ I want to be able to view reviews of others users without having to register and account.
++ I want to be able to access the contact information and location of service shop.
++ I want to have the option to register an account if I want to come back at a later date. 
+### As a returning user: 
++ I want to be able to log into my account.
++ I want to be able to log out from my account.
++ I want to be able to book a new service order. 
++ I want to be able to view my last service orders. 
++ I want to be able to change or cancel my service orders and write my cancelation reason. 
++ I want to be able to view all reviews and write reviews. 
++ I want to be able to delete my reviews. 
+### As the site owner/admin:
++ I want to be able to add new services to the site.
++ I want the new services to be added to the appropriate site areas.
++ I want to be able to edit or delete the pre-existing services.
++ I want to be able to delete any orders(especially the canceled one).
++ I don't want to be able to delete any reviews.
 
-Happy coding!
+ 
+## Design
+### Overall Feel
+
+For this project I wanted to have a light feel to emulate a light-time setting. 
+
+### Color Scheme
+![color scheme](./documentation/readme-view/collor_pallet.jpg)
+
+### Typography
+
+There were two font that I was interested in for the site: 
+- [Signika Negative](https://fonts.google.com/specimen/Signika+Negative?preview.text=Benni%20Auto&query=Signika+Negative) by [Google-Font](https://fonts.google.com/) fit perfectly with the light theme of website. 
+- also Sans-Serif is used as a backup font, in case for any reason the main font isn't being imported into the site correctly.
+
+### Imagery
+
+Imagery is an important part of the user experience.  for this website I used three types of images:
+- Graphic photo which is used for the main page photo and descibes the purpuse of the website
+- Vector image which is used in main page and for service section. it is edited and adopted to website color theme. 
+- real images which are used in service page to describe each services. 
+
+## Wireframes
+### Wireframes
+All Wireframes were designed for laptop/computer, iPad/tablet and phone display.
+Wireframes were produced using Balsamiq.
+#### Home page
+ <details>
+ <summary>Desktop/Laptop Wireframe of Home Page</summary>
+
+![Desktop/Laptop Wireframe](./documentation/wireframes/Home-Page_Desktop.png)
+ </details>
+
+ <details>
+ <summary>Tablet/Ipad Wireframe of Home Page</summary>
+
+![Tablet/Ipad Wireframe](./documentation/wireframes/Home-Page_Tablet.png)
+ </details>
+
+ <details>
+    <summary>Smart phone Wireframe of Home Page</summary>
+
+![Smart Phone Wireframe](./documentation/wireframes/Home-Page_Smart-Phone.png)
+ </details>
+
+#### Services Page
+ <details>
+ <summary>Desktop/Laptop Wireframe of Service Page</summary>
+
+![Desktop/Laptop Wireframe](./documentation/wireframes/Services-page_Desktop.png)
+ </details>
+
+ <details>
+ <summary>Tablet/Ipad Wireframe of Service Page</summary>
+
+![Tablet/Ipad Wireframe](./documentation/wireframes/Service-page_Tablet.png)
+ </details>
+
+ <details>
+    <summary>Smart phone Wireframe of Service Page</summary>
+
+![Smart Phone Wireframe](./documentation/wireframes/Service-page_Smart-Phone.png)
+ </details>
+
+ #### Login/Register Page
+ <details>
+ <summary>Desktop/Laptop Wireframe of Login/Register Page</summary>
+
+![Desktop/Laptop Wireframe](./documentation/wireframes/login-register-page_Desktop.png)
+ </details>
+
+ <details>
+ <summary>Tablet/Ipad Wireframe of Login/Register Page</summary>
+
+![Tablet/Ipad Wireframe](./documentation/wireframes/login-register-page_Tablet.png)
+ </details>
+
+ <details>
+    <summary>Smart phone Wireframe of Login/Register Page</summary>
+
+![Smart Phone Wireframe](./documentation/wireframes/login-register-page_Smart-Phone.png)
+ </details>
+
+#### Book Appointment Page
+ <details>
+ <summary>Desktop/Laptop Wireframe of Book Appointment Page</summary>
+
+![Desktop/Laptop Wireframe](./documentation/wireframes/Service-order-page_Desktop.png)
+ </details>
+
+ <details>
+ <summary>Tablet/Ipad Wireframe of Service Page</summary>
+
+![Tablet/Ipad Wireframe](./documentation/wireframes/Service-order-page_Tablet.png)
+ </details>
+
+ <details>
+    <summary>Smart phone Wireframe of Service Page</summary>
+
+![Smart Phone Wireframe](./documentation/wireframes/Service-order-page_Smart-Phone.png)
+ </details><br>
+
+
+# Features
+## Current Features
+### **Navigation menu displayed across all pages**
+
+The navigation menu will help the user move easily across all pages.
+The navigation buttons update depending on whether a user is logged in, and whether that user is the admin:
+
+| Nav Link              |Not logged in  |Logged in as user|Logged in as admin
+|:-------------         |:------------- |:------------- |:------------- |
+|Logo(back to home)     |&#9989;        |&#9989;        |&#9989;
+|Home                   |&#9989;        |&#9989;        |&#9989;
+|Services               |&#9989;        |&#9989;        |&#9989;
+|Contact                |&#9989;        |&#9989;        |&#9989;
+|Login/Register         |&#9989;        |&#10060;       |&#10060;
+|Log Out                |&#10060;       |&#9989;        |&#9989;
+|Book Now               |&#9989;(login) |&#9989;        |&#9989;
+
+### **All Services and reviews are accessible to users who don't want to make an account**
+
+As someone who doesn't particularly like to sign up to websites there is possibility to see the services and their contents and also the reviews page too. 
+
+### **Reviews**
+
+Anyone is able to see the users reviews. the reveiws are include title of review, Rating, Description and the username of the user who wrote that. 
+The last three weitten reviews appear in the home page. but for writting a review the users have to login first. the rebiews are sorted by date created and user can see the date of review.
+
+
+### **User account management**
+
+Anyone is able to make an account through the 'Register' page. They have to choose a username and a password. Measures have been put in place so that the user cannot choose a username or email that is already taken.
+Also users are asked to re-write their password to confirm they wrote it right. even they can cick on eye icon to unveil the password if needed. 
+
+
+### **User orders management**
+
+  + **Adding**: A registered users are able to book service order to the orders page on their own names. Once they have order that they have added, all order management can be accessable there. This includes editing or canceling them. This orders can be shown just for Admin and the owner of the service orders. in order request form, the users have to determine the requested services and the brand of their car from the options.
+  Also the users are asked to choose the appointment date. if the users need the recovery service to pick up their car, they have to switch on the need recovery icon. as soon as the need recovery switched on, the users have to fill their address. 
+
+  + **Editing**: The user will have to go into the edit order page through the order page, make the necessary changes and confirm them at the bottom of the page. The user also has the option to cancel all changes. These steps assure that the user cannot do any of this by mistake.
+
+  + **Canceling**: when the order placed, The users have option to cancel their order by submitting the cancel description. After the order requested to be canceled, at the top row of the order the word "Canceled" will be shown up.
+ 
+### **User reviews management**
+
+  + **Adding**: A registered users are able to leave a comment for the services. they can rate it from 1 star to 5 stars. and describe and share their experience with others. 
+
+  + **Deleting**: Only the user who owns that written comment is able to delete it. By pressing the delete button the confirmation box will be shown up and after clicking the delete button again the review will be deleted permanentely. this gives the users another chance to change the process if they click the button by mistake.  
+
+### **Admin 'Services' management**
+
+Only the admin can manage the Services pages. This includes adding, editing and deleting. The site has been designed so that the admin only has to use the Services management page to create a new Service at this will automatically be updated on the services page and also an element in home page with the service title. Any edits or deletions to services will also apply to those elements. 
+
+### **Admin 'Orders' management**
+
+Only the admin can delete the Service Orders in orders pages. in some circumenstances if the users request the owner to change or cancel any order, the admin is able to cancel or edit them. 
+
+### **Admin 'Reviews' management**
+
+Admin does not have any option to delete or edit any reviews. this right gives the users to make their decisiion fairly.
+
+
+## Possible Future Features
++ Calculating the average rates for each services according to the user rates. 
++ Create a new page for each services to describe more.
++ Create a search option for the visitors to redirect to the specific otem they want to visit. 
++ Create a profile page for the users to manage their previouse activities in one page. 
++ Adding an option for users to change their password or even retrieve their profile if they forget their password.
+
+
+---
+---
+
+# Database
+Below is the schema for my database:
+
+![database schema](./documentation/database/Databas_diagram.png)
+
+## Service
+
+| Key                   |Value type     |Desc           |
+|:-------------         |:------------- |:------------- |
+|id                     |Integer        |
+|service _name          |string         |used in *order* and *review* arrays
+|image_url              |string         |url for the service image
+|service_description    |Text           |description for service
+
+## Order
+
+| Key                   |Value type     |Desc           |
+|:-------------         |:------------- |:------------- |
+|id                     |Integer        |
+|order_title            |Strin          |title for order
+|car_type               |string         |the brand of the car needed to be fixed
+|order_description      |Text           |Description for order
+|request_date           |Date           |the user proper date for service
+|need_recovery          |Boolean        |to check the user needs the recovery service
+|user_postcode          |string         |If user needs recovery services
+|user_address           |String         |If user needs recovery services
+|user_phone             |String         |user phone number
+|service_id             |Integer        |each Service chosen by user from *Service*
+|user_id                |Integer        |user_id of the user who book the order
+
+## User
+
+| Key                   |Value type     |Desc           |
+|:-------------         |:------------- |:------------- |
+|id                     |Integer        |used in *order* and *review* arrays
+|first_name             |string         |User first name to be shown at head of the website
+|last_name              |string         |user last name
+|gender                 |string         |user gender
+|username               |string         |username to use for login
+|email                  |string         |to prevent to register users with same email
+|password               |string         |hashed password for user security
+|password_confirmation  |string         |hashed password for user security
+|is-admin               |Boolean        |to be admin, it can be added by admin
+
+## Review
+
+| Key                   |Value type     |Desc           |
+|:-------------         |:------------- |:------------- |
+|id                     |Integer        |
+|title                  |string         |review title
+|rating                 |string         |rate of the user experience
+|comment                |Text           |user coment
+|review_date            |DataTime       |added automaticly
+|user_id                |string         |to prevent to register users with same email
+|service_id             |Integer        |each Service chosen by user from *Service*
+
+
+---
+---
+# Technologies Used
+## Languages
++ [HTML5](https://en.wikipedia.org/wiki/HTML5)
++ [CSS3](https://en.wikipedia.org/wiki/CSS)
++ [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
++ [Python3](https://www.python.org/)
+
+## Frameworks and Libraries
++ [Flask](https://flask.palletsprojects.com/en/1.1.x/)
++ [SQLAlchemy](https://www.sqlalchemy.org/)
++ [Pip3](https://pip.pypa.io/en/stable/)
++ [dnspython](https://www.dnspython.org/)
++ [jQuery](https://jquery.com/)
++ [Jinja](https://jinja.palletsprojects.com/en/3.0.x/)
++ [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/)
++ [Materialize](https://materializecss.com/)
++ [FontAwesome](https://fontawesome.com/)
++ [Google Fonts](https://fonts.google.com/) 
+
+## All Others
++ [Heroku](https://www.heroku.com/) used to deploy live site
++ [Postgresql](https://www.postgresql.org/) used to host database information.
++ [GitHub](https://github.com/) used to host repository.
++ [GitPod](https://www.gitpod.io/) used to develop project and organise version 
++ [Adobe Photoshop](https://www.adobe.com/ie/products/photoshop.html) used to design logo and edit the website images. 
++ [Balsamiq](https://balsamiq.com/) used to create wireframes.
++ [CloudConvert](https://cloudconvert.com/) to convert all images to .webp format.
++ [Responsinator](https://www.responsinator.com/) used to check site was responsive on different screen sizes.
++ [Am I Responsive](http://ami.responsivedesign.is/) used to generate README intro image.
++ [favicon.io](https://favicon.io/) used to create a site favicon.
+
+---
+---
+# Testing
+Due to the size of the testing section, I have created a separate document for it. You can find it [here](https://github.com/AmyOShea/MS3-Cocktail-Hour/blob/master/TESTING.md). 
+
+---
+---
+# Deployment
+
+## Heroku Deployment
+This project was deployed through Heroku using the following steps:
+
+### Requirements and Procfile
+Heroku needs to know which technologies are being used and any requirements, so I created files to let it know. Before creating the Heroku app, create these files using the following steps in GitPod: 
++ In the GitPod terminal, type ```pip3 freeze --local > requirements.txt``` to create your requirements file.
++ In the GitPod terminal, type ```echo web: python run.py > Procfile``` to create your Procfile.
++ The Procfile needs to contain the following line: ```web: python app.py``` and make sure there is no additional blank line after it. 
++ Push these files to your repository.
+
+### Environmentals File
+
+Create and env.py file using the following information:
+
+```
+import os
+
+os.environ.setdefault("IP", "0.0.0.0")
+os.environ.setdefault("PORT", "5000")
+os.environ.setdefault("SECRET_KEY", *unique secret key* )
+os.environ.setdefault("DEBUG", "True")
+os.environ.setdefault("DEVELOPMENT", "True")
+os.environ.setdefault("DB_URL", "postgresql:///*database name*")
+```
+
+
+Because this contains sensitive information, this needs to be added to the '.gitignore' file. 
+
+### Creating Heroku App
++ Log into Heroku
++ Select 'Create New App' from your dashboard
++ Choose an app name (if there has been an app made with that name, you will be informed and will need to choose an alternative)
++ Select the appropriate region based on your location
++ Click 'Create App'
+### Connecting to GitHub
++ From the dashboard, click the 'Deploy' tab towards the top of the screen
++ From here, locate 'Deployment Method' and choose 'GitHub'
++ From the search bar newly appeared, locate your repository by name
++ When you have located the correct repository, click 'Connect'
++ DO NOT CLICK 'ENABLE AUTOMATIC DEPLOYMENT': This can cause unexpected errors before configuration. We'll come back to this
++ Click the 'Settings' tab towards the top of the page
++ Locate the 'Config Vars' and click 'Reveal Config Vars'
++ Use the following keys and values which must match the key/value pairs in your env.py file:
+
+    | KEY | VALUE |
+    | :-- | :-- |
+    | IP | 0.0.0.0 |
+    | PORT | 5000 |
+    | SECRET_KEY | ANY_SECRET_KEY* |
+    | DB_URL | postgresql:///*database name* |
+    | DEBUG | TRUE** |
+
+
++ Go back to the 'Deploy' tab and you can now click 'Enable Automatic Deployment'
++ Underneath, locate 'Manual Deploy'; choose the master branch and click 'Deploy Branch'
++ Once the app is built (it may take a few minutes), click 'Open App' from the top of the page
+
+## Forking the Repository
++ Log in to GitHub and locate the GitHub Repository
++ At the top of the Repository above the "Settings" Button on the menu, locate the "Fork" Button.
++ You will have a copy of the original repository in your GitHub account.
++ You will now be able to make changes to the new version and keep the original safe. 
+## Making a Local Clone
++ Log into GitHub.
++ Locate the repository.
++ Click the 'Code' dropdown above the file list.
++ Copy the URL for the repository.
++ Open Git Bash on your device.
++ Change the current working directory to the location where you want the cloned directory.
++ Type ```git clone``` in the CLI and then paste the URL you copied earlier. This is what it should look like:
+  + ```$ git clone https://github.com/BENNI-GITHUB/project-03-Benni-Auto```
++ Press Enter to create your local clone.
+
+You will also need to install all of the packages listed in the requirements file you can use the following command in the terminal ```pip install -r requirements.txt``` which will do it for you. 
+
+---
+---
+# Credits
+## Code
+
++ Most of the code in this project was written by myself, references to [w3school](https://www.w3schools.com/) and also for debugging the codes or solve the issues, I used [stackoverflow](https://stackoverflow.com/).
+
+
+## Content
+
+### Images
++ Services: 
+    + Oil Services [image](https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8b2lsJTIwc2VydmljZXN8ZW58MHx8MHx8fDA%3D) from [Unsplash](https://unsplash.com/photos)
+    
+    
+    + Suspension Services [image](https://img.freepik.com/free-photo/shock-absorber-atv-car-close-up_93675-133524.jpg?size=626&ext=jpg&uid=R27426561&ga=GA1.2.14543885.1701941844&semt=ais) from [FreePik](https://www.freepik.com/)
+    
+    
+    + Transmission Services [image](https://img.freepik.com/free-photo/female-mechanic-holding-spare-parts-car_1170-1615.jpg?size=626&ext=jpg&uid=R27426561&ga=GA1.2.14543885.1701941844&semt=ais) from [FreePik](https://www.freepik.com/)
+
+    
+    + Auto Body Services [image](https://img.freepik.com/free-photo/service-worker-painting-car-auto-service_23-2149487003.jpg?size=626&ext=jpg&ga=GA1.1.14543885.1701941844&semt=ais) from [FreePik](https://www.freepik.com/)
+    
+    
+    + Brake Services [image](https://img.freepik.com/free-photo/side-view-worker-repairing-car_23-2150171256.jpg?size=626&ext=jpg&ga=GA1.1.14543885.1701941844&semt=ais) from [FreePik](https://www.freepik.com/)
+    
+    
+    + Engine Services [image](https://img.freepik.com/free-photo/muscular-car-service-worker-repairing-vehicle_146671-19605.jpg?size=626&ext=jpg&ga=GA1.1.14543885.1701941844&semt=ais) from [FreePik](https://www.freepik.com/)
+
+
++ Home Page Main Image [image](https://www.freepik.com/free-vector/car-service-center-advertisement-composition-poster-with-wheels-tires-oil-gas-canister_2869898.htm#query=auto%20services&position=4&from_view=search&track=ais&uuid=09da9271-e42a-4164-b405-fc9d5cef3be2) from [FreePik](https://www.freepik.com/)
+
+
++ Home Page wall background [image](https://www.freepik.com/free-vector/abstract-background-with-squares_15276013.htm#page=6&query=background%20lines&position=28&from_view=search&track=ais&uuid=3d528e5d-c73b-400b-8b98-64bfa70c4019) from [FreePik](https://www.freepik.com/)
+
+
++ Home Page Service Image [image](https://www.freepik.com/free-vector/isometric-auto-repair-horizontal-background-with-text-indoor-garage-composition-with-two-workers-repairing-car_15406047.htm#page=2&query=auto%20services&position=9&from_view=search&track=ais&uuid=b2cf49ca-916d-4749-9cd7-86c292527130) from [FreePik](https://www.freepik.com/)
+
+
+### Text for Services
++ I used ChatGPT to create content for each services and reviews.
+
+## Acknowledgements
++ All the friends who tested the site, even in its earliest stages.
++ Everyone in the CI Slack that offered answers, advice and just a bit of a chat when needed!
++ My mentor Antonio Rodriguez for his help at the different stages of the project.

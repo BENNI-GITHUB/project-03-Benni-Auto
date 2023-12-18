@@ -1,6 +1,7 @@
 from flask import render_template, request, redirect, url_for, session, flash
 from benniauto import app, db
 from benniauto.models import Service, Order, User, Review
+from werkzeug.security import generate_password_hash, check_password_hash
 
 
 @app.route("/")
@@ -44,6 +45,8 @@ def register():
             flash('Error! Passwords are not same. Please try again', 'register')
             return render_template('register.html')
 
+        # Hash input password
+        hashed_password = generate_password_hash(password)
 
         user = User(
             first_name=first_name,
@@ -51,8 +54,8 @@ def register():
             gender=gender,
             username=username, 
             email=email, 
-            password=password, 
-            password_confirmation=password_confirmation,
+            password=hashed_password, 
+            password_confirmation=hashed_password,
             is_admin=is_admin
         )
 
@@ -75,9 +78,8 @@ def login():
         print("login")
         user = User.query.filter_by(username=username).first()
         if user:
-            user_password = user.password
             # login Successful 
-            if user_password == password_requested:
+            if check_password_hash(user.password, password_requested):
                 session['user_login'] = True
                 session['user_fname'] = user.first_name
                 session['user_id'] = user.id

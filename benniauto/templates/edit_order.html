@@ -125,17 +125,21 @@
                 <label for="user_phone">Phone Number</label>
             </div>
         </div>
-
+        
         <!-- submit button -->
         <div class="row">
-            <div class="col s12 center-align">
-                <button type="submit" class="btn-large teal lighten-2">
+            <div class="col m6 offset-m3 s12 center-align">
+                <button type="submit" class="btn-large teal lighten-2" style="margin: 10px;">
                     Confirm Change <i class="fas fa-check right"></i>
                 </button>
+                <a href="{{ url_for('orders') }}" class="btn-large brown lighten-2" style="margin: 10px;">Cancel<i class="fas fa-undo right"></i></a>
             </div>
         </div>
 
     </form>
 </div>
 
+{% endblock %}
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/order.js') }}"></script>
 {% endblock %}

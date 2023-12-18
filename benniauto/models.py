@@ -2,6 +2,7 @@ from benniauto import db
 import datetime
 
 class User(db.Model):
+    # schema for the User model
     id = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.String(30), nullable=False)
     last_name = db.Column(db.String(30), nullable=False)
@@ -30,9 +31,6 @@ class Service(db.Model):
         return self.service_name
 
 
-
-
-
 class Order(db.Model):
     # schema for the Order model
     id = db.Column(db.Integer, primary_key=True)
@@ -57,6 +55,7 @@ class Order(db.Model):
 
 
 class Review(db.Model):
+    # schema for the Review model
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(40), nullable=False)
     rating = db.Column(db.String, nullable=False)
