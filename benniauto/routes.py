@@ -30,19 +30,19 @@ def register():
         # Check non-reiterativity of email
         user_email = User.query.filter_by(email=email).first()
         if user_email:
-            flash('Error! User with this email is already registered', 'register')
+            flash('User with this email is already registered', 'register')
             return render_template('register.html')
 
         # Check non-reiterativity of username
         user_username = User.query.filter_by(username=username).first()
         if user_username:
-            flash('Error! Username already in use. Please Choose another one', 'register')
+            flash('Username already in use. Please Choose another one', 'register')
             return render_template('register.html')
 
         # Check Passwords similarity
         if password != password_confirmation:
             print("passwords are not same")
-            flash('Error! Passwords are not same. Please try again', 'register')
+            flash('Passwords are not same. Please try again', 'register')
             return render_template('register.html')
 
         # Hash input password
@@ -89,7 +89,7 @@ def login():
                 return redirect(url_for('home'))
             else:
             # login Unsuccessful 
-                flash('Password is not correct. Please try again.' , 'login')    
+                flash('Error! Password is not correct. Please try again.' , 'login')    
         else:
             flash('Error! Username is not found. Please try again.' , 'login')
 
