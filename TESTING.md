@@ -222,7 +222,7 @@ Once the user has made the necessary changes, they can confirm them at the botto
 
 ### As the site owner/admin:
 
-+ The admin will be able to log into their account as every other user does. 
++ The admin will be able to log into their account as every other user does 
 
 ![testing from user stories](static/images/README/Testing/testing-15.png)
 
