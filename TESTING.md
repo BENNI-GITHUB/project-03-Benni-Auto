@@ -227,6 +227,7 @@ Once the user has made the necessary changes, they can confirm them at the botto
 ![testing from user stories](static/images/README/Testing/testing-15.png)
 
 + *I want to be able to add new Services to the site.*
+
 Once they're on the 'Services' page, they'll have access to the 'Add A New Service' button:
 
 ![testing from user stories](static/images/README/Testing/testing-16.png)
