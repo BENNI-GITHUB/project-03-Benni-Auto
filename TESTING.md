@@ -221,13 +221,13 @@ Once the user has made the necessary changes, they can confirm them at the botto
 ---
 
 ### As the site owner/admin:
-+ *I want to be able to add new Services to the site.*
 
-The admin will be able to log into their account as every other user does. 
++ The admin will be able to log into their account as every other user does. 
 
 ![testing from user stories](static/images/README/Testing/testing-15.png)
 
-Once they're on the 'Manage Collections' page, they'll have access to the 'Add Collection' button:
++ *I want to be able to add new Services to the site.*
+Once they're on the 'Services' page, they'll have access to the 'Add A New Service' button:
 
 ![testing from user stories](static/images/README/Testing/testing-16.png)
 
