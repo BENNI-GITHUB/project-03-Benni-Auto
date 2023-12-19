@@ -1,7 +1,6 @@
 # Full Testing
 ## Contents
 + [Validator Testing](#validator-testing)
-+ [Lighthouse Testing](#lighthouse-testing)
 + [PowerMapper Compatibility](#powermapper-compatibility)
 + [Testing From User Stories](#testing-from-user-stories)
 + [Manually Testing Functionality](#manually-testing-functionality)
@@ -54,13 +53,6 @@ The code passed all checks.
 
 ---
 ---
-## Lighthouse Testing
-
-After getting the bulk of the site in place, I ran it through Chrome Lighthouse. The initial scores were a bit low:
-
-![initial lighthouse score](static/images/README/lighthouse-dscore-01.PNG)
-
-By the feed back given , I made a few changes to the code to raise the scores:
 
 ### **Performance**
 
@@ -112,129 +104,126 @@ While it would be great to have the blur included, I still think that the look o
 ## Testing From User Stories
 
 ### As a casual user: 
-+ *I want to be able to view recipes without having to register and account.*
++ *I want to be able to view services without having to register and account.*
 
-Even without being logged in, a user is able to browse through all the recipe cards, choose one and view the full recipe:
+Even without being logged in, a user is able to browse through all the service cards:
 
 ![testing from user stories](static/images/README/Testing/testing-01.png)
 
 ---
 
-+ *I want to be able to search for specific recipes.*
-+ *I want to be able to search for recipes that have a specific ingredient.*
++ *I want to see all the reviews.*
 
-From the recipes page, the user can use the search bar for specifics:
-
-![testing from user stories](static/images/README/Testing/testing-02.png)
-
-The words searched will come from the cocktail name, main ingredient and full ingredients list. 
-
-If there were any results, the user will see just them:
-
-![testing from user stories](static/images/README/Testing/testing-02-a.png)
-
-If there were no matches, the user will be shown a message informing them:
-
-![testing from user stories](static/images/README/Testing/testing-02-b.png)
-
-The user can then use the use the clear button to revert back to seeing all recipes. 
-
----
-
-+ *I want to have a varied range of cocktails.*
-
-The recipes page gives the user the ability to browse through all of the recipes on the site, regardless of which collection it belongs to:
+The review page gives the user the ability to evaluate the quality of services from other users view, especially for the service they want to request:
 
 ![testing from user stories](static/images/README/Testing/testing-03.png)
 
----
-
-+ *I want to have a some cocktail suggestions when I'm not sure what to look for.*
-
-On the home page, the carousel will give the user various collections to scroll through. Each image is a link to the appropriate collection page:
-
-![testing from user stories](static/images/README/Testing/testing-04.png)
 
 ---
 
 + *I want to have the option to register an account if I want to come back at a later date.*
 
-From the navigation bar, the user can go to the registration page. From there, they can choose a username and password:
+From the navigation bar, the user can go to the Login/Register page. From there, If they dont have an account they can choose a register link and then by filling the register form with a unique username and email:
 
+![testing from user stories](static/images/README/Testing/testing-04.png)
 ![testing from user stories](static/images/README/Testing/testing-05.png)
 
- If their chosen username has already been taken, they will be informed and can choose another:
+ If their chosen username or email has already been taken, they will be informed consequency and can choose another:
 
  ![testing from user stories](static/images/README/Testing/testing-05-a.png)
+ ![testing from user stories](static/images/README/Testing/testing-05-b.png)
+
+
+ If their chosen password is not same as the confirmed password, they will be notified to try again to fix it:
+ ![testing from user stories](static/images/README/Testing/testing-05-c.png)
+
+
+If these type of users try to book or write a review, they will be redirected to the login page.
 
 ---
 
 ### As a returning user: 
 + *I want to be able to log into my account.*
 
-As long as the user has been through the registration process, they can use the long in page from the navigation bar to access their account:
-
-![testing from user stories](static/images/README/Testing/testing-06.png)
-
-If they use the wrong username or password, they will be informed and can retry:
+As long as the user has been through the registration process, they are redirected to login page to access their account with a flush message:
 
 ![testing from user stories](static/images/README/Testing/testing-06-a.png)
 
+or if the user has already a registered acount, they can use the login page from the navigation bar to access the login form:
+
+![testing from user stories](static/images/README/Testing/testing-04.png)
+
+If they use the wrong username, they will be informed and can retry:
+
+![testing from user stories](static/images/README/Testing/testing-06-b.png)
+
+If they use the wrong  password, they will be informed and can retry:
+
+![testing from user stories](static/images/README/Testing/testing-06-c.png)
+
+And if both username and password are correct, users are redirected to the Home page with a greeting message includes their first name:
+
+![testing from user stories](static/images/README/Testing/testing-06-d.png)
+
 ---
 
-+ *I want to be able to upload a recipe.*
++ *I want to be able to see all my orders(Appointments).*
 
-From their account page, the use will see the upload button towards the top of the page:
+Users can reach to the order page from the navigation bar, plus buttons in services section in home page, service page and footer link:
 
 ![testing from user stories](static/images/README/Testing/testing-07.png)
 
-Once they have clicked it, they will be redirected to the upload page:
+Once they have clicked it, they will be redirected to the order page:
 
 ![testing from user stories](static/images/README/Testing/testing-08.png)
 
 ---
++ *I want to have ease of access to any orders that I have already booked.*
 
-+ *I want to be able to add a recipe to the pre-determined collections.*
-
-Once the user has been directed to the upload page, the first option is to choose which categories they would like their recipe to be added to:
+From their order page, the user will be able to view all orders that they have requested:
 
 ![testing from user stories](static/images/README/Testing/testing-09.png)
 
 ---
 
-+ *I want to have ease of access to any recipes that I have already uploaded.*
++ *I want to be able to add a service order (appointment).*
 
-From their account page, the user will be able to view all recipes that they have uploaded:
+Once the user has been directed to the order page, by clicking the button "add a new appointment", the form of order will be shown up:
 
-![testing from user stories](static/images/README/Testing/testing-10.png)
+![testing from user stories](static/images/README/Testing/testing-10-a.png)
+
+If the user need recovery services, two more rows will be pop up and they are required to be filled:
+
+![testing from user stories](static/images/README/Testing/testing-10-b.png)
 
 ---
 
-+ *I want to be able to edit or delete any recipes that I have already uploaded.*
 
-From the account page, a logged in user has access to all of their recipes. From there, the user can hover over any of the recipes and they are presented with the edit or delete options:
++ *I want to be able to edit or cancel any orders that I have already booked.*
+
+When the new order is booked the new row will be added to the orders. From there, the user can click on any of the orders and they are presented with the order information and also edit and cancel options:
 
 ![testing from user stories](static/images/README/Testing/testing-11.png)
 
-**EDIT:**
-if the user presses the edit button, the page reloads to the edit page which is a visual duplication of the upload page. However, the input fields will be populated with their original input:
+**EDIT Order:**
+if the user presses the edit button, the page reloads to the edit page which is a visual duplication of the order page. However, the input fields will be populated with their original input:
 
 ![testing from user stories](static/images/README/Testing/testing-12.png)
 
-Once the user has made the necessary changes, they can save them at the bottom of the page. Alternatively, they can cancel all changes they've made. Both buttons lead back to their account page:
+Once the user has made the necessary changes, they can confirm them at the bottom of the page. Alternatively, they can cancel all changes they've made. Both buttons lead back to their order page:
 
 ![testing from user stories](static/images/README/Testing/testing-13.png)
 
-**Delete:** if the user chooses the delete button, they will be presented with a modal to either confirm or cancel the deletion: 
+**Cancel Order:** if the user chooses the Cancel button, the user has to describe the cancelation reason and then cancel it. they will be presented with a modal to either confirm or cancel the cancelation: 
 
 ![testing from user stories](static/images/README/Testing/testing-14.png)
 
 ---
 
 ### As the site owner/admin:
-+ *I want to be able to add new collections to the site.*
++ *I want to be able to add new Services to the site.*
 
-The admin will be able to log into their account as every other user does. However, they will have the 'Manage Collections' link in the nav bar:
+The admin will be able to log into their account as every other user does. 
 
 ![testing from user stories](static/images/README/Testing/testing-15.png)
 
