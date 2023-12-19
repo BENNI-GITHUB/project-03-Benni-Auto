@@ -231,7 +231,7 @@ Once they're on the 'Manage Collections' page, they'll have access to the 'Add C
 
 ![testing from user stories](static/images/README/Testing/testing-16.png)
 
-Once they click that, they'll be redirected to the upload page where they can fill in all of the collection information. The tool tips will give them information about the input elements:
+Once they click that, they'll be redirected to the upload page where they can fill in all of the service information. The tool tips will give them information about the input elements:
 
 ![testing from user stories](static/images/README/Testing/testing-17.png)
 
