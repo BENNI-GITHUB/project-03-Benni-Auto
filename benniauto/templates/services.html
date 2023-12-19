@@ -19,7 +19,7 @@
         <div class="card">
             <div class="card-image">
                 {% if service.image_url == "" %}
-                <img src="{{ url_for('static', filename='images/no-image.jpg') }}">
+                <img src="{{ url_for('static', filename='images/no-image.jpg') }}" alt="service-photo">
                 {% else %}
                 <img src="{{ service.image_url }}">
                 {% endif %}
