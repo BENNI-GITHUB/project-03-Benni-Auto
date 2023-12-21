@@ -22,7 +22,8 @@
 
 I checked the CSS file using [W3C CSS Markup Validation Service](https://jigsaw.w3.org/css-validator/)
 
-Unfortunately, it returned 3 errors:
+Unfortunately, it returned 1 error:
++ the error is related to materializecss and due to I used CDN link, I caanot access to that.
 
 ![css validator results](static/images/README/validator-css.PNG)
 
@@ -232,35 +233,37 @@ Once they're on the 'Services' page, they'll have access to the 'Add A New Servi
 
 ![testing from user stories](static/images/README/Testing/testing-16.png)
 
-Once they click that, they'll be redirected to the upload page where they can fill in all of the service information. The tool tips will give them information about the input elements:
+Once they click that, they'll be redirected to the add service page where they can fill in all of the service information.Once all of the inputs have been filled in correctly, the Admin can use the 'Add Service' button at the bottom of the page to add it to the database:
 
 ![testing from user stories](static/images/README/Testing/testing-17.png)
 
-Once all of the inputs have been filled in correctly, the user can use the 'Add Collection' button at the bottom of the page to add it to the database:
+---
+
++ *I want the new services to be added to the appropriate site areas.*
+
+The new collection is added to the Service page:
 
 ![testing from user stories](static/images/README/Testing/testing-18.png)
 
----
-
-+ *I want the new collection to be added to the appropriate site areas.*
-
-The new collection is added to the nav bar (and side nav):
+The new collection is added to the home page service section: 
 
 ![testing from user stories](static/images/README/Testing/testing-19.png)
 
-The new collection is added to the home page carousel:
+The new collection is added to the Service options in add order form:
 
 ![testing from user stories](static/images/README/Testing/testing-20.png)
 
-The new collection has its own page created:
+The new collection is added to the Service options in add review form: 
 
 ![testing from user stories](static/images/README/Testing/testing-21.png)
 
+
+
 ---
 
-+ *I want to be able to edit the pre-existing collections.*
++ *I want to be able to edit the pre-existing Services.*
 
-From the 'Manage Collections' page, the admin can hover/click on whichever collection they wish to edit and click the 'Edit' button:
+From the 'Services' page, the admin can click on whichever collection they wish to edit and click the 'Edit' button:
 
 ![testing from user stories](static/images/README/Testing/testing-22.png)
 
