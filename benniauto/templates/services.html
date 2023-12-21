@@ -21,7 +21,7 @@
                 {% if service.image_url == "" %}
                 <img src="{{ url_for('static', filename='images/no-image.jpg') }}" alt="service-photo">
                 {% else %}
-                <img src="{{ service.image_url }}">
+                <img src="{{ service.image_url }}" alt="no-image">
                 {% endif %}
             </div>
             <div class="card-content">
