@@ -4,6 +4,7 @@ body {
   flex-direction: column;
   background: url("../images/background.jpg") center / contain;
   font-family: 'Signika Negative', sans-serif;
+  overflow: hidden;
 }
 
 main {
