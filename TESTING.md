@@ -260,6 +260,10 @@ Users can access to delete their own reviews if they need.
 
 ![testing from user stories](documentation/Testing/testing-11-c.png)
 
+A modal will appear asking the users to confirm that they want to delete the selected review. They also have the option to 'Cancel' which will close the modal with no changes made:
+
+![testing from user stories](documentation/Testing/testing-11-e.png)
+
 + *I want to Log out the website.*
 By clicking on "Log out" button on navbar and footer links, Users can log out from their account. 
 
