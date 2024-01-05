@@ -99,6 +99,9 @@
             <li><a href="{{ url_for('home') }}#contact" class="grey-text text-lighten-3">
                 <h6>Contact</h6>
               </a></li>
+            <li><a href="{{ url_for('reviews') }}" class="grey-text text-lighten-3">
+                <h6>Reviews</h6>
+              </a></li>
             {% if session['user_login'] %}
             <li><a href="{{ url_for('logout') }}" class="grey-text text-lighten-3">
                 <h6>Log out</h6>
