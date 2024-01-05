@@ -10,8 +10,8 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-tools prefix teal-text text-lighten-2"></i>
-                <input id="service_name" name="service_name" value="{{ service.service_name }}" minlength="5" maxlength="25" type="text"
-                    class="validate brown-text" required>
+                <input id="service_name" name="service_name" value="{{ service.service_name }}" minlength="5"
+                    maxlength="25" type="text" class="validate brown-text" required>
                 <label for="service_name">Service Name</label>
             </div>
         </div>
@@ -20,7 +20,8 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-image prefix teal-text text-lighten-2"></i>
-                <input id="image_url" name="image_url" type="text" value="{{ service.image_url }}" class="validate brown-text" >
+                <input id="image_url" name="image_url" type="text" value="{{ service.image_url }}"
+                    class="validate brown-text">
                 <label for="image_url">Image URL</label>
             </div>
         </div>
@@ -30,7 +31,8 @@
             <div class="input-field col s12">
                 <i class="fas fa-align-left prefix teal-text text-lighten-2"></i>
                 <textarea id="service_description" name="service_description" minlength="20" maxlength="400"
-                    class="materialize-textarea validate brown-text" required>{{ service.service_description }}</textarea>
+                    class="materialize-textarea validate brown-text"
+                    required>{{ service.service_description }}</textarea>
                 <label for="service_description">Service Description</label>
             </div>
         </div>
@@ -41,9 +43,11 @@
                 <button type="submit" class="btn-large teal lighten-2">
                     Edit Service <i class="fas fa-edit right"></i>
                 </button>
+                <a href="{{ url_for('services') }}" class="btn-large brown lighten-2" style="margin: 10px;">Cancel<i
+                        class="fas fa-undo right"></i></a>
             </div>
         </div>
-        
+
     </form>
 </div>
 
