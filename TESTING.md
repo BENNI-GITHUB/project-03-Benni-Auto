@@ -25,7 +25,7 @@ I checked the CSS file using [W3C CSS Markup Validation Service](https://jigsaw.
 Unfortunately, it returned 1 error:
 + the error is related to materializecss and due to I used CDN link, I caanot access to that.
 
-![css validator results](static/images/README/validator-css.PNG)
+![css validator results](documentation/validator-css.PNG)
 
 All the errors were in relation to the ```backdrop-filter: blur``` property that it claims doesn't exist. However, according to [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter) this is a valid property. 
 
@@ -39,13 +39,13 @@ I checked the script.js file using [JSHint](https://jshint.com/)
 
 The only issues coming back from JS Validator were two unused functions:
 
-![js validator results](static/images/README/validator-js.PNG)
+![js validator results](documentation/validator-js.PNG)
 
 However, both of these functions are called throughout the site:
 
-![js validator results](static/images/README/validator-js-02.PNG)
+![js validator results](documentation/validator-js-02.PNG)
 
-![js validator results](static/images/README/validator-js-03.PNG)
+![js validator results](documentation/validator-js-03.PNG)
 
 ### **Python**
 I checked the app.py file using [PEP8 online](http://pep8online.com/)
@@ -74,7 +74,7 @@ The code passed all checks.
 
 All of these changes helped bring the final score up nicely. While I would have like a higher performance score(preferably in the green) but overall, I'm happy with the progress. 
 
-![final lighthouse score](static/images/README/lighthouse-d-score-02.PNG)
+![final lighthouse score](documentation/lighthouse-d-score-02.PNG)
 
 ---
 ---
@@ -82,21 +82,21 @@ All of these changes helped bring the final score up nicely. While I would have 
 
 I used [PowerMapper](https://www.powermapper.com/) to test cross-browser compatbility on other browsers that I don't have access to.
 
-![powermapper results](static/images/README/powermapper-01.PNG)
+![powermapper results](documentation/powermapper-01.PNG)
 
 According to their site, the ```backdrop-filter``` property had some browser compatibility issues:
-![powermapper results](static/images/README/powermapper-02.PNG)
+![powermapper results](documentation/powermapper-02.PNG)
 
 I manually checked all of the browsers specified(apart from Internet Explorer) and found that, apart from Firefox, the ```backdrop-filter``` property did work:
 
-![safari blur](static/images/README/safari-backdrop-blur.png)
-![ios blur](static/images/README/ios-backdrop-blur.png)
+![safari blur](documentation/safari-backdrop-blur.png)
+![ios blur](documentation/ios-backdrop-blur.png)
 
 Firefox definitely doesn't support the property so I manually tested it to make sure that, even without the blur filter, the site still looked okay and the text was legible
 
-![firefox blur](static/images/README/firefox-blur.png)
-![firefox blur](static/images/README/firefox-blur-02.png)
-![firefox blur](static/images/README/firefox-blur-03.PNG)
+![firefox blur](documentation/firefox-blur.png)
+![firefox blur](documentation/firefox-blur-02.png)
+![firefox blur](documentation/firefox-blur-03.PNG)
 
 While it would be great to have the blur included, I still think that the look of the site holds up on firefox and all text remains legible. 
 
@@ -105,11 +105,22 @@ While it would be great to have the blur included, I still think that the look o
 ## Testing From User Stories
 
 ### As a casual user: 
++ *I want to be able to view the website home page and contact section.*
+
+Even without being logged in, a user is able to browse through all the website:
+
+![testing from user stories](documentation/Testing/testing-02.png)
+
+Even without being logged in, a user is able to access the contact section and use make a phone call, or send and email:
+
+![testing from user stories](documentation/Testing/testing-02-a.png)
+
+
 + *I want to be able to view services without having to register and account.*
 
 Even without being logged in, a user is able to browse through all the service cards:
 
-![testing from user stories](static/images/README/Testing/testing-01.png)
+![testing from user stories](documentation/Testing/testing-01.png)
 
 ---
 
@@ -117,7 +128,7 @@ Even without being logged in, a user is able to browse through all the service c
 
 The review page gives the user the ability to evaluate the quality of services from other users view, especially for the service they want to request:
 
-![testing from user stories](static/images/README/Testing/testing-03.png)
+![testing from user stories](documentation/Testing/testing-03.png)
 
 
 ---
@@ -126,17 +137,17 @@ The review page gives the user the ability to evaluate the quality of services f
 
 From the navigation bar, the user can go to the Login/Register page. From there, If they dont have an account they can choose a register link and then by filling the register form with a unique username and email:
 
-![testing from user stories](static/images/README/Testing/testing-04.png)
-![testing from user stories](static/images/README/Testing/testing-05.png)
+![testing from user stories](documentation/Testing/testing-04.png)
+![testing from user stories](documentation/Testing/testing-05.png)
 
  If their chosen username or email has already been taken, they will be informed consequency and can choose another:
 
- ![testing from user stories](static/images/README/Testing/testing-05-a.png)
- ![testing from user stories](static/images/README/Testing/testing-05-b.png)
+ ![testing from user stories](documentation/Testing/testing-05-a.png)
+ ![testing from user stories](documentation/Testing/testing-05-b.png)
 
 
  If their chosen password is not same as the confirmed password, they will be notified to try again to fix it:
- ![testing from user stories](static/images/README/Testing/testing-05-c.png)
+ ![testing from user stories](documentation/Testing/testing-05-c.png)
 
 
 If these type of users try to book or write a review, they will be redirected to the login page.
@@ -148,23 +159,23 @@ If these type of users try to book or write a review, they will be redirected to
 
 As long as the user has been through the registration process, they are redirected to login page to access their account with a flush message:
 
-![testing from user stories](static/images/README/Testing/testing-06-a.png)
+![testing from user stories](documentation/Testing/testing-06-a.png)
 
 or if the user has already a registered acount, they can use the login page from the navigation bar to access the login form:
 
-![testing from user stories](static/images/README/Testing/testing-04.png)
+![testing from user stories](documentation/Testing/testing-04.png)
 
 If they use the wrong username, they will be informed and can retry:
 
-![testing from user stories](static/images/README/Testing/testing-06-b.png)
+![testing from user stories](documentation/Testing/testing-06-b.png)
 
 If they use the wrong  password, they will be informed and can retry:
 
-![testing from user stories](static/images/README/Testing/testing-06-c.png)
+![testing from user stories](documentation/Testing/testing-06-c.png)
 
 And if both username and password are correct, users are redirected to the Home page with a greeting message includes their first name:
 
-![testing from user stories](static/images/README/Testing/testing-06-d.png)
+![testing from user stories](documentation/Testing/testing-06-d.png)
 
 ---
 
@@ -172,30 +183,37 @@ And if both username and password are correct, users are redirected to the Home 
 
 Users can reach to the order page from the navigation bar, plus buttons in services section in home page, service page and footer link:
 
-![testing from user stories](static/images/README/Testing/testing-07.png)
+![testing from user stories](documentation/Testing/testing-07-a.png)
+![testing from user stories](documentation/Testing/testing-07-b.png)
 
 Once they have clicked it, they will be redirected to the order page:
 
-![testing from user stories](static/images/README/Testing/testing-08.png)
+![testing from user stories](documentation/Testing/testing-08.png)
 
 ---
 + *I want to have ease of access to any orders that I have already booked.*
 
 From their order page, the user will be able to view all orders that they have requested:
 
-![testing from user stories](static/images/README/Testing/testing-09.png)
+![testing from user stories](documentation/Testing/testing-09.png)
 
 ---
 
 + *I want to be able to add a service order (appointment).*
 
-Once the user has been directed to the order page, by clicking the button "add a new appointment", the form of order will be shown up:
+Once the user has been directed to the order page, by clicking the button "BOOK A NEW APPOINTMENT", the form of order will be shown up, Also there are two other access buttons in home page and service page to redirect the mentioned page:
 
-![testing from user stories](static/images/README/Testing/testing-10-a.png)
+![testing from user stories](documentation/Testing/testing-10-1.png)
+![testing from user stories](documentation/Testing/testing-10-2.png)
+![testing from user stories](documentation/Testing/testing-10-3.png)
+
+Order Form:
+
+![testing from user stories](documentation/Testing/testing-10-a.png)
 
 If the user need recovery services, two more rows will be pop up and they are required to be filled:
 
-![testing from user stories](static/images/README/Testing/testing-10-b.png)
+![testing from user stories](documentation/Testing/testing-10-b.png)
 
 ---
 
@@ -204,20 +222,52 @@ If the user need recovery services, two more rows will be pop up and they are re
 
 When the new order is booked the new row will be added to the orders. From there, the user can click on any of the orders and they are presented with the order information and also edit and cancel options:
 
-![testing from user stories](static/images/README/Testing/testing-11.png)
+![testing from user stories](documentation/Testing/testing-09.png)
 
 **EDIT Order:**
 if the user presses the edit button, the page reloads to the edit page which is a visual duplication of the order page. However, the input fields will be populated with their original input:
 
-![testing from user stories](static/images/README/Testing/testing-12.png)
+![testing from user stories](documentation/Testing/testing-12.png)
 
 Once the user has made the necessary changes, they can confirm them at the bottom of the page. Alternatively, they can cancel all changes they've made. Both buttons lead back to their order page:
 
-![testing from user stories](static/images/README/Testing/testing-13.png)
+![testing from user stories](documentation/Testing/testing-13.png)
 
 **Cancel Order:** if the user chooses the Cancel button, the user has to describe the cancelation reason and then cancel it. they will be presented with a modal to either confirm or cancel the cancelation: 
 
-![testing from user stories](static/images/README/Testing/testing-14.png)
+![testing from user stories](documentation/Testing/testing-14.png)
+ 
+Once the order is canceled, the canceled badge will be shown up to the related order and cancel description will be replaced with order description, Users cannot change that and in case they want to book another order there is a button to redirect them to place a new order.
+
+![testing from user stories](documentation/Testing/testing-14-a.png)
+
++ *I want to be able to leave a review.*
+
+From the Home page and footer link, Users can access to review page. the review form will be pop up by click on the "LEAVE A REVIEW" button. 
+
+![testing from user stories](documentation/Testing/testing-11-a.png)
+Review Form:
+Users also can choose the stars rate for their satisfication. 
+![testing from user stories](documentation/Testing/testing-11-b.png)
+
++ *I want to be able to see my review and delete it.*
+
+As soon as the review submitted, the review can be shown on the review page and main page. the date of the review is inserted automatically based on the review date. 
+
+![testing from user stories](documentation/Testing/testing-11-d.png)
+
+Users can access to delete their own reviews if they need. 
+
+![testing from user stories](documentation/Testing/testing-11-c.png)
+
++ *I want to Log out the website.*
+By clicking on "Log out" button on navbar and footer links, Users can log out from their account. 
+
+![testing from user stories](documentation/Testing/testing-01-a.png)
+
+As soon as the user log out, a notification will be pop up and confirm the logging out the process. also, the navar items changed and the greeting text disapeared.
+
+![testing from user stories](documentation/Testing/testing-01-b.png)
 
 ---
 
@@ -225,37 +275,37 @@ Once the user has made the necessary changes, they can confirm them at the botto
 
 + The admin will be able to log into their account as every other user does 
 
-![testing from user stories](static/images/README/Testing/testing-15.png)
+![testing from user stories](documentation/Testing/testing-15.png)
 
 + *I want to be able to add new Services to the site.*
 
 Once they're on the 'Services' page, they'll have access to the 'Add A New Service' button:
 
-![testing from user stories](static/images/README/Testing/testing-16.png)
+![testing from user stories](documentation/Testing/testing-16.png)
 
 Once they click that, they'll be redirected to the add service page where they can fill in all of the service information.Once all of the inputs have been filled in correctly, the Admin can use the 'Add Service' button at the bottom of the page to add it to the database:
 
-![testing from user stories](static/images/README/Testing/testing-17.png)
+![testing from user stories](documentation/Testing/testing-17.png)
 
 ---
 
 + *I want the new services to be added to the appropriate site areas.*
 
-The new collection is added to the Service page:
+The new service is added to the Service page:
 
-![testing from user stories](static/images/README/Testing/testing-18.png)
+![testing from user stories](documentation/Testing/testing-18.png)
 
-The new collection is added to the home page service section: 
+The new Service is added to the home page service section: 
 
-![testing from user stories](static/images/README/Testing/testing-19.png)
+![testing from user stories](documentation/Testing/testing-19.png)
 
 The new collection is added to the Service options in add order form:
 
-![testing from user stories](static/images/README/Testing/testing-20.png)
+![testing from user stories](documentation/Testing/testing-20.png)
 
 The new collection is added to the Service options in add review form: 
 
-![testing from user stories](static/images/README/Testing/testing-21.png)
+![testing from user stories](documentation/Testing/testing-21.png)
 
 
 
@@ -263,31 +313,50 @@ The new collection is added to the Service options in add review form:
 
 + *I want to be able to edit the pre-existing Services.*
 
-From the 'Services' page, the admin can click on whichever collection they wish to edit and click the 'Edit' button:
+From the 'Services' page, the admin can click on whichever Service they wish to edit and click the 'Edit' button:
 
-![testing from user stories](static/images/README/Testing/testing-22.png)
+![testing from user stories](documentation/Testing/testing-22.png)
 
-This will redirect them to the edit page where they can update whatever information they want. The only thing they can't update is the collection name:
+This will redirect them to the edit page where they can update whatever information they want. However, the input fields will be populated with their original input:
 
-![testing from user stories](static/images/README/Testing/testing-23.png)
+![testing from user stories](documentation/Testing/testing-23.png)
 
-Once the user has updated the information, they can access they buttons at the bottom of the form. If they click 'Edit Collection', the changed will be sent to the database and be updated across the site. They also have the option to 'Cancel' which will ignore any changes and redirect them to the 'Manage Collections' page:
+Once the user has updated the information, they can access they buttons at the bottom of the form. If they click 'Edit Service', the changed will be sent to the database and be updated across the site. They also have the option to 'Cancel' which will ignore any changes and redirect them to the 'Services' page:
 
-![testing from user stories](static/images/README/Testing/testing-24.png)
+![testing from user stories](documentation/Testing/testing-24.png)
 
 ---
 
 + *I want to be able to delete any collections.*
 
-From the 'Manage Collections' page, the admin can hover/click on whichever collection they wish to edit and click the 'Delete' button:
+From the 'Service' page, the admin can click on 'Delete' button of whichever Service they wish to delete:
 
-![testing from user stories](static/images/README/Testing/testing-25.png)
+![testing from user stories](documentation/Testing/testing-25.png)
 
-A modal will appear asking the admin to confirm that they want to delete the collection. They also have the option to 'Cancel' which will close the modal with no changes made:
+A modal will appear asking the admin to confirm that they want to delete the selected service (include the service name to prevent any mistake). They also have the option to 'Cancel' which will close the modal with no changes made:
 
-![testing from user stories](static/images/README/Testing/testing-26.png)
+![testing from user stories](documentation/Testing/testing-26.png)
 
 ---
++ *I want to be able to manage the users orders.*
+
+This part is the business center of the website where Admin can access to all the users orders: 
+
+![testing from user stories](documentation/Testing/testing-27.png)
+
+Admin has an option to edit or cancel the users order on behalf of them. 
+
+![testing from user stories](documentation/Testing/testing-28.png)
+
+Admin can Also delete the cancel order to tidy up the orders.
+
+![testing from user stories](documentation/Testing/testing-29.png)
+
++ *I don't Want to be able to change or delete any reviews*
+
+To respect the users rights, Admin cannot change or delete any reviews and Admin is just a viewer for this page. 
+
+![testing from user stories](documentation/Testing/testing-30.png)
 ---
 ## Manually Testing Functionality
 ### **base.html**
@@ -606,18 +675,18 @@ Through devices that I have at home/readily available to me, I was able to conti
 
 I used the Materialize Carousel for the home page and wanted to have the information collection name text appear over the image. However, no matter what CSS I tried to manipulate it, the text remained below the image:
 
-![carousel bug](static/images/README/bugs/carousel-bug.PNG)
-![carousel bug](static/images/README/bugs/carousel-code.PNG)
+![carousel bug](documentation/bugs/carousel-bug.PNG)
+![carousel bug](documentation/bugs/carousel-code.PNG)
 
 On their site, Materialize have another type of carousel that allows for this but I prefer the look of this - the 3d style rotation, in my opinion, looked a lot better for this project. 
 
 I had to experiment ALOT with this but found that the below code worked great for this: 
 
-![carousel bug](static/images/README/bugs/carousel-code-fix-01.PNG)
+![carousel bug](documentation/bugs/carousel-code-fix-01.PNG)
 
 The above HTML with some CSS tricks helped place the text nicely over the image:
 
-![carousel bug](static/images/README/bugs/carousel-fix.PNG)
+![carousel bug](documentation/bugs/carousel-fix.PNG)
 
 Once I had the placement figured, I wanted to experiment further and try to create the carousel dynamically for each drinks collection. While the image and text for each element was easy enough to work through, the anchor URL proved to be tricky. I tried a couple of things and ended up with varying results: 
 
@@ -629,39 +698,39 @@ Once I had the placement figured, I wanted to experiment further and try to crea
 
 In the end, I created a ```key:value``` pair in MongoDB: the key was called ```page_url``` and the value matched the name of the html page to be redirected to. I was able to pull that in the HTML code:
 
-![carousel bug](static/images/README/bugs/carousel-code-fix-02.PNG)
+![carousel bug](documentation/bugs/carousel-code-fix-02.PNG)
 
 I have since changed how the collections pages are created - they are now dynamically created so the ```page_url``` is no longer needed.
 
 ---
 ### **Card Overlaying**
 
-![card overlay bug](static/images/README/bugs/bug-01.PNG)
+![card overlay bug](documentation/bugs/bug-01.PNG)
 
 When initially putting together the card layout, I was having an issue where the recipe card was layering on top of the previous one rather than generating it's own card
 
-![card overlay bug](static/images/README/bugs/bug-01-code.PNG)
+![card overlay bug](documentation/bugs/bug-01-code.PNG)
 
 After a bit of experimenting, I moved the entire card div into the for loop and managed to sort this issue. 
 
-![card overlay bug](static/images/README/bugs/bug-01-code-fix.PNG)
+![card overlay bug](documentation/bugs/bug-01-code-fix.PNG)
 
 ---
 ### **TypeError - length vs count()**
 
 I followed the CI task manager project for the initial stages of this project. Most things translated well except the ```length``` property. When called, it would cause a TypeError.
 
-![TypeError](static/images/README/bugs/bug-02.PNG)
+![TypeError](documentation/bugs/bug-02.PNG)
 
-![TypeError](static/images/README/bugs/bug-02-code-2.PNG)
+![TypeError](documentation/bugs/bug-02-code-2.PNG)
 
-![TypeError](static/images/README/bugs/bug-02-code.PNG)
+![TypeError](documentation/bugs/bug-02-code.PNG)
 
 I did a lot of research on this and while there were a few different fixes, the one that worked best for this project was to change the ```recipes``` variable from a list and use the ```count()``` function instead.
 
-![TypeError](static/images/README/bugs/bug-02-code-fix-2.PNG)
+![TypeError](documentation/bugs/bug-02-code-fix-2.PNG)
 
-![TypeError](static/images/README/bugs/bug-02-code-fix.PNG)
+![TypeError](documentation/bugs/bug-02-code-fix.PNG)
 
 ---
 
@@ -669,7 +738,7 @@ I did a lot of research on this and while there were a few different fixes, the 
 
 When using the Materialize navigation bar dropdown, the side nav dropdown on mobile was covering the content below, rather than pushing the content down. 
 
-![Dropdown bug](static/images/README/bugs/bug-03.PNG)
+![Dropdown bug](documentation/bugs/bug-03.PNG)
 
 I believe this is expected behaviour but from a UX standpoint, I wasn't happy with this on mobile.
 As a result, I decided that it would be a better idea to use a Materialize collapsible on the side-nav instead. This allows the sub-menu to reposition all of the other elements rather than them being covered. 
@@ -679,7 +748,7 @@ As a result, I decided that it would be a better idea to use a Materialize colla
 
 I added ```hover:true``` to the dropdown menu which worked fine on desktop. But with mobile, it was causing a massive glitch - when you would click the dropdown menu, it would appear for a split second and disappear. 
 
-![Hover bug](static/images/README/bugs/bug-04-code.PNG)
+![Hover bug](documentation/bugs/bug-04-code.PNG)
 
 I tried removing the ```inDuration``` and ```outDuration``` but it was still happening. I decided to remove the ```hover``` option altogether and this fixed the issue. 
 
@@ -692,18 +761,18 @@ After talking to someone on slack who had experienced the same issue, I was info
 
 I updated the recipe-side modal href and the actual modal ID to target the specific recipe card to be deleted. 
 
-![Deleting bug](static/images/README/bugs/bug-05-code-fix.jpg) 
+![Deleting bug](documentation/bugs/bug-05-code-fix.jpg) 
 
 ---
 ### **Selecting option on mobile**
 
 On mobile, the 'Choose Collection' option in both add and edit recipe wasn't working as it should. There was an issue with selecting the options - you would select 'Fruity', but 'Mocktails' would highlight, as if there had been an upwards shift in the selection area. 
 
-![Selecting bug](static/images/README/bugs/bug-06-code.PNG) 
+![Selecting bug](documentation/bugs/bug-06-code.PNG) 
 
 Originally the ```formSelect()```m function was placed above the ```dropdown()``` function, both of which were triggered by the 'Choose Collection' dropdown. I know that the order of code matters so I tried to reorder them.
 
-![Selecting bug](static/images/README/bugs/bug-06-code-fix.PNG)  
+![Selecting bug](documentation/bugs/bug-06-code-fix.PNG)  
 
 This fixed the issue.
 
@@ -713,13 +782,13 @@ This fixed the issue.
 
 When visiting a specific collection of recipes, the correct recipes for that category were displaying. However, the pagination information was displaying the total number of recipes in the database. 
 
-![Pagination bug](static/images/README/bugs/bug-09.jpg)
+![Pagination bug](documentation/bugs/bug-09.jpg)
 
-![Pagination bug](static/images/README/bugs/bug-09-code.PNG)
+![Pagination bug](documentation/bugs/bug-09-code.PNG)
 
 Because I hadn't specified the ```category_name``` in the ```find()``` function for the ```total``` variable, it was counting all recipes and then displaying this number as the total. 
 
-![Pagination bug](static/images/README/bugs/bug-09-code-fix.PNG)
+![Pagination bug](documentation/bugs/bug-09-code-fix.PNG)
 
 Adding the ```category_name``` key and the correct value in the ```total``` variable fixed the issue.
 
@@ -736,11 +805,11 @@ total = recipes.count()
 
 When dynamically adding a new input field for ingredients and method, there was an issues with clicking the input field. When the second input was clicked, the focus would jump back up to the original input. 
 
-![Input Field Dynamic ID bug](static/images/README/bugs/bug-10.PNG)
+![Input Field Dynamic ID bug](documentation/bugs/bug-10.PNG)
 
 This was because I had not been dynamically adding a new ID to the newly created input fields. Adding an incrementing variable to the ID fixed this issue. 
 
-![Input Field Dynamic ID bug](static/images/README/bugs/bug-10-code-fix.jpg)
+![Input Field Dynamic ID bug](documentation/bugs/bug-10-code-fix.jpg)
 
 ---
 
@@ -748,13 +817,13 @@ This was because I had not been dynamically adding a new ID to the newly created
 
 A pylint warning appeared when I added the pagination functionality:
 
-![Unbalanced Tuple Unpacking bug](static/images/README/bugs/bug-12.PNG)
+![Unbalanced Tuple Unpacking bug](documentation/bugs/bug-12.PNG)
 
 This was a non-issue as everything was working as it should, and the code worked fine.
 
 After a bit of research I learned that this is referred to as a 'false positive' and by adding the below comment, the warning would go away: 
 
-![Unbalanced Tuple Unpacking bug](static/images/README/bugs/bug-12-code-fix.PNG)
+![Unbalanced Tuple Unpacking bug](documentation/bugs/bug-12-code-fix.PNG)
 
 ---
 
@@ -762,26 +831,26 @@ After a bit of research I learned that this is referred to as a 'false positive'
 
 I added a button to redirect the user back to the top of the page when they had scrolled for a certain amount of pixels. But because the button isn't present on all pages, the JS script was looking for it, not finding it and then throwing the error:
 
-![Scroll-To-Top TypeError bug](static/images/README/bugs/bug-13.PNG)
+![Scroll-To-Top TypeError bug](documentation/bugs/bug-13.PNG)
 
 Wrapping the whole button functionality inside an if statement allowed the script to check if the button was on that page and either run the functions if it was, and ignore them if it wasn't.
 
-![Scroll-To-Top TypeError bug](static/images/README/bugs/bug-13-code-fix.PNG)
+![Scroll-To-Top TypeError bug](documentation/bugs/bug-13-code-fix.PNG)
 
 ---
 
 ### **Heading Text Mobile Display**
  On mobile display, a particularly long or multiple word heading 
 
-![Heading Text Mobile Display bug](static/images/README/bugs/bug-14.PNG)
-![Heading Text Mobile Display bug](static/images/README/bugs/bug-14-02.PNG)
+![Heading Text Mobile Display bug](documentation/bugs/bug-14.PNG)
+![Heading Text Mobile Display bug](documentation/bugs/bug-14-02.PNG)
 
 
 Making the font responsive to the view width allowed for longer text to display properly without overflowing off the screen. I used a media query targeted specifically at smaller screens so the desktop display didn't look oversized. 
 
-![Heading Text Mobile Display bug](static/images/README/bugs/bug-14-code-fix.PNG)
+![Heading Text Mobile Display bug](documentation/bugs/bug-14-code-fix.PNG)
 
-![Heading Text Mobile Display bug](static/images/README/bugs/bug-14-fix-01.PNG)
+![Heading Text Mobile Display bug](documentation/bugs/bug-14-fix-01.PNG)
 
 ---
 
@@ -801,23 +870,23 @@ There's an input for the main ingredient which is displayed on the recipe card b
 
 The issue was that while the main ingredient was seen on the recipe card, once you viewed the full recipe, that was omitted:
 
-![Ingredients list issue](static/images/README/bugs/bug-16.png)
+![Ingredients list issue](documentation/bugs/bug-16.png)
 
-![Ingredients list issue](static/images/README/bugs/bug-16-02.PNG)
+![Ingredients list issue](documentation/bugs/bug-16-02.PNG)
 
 To fix this, I added the ```main_ingredient``` to the recipe list. This worked well for recipes that had omitted it from the main ingredients list:
 
-![Ingredients list issue](static/images/README/bugs/bug-16-fix-01.PNG)
+![Ingredients list issue](documentation/bugs/bug-16-fix-01.PNG)
 
 But on a recipe that had all of the ingredients listed as per the instructions, it looked a bit strange for it to be listed twice: 
 
-![Ingredients list issue](static/images/README/bugs/bug-16-fix-02.PNG)
+![Ingredients list issue](documentation/bugs/bug-16-fix-02.PNG)
 
 To try to remedy the issues, I decided to meet somewhere in the middle - I enlarged the ```main_ingredient``` font and made it a little bolder: 
 
-![Ingredients list issue](static/images/README/bugs/bug-16-correct-01.PNG)
+![Ingredients list issue](documentation/bugs/bug-16-correct-01.PNG)
 
-![Ingredients list issue](static/images/README/bugs/bug-16-correct-02.PNG)
+![Ingredients list issue](documentation/bugs/bug-16-correct-02.PNG)
 
 This way it's included on the ingredients list but looks more like a featured ingredient that can be overlooked if that ingredient is listed elsewhere.
 
@@ -829,15 +898,15 @@ This way it's included on the ingredients list but looks more like a featured in
 
 When testing error pages, I was adding addition characters to the end of the URL in the account page, anything that was changed/edited was updating the username header on the page:
 
-![URL & Username bug](static/images/README/bugs/bug-11.PNG)
+![URL & Username bug](documentation/bugs/bug-11.PNG)
 
 I defined username as a variable in the account section of the app.py file:
 
-![URL & Username bug](static/images/README/bugs/bug-11-code-fix.PNG)
+![URL & Username bug](documentation/bugs/bug-11-code-fix.PNG)
 
 I retested and, while it solved that issue, adding the extra characters didn't break the code. This is an issue that hasn't been resolved. 
 
-![URL & Username bug](static/images/README/bugs/bug-11-not-resolved.PNG)
+![URL & Username bug](documentation/bugs/bug-11-not-resolved.PNG)
 
 ---
 
@@ -845,10 +914,10 @@ I retested and, while it solved that issue, adding the extra characters didn't b
 
 From the Chrome console there are issues being reported: 
 
-![URL & Username bug](static/images/README/bugs/bug-15.PNG)
+![URL & Username bug](documentation/bugs/bug-15.PNG)
 
 These are coming from the ```.side-nav``` and ```.carousel``` triggers. Based on the message itself, the issue seems to be coming from Materialize rather than the script.js file.
 
-![URL & Username bug](static/images/README/bugs/bug-15-02.PNG)
+![URL & Username bug](documentation/bugs/bug-15-02.PNG)
 
 However, I spent a lot of time looking into this and trying to add the ```passive: true``` that the helper documentation pointed to but to no avail. 

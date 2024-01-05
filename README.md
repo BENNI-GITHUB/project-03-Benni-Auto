@@ -2,8 +2,8 @@
 benni auto is a sample website for an auto service shop to manage their orders and develope their business.
 Also, It has an oppurtunate for users to view the reviews or login to the website and book their service orders and leave comment.  
 
-You can find the live site [here](https://cocktail-hour-ms3.herokuapp.com/)
-![Main site image](static/images/README/readme-main-img.png)
+You can find the live site [here](https://benniauto-b1eb6496d00c.herokuapp.com/)
+![Main site image](./documentation/readme-view/responsive_view.png)
 
 ---
 ---
@@ -313,20 +313,21 @@ Below is the schema for my database:
 
 ## All Others
 + [Heroku](https://www.heroku.com/) used to deploy live site
-+ [Postgresql](https://www.postgresql.org/) used to host database information.
++ [Postgresql](https://www.postgresql.org/) used to host database information locally.
++ [Elephantsql](https://www.elephantsql.com/) used to host database information for Heroku.
 + [GitHub](https://github.com/) used to host repository.
 + [GitPod](https://www.gitpod.io/) used to develop project and organise version 
 + [Adobe Photoshop](https://www.adobe.com/ie/products/photoshop.html) used to design logo and edit the website images. 
 + [Balsamiq](https://balsamiq.com/) used to create wireframes.
 + [CloudConvert](https://cloudconvert.com/) to convert all images to .webp format.
 + [Responsinator](https://www.responsinator.com/) used to check site was responsive on different screen sizes.
-+ [Am I Responsive](http://ami.responsivedesign.is/) used to generate README intro image.
++ [Am I Responsive](https://ui.dev/amiresponsive?url=https://benniauto-b1eb6496d00c.herokuapp.com/) used to generate README intro image.
 + [favicon.io](https://favicon.io/) used to create a site favicon.
 
 ---
 ---
 # Testing
-Due to the size of the testing section, I have created a separate document for it. You can find it [here](https://github.com/AmyOShea/MS3-Cocktail-Hour/blob/master/TESTING.md). 
+Due to the size of the testing section, I have created a separate document for it. You can find it [here](https://github.com/BENNI-GITHUB/project-03-Benni-Auto/blob/main/TESTING.md). 
 
 ---
 ---
@@ -380,7 +381,7 @@ Because this contains sensitive information, this needs to be added to the '.git
     | :-- | :-- |
     | IP | 0.0.0.0 |
     | PORT | 5000 |
-    | SECRET_KEY | ANY_SECRET_KEY* |
+    | SECRET_KEY | MY_SECRET_KEY* |
     | DB_URL | postgresql:///*database name* |
     | DEBUG | TRUE** |
 
