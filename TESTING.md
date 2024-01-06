@@ -1,6 +1,6 @@
 # Full Testing
 ## Contents
-+ [Validator Testing](#validator-testing)
++ [Validators Testing](#validator-testing)
 + [Lighthouse Testing](#lighthouse-testing)
 + [Testing From User Stories](#testing-from-user-stories)
 + [Manually Testing Functionality](#manually-testing-functionality)
@@ -591,7 +591,6 @@ Through devices that I have at home/readily available to me, I was able to conti
   * Opera
   * Mozilla Firefox
 ### Responsinator
-+ When there were devices/browsers that I didn't have access to, I used [Responsinator](https://www.responsinator.com/) to make sure that the site was responsive.
++ When there were devices/browsers that I didn't have access to, I used [Responsinator for Benni Auto](https://www.responsinator.com/?url=https%3A%2F%2Fbenniauto-b1eb6496d00c.herokuapp.com%2F) to make sure that the site was responsive.
 
----
 ---
