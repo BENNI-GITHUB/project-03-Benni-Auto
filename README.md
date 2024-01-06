@@ -3,6 +3,7 @@ benni auto is a sample website for an auto service shop to manage their orders a
 Also, It has an opportunity for users to view the reviews or login to the website and book their service orders and leave comment.  
 
 You can find the live site [here](https://benniauto-b1eb6496d00c.herokuapp.com/)
+-
 ![Main site image](./documentation/readme-view/responsive_view.png)
 
 ---
