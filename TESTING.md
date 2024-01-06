@@ -5,8 +5,6 @@
 + [Testing From User Stories](#testing-from-user-stories)
 + [Manually Testing Functionality](#manually-testing-functionality)
 + [Responsive Testing](#responsive-testing)
-+ [Bugs and Fixes](#bugs-and-fixes)
-+ [Known Bugs](#known-bugs)
 ---
 ---
 ## Validator Testing
