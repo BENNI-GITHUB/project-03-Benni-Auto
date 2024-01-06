@@ -1,7 +1,7 @@
 # Full Testing
 ## Contents
 + [Validator Testing](#validator-testing)
-+ [PowerMapper Compatibility](#powermapper-compatibility)
++ [Lighthouse Testing](#lighthouse-testing)
 + [Testing From User Stories](#testing-from-user-stories)
 + [Manually Testing Functionality](#manually-testing-functionality)
 + [Responsive Testing](#responsive-testing)
@@ -55,31 +55,6 @@ By the feed back given , I made a few changes to the code to raise the scores:
 
 ![final lighthouse score](documentation/Testing/Lighthouse-b.png)
 
----
----
-## PowerMapper Compatibility
-
-I used [PowerMapper](https://www.powermapper.com/) to test cross-browser compatbility on other browsers that I don't have access to.
-
-![powermapper results](documentation/powermapper-01.PNG)
-
-According to their site, the ```backdrop-filter``` property had some browser compatibility issues:
-![powermapper results](documentation/powermapper-02.PNG)
-
-I manually checked all of the browsers specified(apart from Internet Explorer) and found that, apart from Firefox, the ```backdrop-filter``` property did work:
-
-![safari blur](documentation/safari-backdrop-blur.png)
-![ios blur](documentation/ios-backdrop-blur.png)
-
-Firefox definitely doesn't support the property so I manually tested it to make sure that, even without the blur filter, the site still looked okay and the text was legible
-
-![firefox blur](documentation/firefox-blur.png)
-![firefox blur](documentation/firefox-blur-02.png)
-![firefox blur](documentation/firefox-blur-03.PNG)
-
-While it would be great to have the blur included, I still think that the look of the site holds up on firefox and all text remains legible. 
-
----
 ---
 ## Testing From User Stories
 
