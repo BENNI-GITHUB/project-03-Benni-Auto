@@ -2,7 +2,7 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  background: url("../images/background.jpg") center / contain;
+  background: url("../images/background.webp") center / contain;
   font-family: 'Signika Negative', sans-serif;
 }
 

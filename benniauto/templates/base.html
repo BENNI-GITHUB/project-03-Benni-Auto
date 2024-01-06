@@ -24,22 +24,22 @@
     <!-- navbar -->
     <nav class="brown lighten-1">
       <div class="nav-wrapper">
-        <a href="{{ url_for('home') }}" class="brand-logo">
+        <a href="{{ url_for('home') }}" class="brand-logo" title="logo">
           <img src="{{ url_for('static', filename='images/logo.png') }}" alt="brand-logo">
         </a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars" title="mobile-demo"></i></a>
         <ul class="right hide-on-med-and-down">
-          <li><a class="{% if active == 'home' %}active{% endif %}" href="{{ url_for('home') }}">Home</a></li>
-          <li><a class="{% if active == 'services' %}active{% endif %}" href="{{ url_for('services') }}">Services</a>
+          <li><a class="{% if active == 'home' %}active{% endif %}" href="{{ url_for('home') }}" title="Home">Home</a></li>
+          <li><a class="{% if active == 'services' %}active{% endif %}" href="{{ url_for('services') }}" title="Services">Services</a>
           </li>
-          <li><a href="{{ url_for('home') }}#contact">Contact</a></li>
+          <li><a href="{{ url_for('home') }}#contact" title="Contact">Contact</a></li>
           {% if session['user_login'] %}
-          <li><a class="{% if active == 'login' %}active{% endif %}" href="{{ url_for('logout') }}">Log out</a></li>
-          <li><a href="{{ url_for('orders') }}" class="waves-effect waves-light btn">Book Now</a></li>
+          <li><a class="{% if active == 'login' %}active{% endif %}" href="{{ url_for('logout') }}" title="Log-out">Log out</a></li>
+          <li><a href="{{ url_for('orders') }}" class="waves-effect waves-light btn" title="Orders">Book Now</a></li>
           {% else %}
-          <li><a class="{% if active == 'login' %}active{% endif %}" href="{{ url_for('login') }}">Login/Register</a>
+          <li><a class="{% if active == 'login' %}active{% endif %}" href="{{ url_for('login') }}" title="Login">Login/Register</a>
           </li>
-          <li><a href="{{ url_for('login') }}" class="waves-effect waves-light btn">Book Now</a></li>
+          <li><a href="{{ url_for('login') }}" class="waves-effect waves-light btn" title="Login">Book Now</a></li>
           {% endif %}
         </ul>
       </div>
@@ -47,15 +47,15 @@
 
     <!-- sidenav -->
     <ul class="sidenav" id="mobile-demo">
-      <li><a href="{{ url_for('home') }}">Home</a></li>
-      <li><a href="{{ url_for('services') }}">Services</a></li>
-      <li><a href="{{ url_for('home') }}#contact">Contact</a></li>
+      <li><a href="{{ url_for('home') }}" title="Home">Home</a></li>
+      <li><a href="{{ url_for('services') }}" title="Services">Services</a></li>
+      <li><a href="{{ url_for('home') }}#contact" title="Contact">Contact</a></li>
       {% if session['user_login'] %}
-      <li><a href="{{ url_for('logout') }}">Log out </a></li>
-      <li><a href="{{ url_for('orders') }}">Book Now</a></li>
+      <li><a href="{{ url_for('logout') }}" title="Logout">Log out </a></li>
+      <li><a href="{{ url_for('orders') }}" title="Orders">Book Now</a></li>
       {% else %}
-      <li><a href="{{ url_for('login') }}">Login/Register </a></li>
-      <li><a href="{{ url_for('login') }}">Book Now</a></li>
+      <li><a href="{{ url_for('login') }}" title="Login">Login/Register </a></li>
+      <li><a href="{{ url_for('login') }}" title="Login">Book Now</a></li>
       {% endif %}
     </ul>
 
@@ -79,8 +79,8 @@
     <div class="container">
       <div class="row">
         <div class="col l6 s12 center-align">
-          <a href="{{ url_for('home') }}" class="brand-logo">
-            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo" style="width: 100%;">
+          <a href="{{ url_for('home') }}" class="brand-logo" title="Logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="footer-logo" style="width: 100%;">
           </a>
           <p class="grey-text text-lighten-4">Benni Auto Services is your premier destination for comprehensive
             automotive solutions.
@@ -90,28 +90,28 @@
         <div class="col l4 offset-l2 s12 center-align">
           <h4 class="brown-text text-darken-4"><strong>Links</strong></h4>
           <ul>
-            <li><a href="{{ url_for('home') }}" class="grey-text text-lighten-3 large">
+            <li><a href="{{ url_for('home') }}" class="grey-text text-lighten-3 large" title="Home">
                 <h6>Home</h6>
               </a></li>
-            <li><a href="{{ url_for('services') }}" class="grey-text text-lighten-3">
+            <li><a href="{{ url_for('services') }}" class="grey-text text-lighten-3" title="Services">
                 <h6>Services</h6>
               </a></li>
-            <li><a href="{{ url_for('home') }}#contact" class="grey-text text-lighten-3">
+            <li><a href="{{ url_for('home') }}#contact" class="grey-text text-lighten-3" title="Contact">
                 <h6>Contact</h6>
               </a></li>
-            <li><a href="{{ url_for('reviews') }}" class="grey-text text-lighten-3">
+            <li><a href="{{ url_for('reviews') }}" class="grey-text text-lighten-3" title="Reviews">
                 <h6>Reviews</h6>
               </a></li>
             {% if session['user_login'] %}
-            <li><a href="{{ url_for('logout') }}" class="grey-text text-lighten-3">
+            <li><a href="{{ url_for('logout') }}" class="grey-text text-lighten-3" title="Logout">
                 <h6>Log out</h6>
               </a></li>
-            <li><a href="{{ url_for('orders') }}" class="btn teal lighten-1" style="margin-top: 5px;">Book Now</a></li>
+            <li><a href="{{ url_for('orders') }}" class="btn teal lighten-1" style="margin-top: 5px;" title="Orders">Book Now</a></li>
             {% else %}
-            <li><a href="{{ url_for('login') }}" class="grey-text text-lighten-3">
+            <li><a href="{{ url_for('login') }}" class="grey-text text-lighten-3" title="Login">
                 <h6>Login/Register</h6>
               </a></li>
-            <li><a href="{{ url_for('login') }}" class="btn teal lighten-1" style="margin-top: 5px;">Book Now</a></li>
+            <li><a href="{{ url_for('login') }}" class="btn teal lighten-1" style="margin-top: 5px;" title="Login">Book Now</a></li>
             {% endif %}
           </ul>
         </div>

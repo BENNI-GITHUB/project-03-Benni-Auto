@@ -23,37 +23,26 @@
 I checked the CSS file using [W3C CSS Markup Validation Service](https://jigsaw.w3.org/css-validator/)
 
 Unfortunately, it returned 1 error:
-+ the error is related to materializecss and due to I used CDN link, I caanot access to that.
++ the error relates to materializecss and due to I used CDN link, I cannot access to that.
 
-![css validator results](documentation/validator-css.PNG)
-
-All the errors were in relation to the ```backdrop-filter: blur``` property that it claims doesn't exist. However, according to [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter) this is a valid property. 
-
-There are some compatbilty issues with Firefox which I've documented in the [manual testing section](#manually-testing-functionality). 
+![css validator results](documentation/Testing/validator-css-a.png)
+![css validator results](documentation/Testing/validator-css-b.png)
 
 Other than that, any other warnings were related to the vendor prefixes. 
 
 ### **JavaScript**
 
-I checked the script.js file using [JSHint](https://jshint.com/)
-
-The only issues coming back from JS Validator were two unused functions:
-
-![js validator results](documentation/validator-js.PNG)
-
-However, both of these functions are called throughout the site:
-
-![js validator results](documentation/validator-js-02.PNG)
-
-![js validator results](documentation/validator-js-03.PNG)
-
-### **Python**
-I checked the app.py file using [PEP8 online](http://pep8online.com/)
-
-The code passed all checks.
+I checked the js files using [JSHint](https://jshint.com/)
+There is no error in all js files.  
 
 ---
----
+## Lighthouse Testing
+
+After getting the bulk of the site in place, I ran it through Chrome Lighthouse. The initial scores were a bit low:
+
+![initial lighthouse score](documentation/Testing/Lighthouse-a.png)
+
+By the feed back given , I made a few changes to the code to raise the scores:
 
 ### **Performance**
 
@@ -61,20 +50,10 @@ The code passed all checks.
 
 ### **Accessibility**
 
-+ Footer h4 changed to h1
 + Add alt tags to all images
 + Add title to all links
-+ Place side nav header into li
 
-### **Best Practices**
-+ Add ```rel="nopener"``` to all external links
-
-### **SEO**
-+ Add meta description
-
-All of these changes helped bring the final score up nicely. While I would have like a higher performance score(preferably in the green) but overall, I'm happy with the progress. 
-
-![final lighthouse score](documentation/lighthouse-d-score-02.PNG)
+![final lighthouse score](documentation/Testing/Lighthouse-b.png)
 
 ---
 ---
@@ -369,293 +348,263 @@ To respect the users rights, Admin cannot change or delete any reviews and Admin
 |:-------------         |:------------- |:-----|:-----|
 | **NavBar**            |               |      |
 |Logo                   |Click|Redirect to home         |Pass|
-|Recipes Link           |Click|Redirect to all recipes  |Pass|
-|Collections Dropdown   |Click|Open collections dropdown|Pass|
-|Collection page link   |Click|Redirect to collection page|Pass|
-|Manage Collections link|Click|Redirect to all_collections page|Pass|
-|                       |     |(Only visible if admin in session)|Pass|
-|Register Link          |Click|Redirect to register page|Pass|
+|Home Link              |Click|Redirect to home         |Pass|
+|Book Now Link          |Click|Redirect to all Orders  |Pass|
+|                       |     |(Not Applicable if user not in session)  |Pass|
+|Book Now Link          |Click|Redirect to Log in page  |Pass|
+|                       |     |(if user not in session)  |Pass|
+|Services page link     |Click|Redirect to Service page|Pass|
+|Login/Register Link    |Click|Redirect to Login page|Pass|
 |                       |     |(Not visible if user in session)  |Pass|
-|Log In Link            |Click|Redirect to log in page  |Pass|
-|                       |     |(Not visible if user in session)  |Pass|
-|Log Out Link           |Click|Log user out of account  |Pass|
-|                       |Click|Redirect to log in page  |Pass|
-|                       |     |(Only visible if user in session)  |Pass|
-|Account Link            |Click|Redirect to account page|Pass|
-|                       |     |(Only visible if user in session)  |Pass|
-|Manage Collections Link|Click|Redirect to manage collections page|Pass|
-|                       |     |(Only visible if admin in session) |Pass|
-| **SideNav**           |       |    |
+|Log Out Link           |Click|Log user out of account an Redirect to Home page  |Pass|
+|                       |     |(visible if user in session)  |Pass|
+|Contact Link           |Click|Redirect to Contact section in Home page|Pass|
+| **SideNav**           |     |                         |    |
 |Hamburger Icon         |Click|Open Sidenav             |Pass|
-|Recipes Link           |Click|Redirect to all recipes  |Pass|
-|Collections Dropdown   |Click|Open collections dropdown|Pass|
-|Collection page link   |Click|Redirect to collection page|Pass|
-|Manage Collections link|Click|Redirect to all_collections page|Pass|
-|                       |     |(Only visible if admin in session)|Pass|
-|Register Link          |Click|Redirect to register page|Pass|
+|Home Link              |Click|Redirect to home         |Pass|
+|Book Now Link          |Click|Redirect to all Orders  |Pass|
+|                       |     |(Not Applicable if user not in session)  |Pass|
+|Book Now Link          |Click|Redirect to Log in page  |Pass|
+|                       |     |(if user not in session)  |Pass|
+|Services page link     |Click|Redirect to Service page|Pass|
+|Login/Register Link    |Click|Redirect to Login page|Pass|
 |                       |     |(Not visible if user in session)  |Pass|
-|Log In Link            |Click|Redirect to log in page  |Pass|
-|                       |     |(Not visible if user in session)  |Pass|
-|Log Out Link           |Click|Log user out of account  |Pass|
-|                       |Click|Redirect to log in page  |Pass|
-|                       |     |(Only visible if user in session)  |Pass|
-|Account Link            |Click|Redirect to account page|Pass|
-|                       |     |(Only visible if user in session)  |Pass|
-|Manage Collections Link|Click|Redirect to manage collections page|Pass|
-|                       |     |(Only visible if admin in session) |Pass|
+|Log Out Link           |Click|Log user out of account an Redirect to Home page  |Pass|
+|                       |     |(visible if user in session)  |Pass|
+|Contact Link           |Click|Redirect to Contact section in Home page|Pass|
 | **Footer**            |     |     |
-|Facebook Link          |Click|Open on external page    |Pass|
-|Instagram Link         |Click|Open on external page    |Pass|
-|Twitter Link           |Click|Open on external page    |Pass|
-|TikTok Link            |Click|Open on external page    |Pass|
+|Logo                   |Click|Redirect to home         |Pass|
+|Home Link              |Click|Redirect to home         |Pass|
+|Book Now Link          |Click|Redirect to all Orders  |Pass|
+|                       |     |(Not Applicable if user not in session)  |Pass|
+|Book Now Link          |Click|Redirect to Log in page  |Pass|
+|                       |     |(if user not in session)  |Pass|
+|Services page link     |Click|Redirect to Service page|Pass|
+|Login/Register Link    |Click|Redirect to Login page|Pass|
+|                       |     |(Not visible if user in session)  |Pass|
+|Log Out Link           |Click|Log user out of account an Redirect to Home page  |Pass|
+|                       |     |(visible if user in session)  |Pass|
+|Contact Link           |Click|Redirect to Contact section in Home page|Pass|
+|Reviews Link           |Click|Redirect to Reviews Page |Pass|
 
 ---
-### **index.html**
+### **home.html**
 | Element               | Action            | Expected Result           | Pass/Fail  |
 |:-------------         |:-------------     |:-----                     |:-----|
-| **Carousel**          |                   |                           |    |
-|Whole Carousel         |Horizontal scroll  |Scroll through collections |Pass|
-|Classics Link          |Click              |Redirect to Classics page  |Pass|
-|Elegance Link          |Click              |Redirect to Elegance page  |Pass|
-|Fruity Link            |Click              |Redirect to Fruity page    |Pass|
-|Hot Drinks Link        |Click              |Redirect to Hot Drinks page|Pass|
-|Mocktails Link         |Click              |Redirect to Mocktails page |Pass|
-|Pitchers Link          |Click              |Redirect to Pitchers page  |Pass|
-|Shots Link             |Click              |Redirect to Shots page     |Pass|
-|Register Link          |Click              |Redirect to register page  |Pass|
-|Log In Link            |Click              |Redirect to log in page    |Pass|
+| **Contact**           |                   |                           |    |
+|Location/Map Link      |Click              |Redirect to the location in google Map|Pass|
+|Email 1 Link           |Click              |Open Send email app        |Pass|
+|Email 2 Link           |Click              |Open Send email app        |Pass|
+|Phone Link             |Click              |redirect to call app       |Pass|
 | **Inline Links**      |                   |                           |    |
-|Sign Up link           |Click              |Redirect to Register Page  |Pass|
-|Sign In link           |Click              |Redirect to Login page     |Pass|
-|'Join us...'           |Click              |Redirect to recipes page   |Pass|
-
+|Our Services link      |Click              |Redirect to Services Page  |Pass|
+|Reviews link           |Click              |Redirect to Reviews page     |Pass|
+|See all reviews link   |Click              |Redirect to Reviews page     |Pass|
+|+ link in services     |Click              |Redirect to Book an appointment page   |Pass|
+|                       |   |(if user in session)  |Pass|
+|+ link in services     |Click              |Redirect to Login page   |Pass|
+|                       |     |(if user not in session)  |Pass|
 ---
 
-### **account.html**
-
-| Element                   | Action            | Expected Result                   | Pass/Fail  |
-|:-------------             |:-------------     |:-----                             |:-----|
-| **Upload Btn**            |                   |                                   |    |
-|Upload Button              |Click              |Redirect to recipe upload page     |Pass|
-| **Recipe Card**           |                   |                                   |    |
-|Recipe Card                |Hover/click        |Reveal recipe action buttons       |Pass|
-|Full recipe btn            |Click              |Redirect to full recipe            |Pass|
-|Edit recipe btn            |Click              |Redirect to edit recipe page       |Pass|
-|Delete recipe btn          |Click              |Open delete confirmation modal     |Pass|
-|Delete modal - delete btn  |Click              |Delete selected recipe             |Pass|
-|                           |                   |Redirect to account page           |Pass|
-|                           |                   |'Recipe deleted' confirmation message  |Pass|
-|Delete modal - cancel btn  |Click              |Close modal with no change made    |Pass|
-| **Pagination**            |                   |                                   |    |
-|<< btn                     |Click              |Reveal 'previous' recipes          |Pass|
-|Pagination number          |Click              |Specific recipes page number       |Pass|
-|>> btn                     |Click              |Reveal 'next' recipes              |Pass|
-| **Scroll to top btn**     |                   |                                   |    |
-|(Mobile only) btn          |Click              |Scroll to top of page              |Pass|
-
----
-### add_recipe.html
-
-| Element                   | Action            | Expected Result                   | Pass/Fail  |
-|:-------------             |:-------------     |:-----                             |:-----|
-| **Form**                  |                   |                                   |    |
-|Choose Collection dropdown |Click              |Reveal collection options          |Pass|
-|Text input fields          |Type into          |Text appears, line highlights green|Pass|
-|Text input fields          |Leave blank        |Line highlights red                |Pass|
-|Text input fields          |Just input whitespace  |Line highlights red            |Pass|
-|Tooltips                   |Hover/click        |Reveal notes/instructions          |Pass|
-|Add ingredient btn         |Click              |Generate new input field           |Pass|
-|Delete ingredient btn      |Click              |Delete new input field             |Pass|
-|Add method step btn        |Click              |Generate new method step field     |Pass|
-|Delete method step btn     |Click              |Delete new method step field       |Pass|
-|Add recipe btn(all fields correct)|Click       |Recipe uploads to database         |Pass|
-|                           |                   |Redirect to account page           |Pass|
-|                           |                   |"Recipe Uploaded!" confirmation message  |Pass|
-|Add recipe btn(some incorrect fields)|Click    |Page scrolls to incorrect fields   |Pass|
-
----
-### **edit_recipe.html**
-
-| Element                   | Action            | Expected Result                   | Pass/Fail  |
-|:-------------             |:-------------     |:-----                             |:-----|
-| **Form**                  |                   |                                   |    |
-|All fields                 |On page open       |Pre-populated with previous inputs |Pass|
-|Choose Collection dropdown |Click              |Reveal collection options          |Pass|
-|Text input fields          |Type into          |Text appears, line highlights green|Pass|
-|Text input fields          |Leave blank        |Line highlights red                |Pass|
-|Text input fields          |Just input whitespace  |Line highlights red            |Pass|
-|Tooltips                   |Hover/click        |Reveal notes/instructions          |Pass|
-|Add ingredient btn         |Click              |Generate new input field           |Pass|
-|Delete ingredient btn      |Click              |Delete new input field             |Pass|
-|Add method step btn        |Click              |Generate new method step field     |Pass|
-|Delete method step btn     |Click              |Delete new method step field       |Pass|
-|Update btn(all fields correct)|Click           |Recipe updates on database         |Pass|
-|                           |                   |Redirect to account page           |Pass|
-|                           |                   |"Recipe Edited!" confirmation message  |Pass|
-|Update btn(some incorrect fields)|Click        |Page scrolls to incorrect fields   |Pass|
-|Cancel btn                 |Click              |No changes made to recipe          |Pass|
-|                           |                   |Redirect to account page           |Pass|
-
----
-### **full_recipe.html**
-
-| Element                   | Action            | Expected Result                   | Pass/Fail  |
-|:-------------             |:-------------     |:-----                             |:-----|
-|Back to recipes btn        |Click              |Redirect to previous page          |Pass|
-|Recipe image               |On page open       |Recipe image displayed properly    |Pass|
-|Recipe ingredients list    |On page open       |Recipe ingredients list displayed properly |Pass|
-|Recipe method list         |On page open       |Recipe method list displayed properly  |Pass|
-
----
 ### **login.html**
 
 | Element                   | Action            | Expected Result                   | Pass/Fail  |
 |:-------------             |:-------------     |:-----                             |:-----|
-|**Form**                   |Click              |Redirect to previous page          |Pass|
+|**Form**                   |                   |                                   |    |
 |Username                   |Text input         |Text displayed to user             |Pass|
-|Password                   |Text input         |Password hidden to user            |Pass|
-|Submit btn (fields correct)|Click              |Redirect to account page           |Pass|
-|Submit btn (fields incorrect)|Click            |Reload log in page                 |Pass|
+|Password                   |Text input         |Password is hidden to user         |Pass|
+|Show password icon         |Click              |Password is unveiled to user       |Pass|
+|Login btn (fields correct) |Click              |Redirect to Home page              |Pass|
+|Login btn (fields incorrect)|Click             |Reload login page                   |Pass|
+|                           |             |Flush the error messages                  |Pass|
+|Login btn(Username is not Found)|Click         |Reload register page, error message to user    |Pass|
+|Login btn(Password  is not correct)|Click    |Reload register page, error message to user    |Pass|
 |**Redirect Link**          |                   |                                   |    |
-|'Register here' link       |Click              |Redirect to registration page      |Pass|
-
+|'Register Now' link        |Click              |Redirect to Register page      |Pass|
 ---
-### **recipes.html**
 
-| Element                   | Action            | Expected Result                   | Pass/Fail  |
-|:-------------             |:-------------     |:-----                             |:-----|
-|**Search**                 |                   |                                   |    |
-|Text input                 |Text input         |Text displayed to user             |Pass|
-|Clear btn                  |Click              |Clear searches, show all recipes   |Pass|
-|Search btn (with results)  |Click              |Display matched to user            |Pass|
-|Search btn (no results)    |Click              |'No Results Found' message         |Pass|
-|**'No Results Found' links**|                  |                                   |    |
-|Account log in link        |Click              |Redirect to log in page            |Pass|
-|Register account link      |Click              |redirect to registration page      |Pass|
-| **Recipe Card**           |                   |                                   |    |
-|Recipe Card                |Hover/click        |Reveal recipe action buttons       |Pass|
-|Full recipe btn            |Click              |Redirect to full recipe            |Pass|
-| **Pagination**            |                   |                                   |    |
-|<< btn                     |Click              |Reveal 'previous' recipes          |Pass|
-|Pagination number          |Click              |Specific recipes page number       |Pass|
-|>> btn                     |Click              |Reveal 'next' recipes              |Pass|
-| **Scroll to top btn**     |                   |                                   |    |
-|(Mobile only) btn          |Click              |Scroll to top of page              |Pass|
-
-
----
 ### **register.html**
-
 | Element                   | Action            | Expected Result                   | Pass/Fail  |
 |:-------------             |:-------------     |:-----                             |:-----|
 |**Form**                   |Click              |Redirect to previous page          |Pass|
+|Text input fields          |Type into          |Text appears, line highlights green|Pass|
+|Text input fields          |Leave blank        |Line highlights red                |Pass|
+|Gender Options             |click and choose   |Gender selected                    |Pass|
+|Email input                |Text input         |Email displayed to user            |Pass|
 |Username                   |Text input         |Text displayed to user             |Pass|
 |Password                   |Text input         |Password hidden to user            |Pass|
-|**Submit btn**             |                   |                                   |    |
+|Password                   |Text input         |Confirmed Password hidden to user  |Pass|
+|**Register btn**             |                   |                                   |    |
 |Fields correct             |Click              |New user added to database         |Pass|
-|                           |                   |Redirect to account page           |Pass|
+|                           |                   |Redirect to Login page with greeting message |Pass|
 |Fields incorrect format    |Click              |Fields highlighted red, user prompted to change format |Pass|
-|Username already in use    |Click              |Reload register page, error message to user    |Pass|
-|**Redirect Link**          ||||
-|'Log in here' link         |Click              |Redirect to log in page            |Pass|
-
----
-### **Collections pages**
-*All collections pages have identical functionality so all the below test apply to each collection page:*
-
-| Element                   | Action            | Expected Result                   | Pass/Fail  |
-|:-------------             |:-------------     |:-----                             |:-----|
-|Recipe Card                |On page load       |Only display recipes in that category|Pass|
-|Recipe Card                |Hover/click        |Reveal recipe action buttons       |Pass|
-|Full recipe btn            |Click              |Redirect to full recipe            |Pass|
-| **Pagination**            |                   |                                   |    |
-|<< btn                     |Click              |Reveal 'previous' recipes          |Pass|
-|Pagination number          |Click              |Specific recipes page number       |Pass|
-|>> btn                     |Click              |Reveal 'next' recipes              |Pass|
-| **Scroll to top btn**     |                   |                                   |    |
-|(Mobile only) btn          |Click              |Scroll to top of page              |Pass|
-|**If nothing in collection**|                  |                                   |    |
-|User message               |On page load       |Message informs user that there's no recipes in collection|Pass|
-|Log in link                |On page load       |Redirect to log in page            |Pass|
-|Register link              |On page load       |Redirect to registration page      |Pass|
-
+|Email already in use       |Click              |Reload register page, error message for email to user    |Pass|
+|Username already in use    |Click              |Reload register page, error message for username to user    |Pass|
+|Passwords are not same     |Click              |Reload register page, error message password to user    |Pass|
+|**Reset btn**             |                   |                                   |    |
+|Reset Button              |Click              |All data cleared         |Pass|
 ---
 
-### **all_collections.html**
-
+### **Services page**
 | Element                   | Action            | Expected Result                   | Pass/Fail  |
 |:-------------             |:-------------     |:-----                             |:-----|
-| **Upload Btn**            |                   |                                   |    |
-|Upload Button              |Click              |Redirect to collection upload page |Pass|
-| **Collection Card**       |                   |                                   |    |
-|Collection Card            |Hover/click        |Reveal recipe action buttons       |Pass|
-|Edit collection btn        |Click              |Redirect to edit collection page   |Pass|
-|Delete collection btn      |Click              |Open delete confirmation modal     |Pass|
-|Delete modal - delete btn  |Click              |Delete selected collection         |Pass|
-|                           |                   |Redirect to all_collections page   |Pass|
-|                           |                   |'Collection deleted' confirmation message|Pass|
+|Service Card               |On page load       |display Service Cards              |Pass|
+|Book Now btn              |Click              |Redirect to Book an appointment page|Pass|
+|                       |   |(if user in session)  |Pass|
+|Book Now btn              |Click              |Redirect to Login page   |Pass|
+|                       |     |(if user not in session)  |Pass|
+|ADD A NEW SERVICE btn     |Click              |Redirect to add_service page   |Pass|
+|                       |     |(Visible/Applicable if Admin in session)  |Pass|
+|Edit btn                  |Click              |Redirect to edit_service page   |Pass|
+|                       |     |(Visible/Applicable if Admin in session)  |Pass|
+|Delete btn                |Click              |Open Delete Modal Window   |Pass|
+|                       |     |(Visible/Applicable if Admin in session)  |Pass|
+|Delete modal - delete btn  |Click              |Delete selected Service         |Pass|
+|                           |                   |Redirect to Services page   |Pass|
+|                       |     |(Visible/Applicable if Admin in session)  |Pass|
 |Delete modal - cancel btn  |Click              |Close modal with no change made    |Pass|
-| **Pagination**            |                   |                                   |    |
-|<< btn                     |Click              |Reveal 'previous' recipes          |Pass|
-|Pagination number          |Click              |Specific recipes page number       |Pass|
-|>> btn                     |Click              |Reveal 'next' recipes              |Pass|
-| **Scroll to top btn**     |                   |                                   |    |
-|(Mobile only) btn          |Click              |Scroll to top of page              |Pass|
+|                       |     |(Visible/Applicable if Admin in session)  |Pass|
+---
 
-
-### add_collection.html
-
+### add_service.html
+*Applicable if Admin in session*
 | Element                   | Action            | Expected Result                   | Pass/Fail  |
 |:-------------             |:-------------     |:-----                             |:-----|
 | **Form**                  |                   |                                   |    |
 |Text input fields          |Type into          |Text appears, line highlights green|Pass|
 |Text input fields          |Leave blank        |Line highlights red                |Pass|
-|Text input fields          |Just input whitespace  |Line highlights red            |Pass|
-|Tooltips                   |Hover/click        |Reveal notes/instructions          |Pass|
-|Add collection btn(all fields correct)|Click   |Collection uploads to database     |Pass|
-|                           |                   |Redirect to all_collections page   |Pass|
-|                           |                   |"New Collection Added!" confirmation message|Pass|
-|Add collection btn(some incorrect fields)|Click|Page scrolls to incorrect fields   |Pass|
+|Add Service btn (some incorrect fields)|Click   |Page shows incorrect fields   |Pass|
+|Add Service btn (correct fields)|Click   |New Service added and redirect to services page   |Pass|
 
 ---
-### **edit_collection.html**
+### **edit_service.html**
+*Applicable if Admin in session*
+| Element                   | Action            | Expected Result                   | Pass/Fail  |
+|:-------------             |:-------------     |:-----                             |:-----|
+| **Form**                  |                   |                                   |    |
+|All fields                 |On page open       |Pre-populated with previous inputs |Pass|
+|Text input fields          |Type into          |Text appears, line highlights green|Pass|
+|Text input fields          |Leave blank        |Line highlights red                |Pass|
+|Edit btn(all fields correct)|Click           |Service edits on database         |Pass|
+|                           |                   |Redirect to Service page           |Pass|
+|Edit btn(some incorrect fields)|Click        |Page shows the incorrect fields   |Pass|
+|Cancel btn                 |Click              |No changes made to recipe          |Pass|
+|                           |                   |Redirect to Service page           |Pass|
+---
+
+### **orders.html**
+*Applicable if User in session*
+| Element                   | Action            | Expected Result                   | Pass/Fail  |
+|:-------------             |:-------------     |:-----                             |:-----|
+|**Add A New Order**|                  |                                   |    |
+|"BOOK A NEW APPOINTMENT" btn |Click              |Redirect to add_order page       |Pass|
+|**Orders**                 |                   |                                   |    |
+|Order rows                 |Click              |Orders expand and show details     |Pass|
+|                       |     |(if any order submitted before)  |Pass|
+|Expanded order             |Click              |close the expanded part            |Pass|
+|Another Order row when an order is expanded |Click |close the expanded order and expand the new clicked row |Pass|
+|Edit Order btn             |Click              |Redirect to edit_order page        |Pass|
+|Cancel Order btn           |Click              |Redirect to cancel_order page      |Pass|
+|Delete Order btn           |Click              |Open Delete Modal Window   |Pass|
+|                       |     |(Visible/Applicable if Admin in session)  |Pass|
+|Delete modal - Delete btn  |Click              |Delete selected order         |Pass|
+|                           |                   |Redirect to orders page   |Pass|
+|                       |     |(Visible/Applicable if Admin in session)  |Pass|
+|Delete modal - cancel btn  |Click              |Close modal with no change made    |Pass|
+|                       |     |(Visible/Applicable if Admin in session)  |Pass|
+---
+
+### add_order.html
+*Applicable if User in session*
+| Element                   | Action            | Expected Result                   | Pass/Fail  |
+|:-------------             |:-------------     |:-----                             |:-----|
+| **Form**                  |                   |                                   |    |
+|Username                   |check              |Show the correct username          |Pass|
+|Text input fields          |Type into          |Text appears, line highlights green|Pass|
+|Text input fields          |Leave blank        |Line highlights red                |Pass|
+|Service category option    |Click and select   |service category selected          |Pass|
+|Car Brand Option           |Click and select   |Car Brand selected                 |Pass|
+|Request Date input         |Click              |the calender is pop up             |Pass|
+|Calender - Choose date     |Click              |Select the date within the workdays|Pass|
+|Calender - Select btn      |Click              |Date selected and calender closed  |Pass|
+|Calender - Cancel btn      |Click              |Calender closed without selecting the date|Pass|
+|Toggle icon for Need Recovery|Click            |need recovery switched on and two more rows added to form|Pass|
+|Text input fields          |Leave blank        |Line highlights red                |Pass|
+|BOOK APPOINTMENT btn(all fields correct)|Click |New order adds to orders     |Pass|
+|                           |                   |Redirect to orders page   |Pass|
+|Add collection btn(some incorrect fields)|Click|Page shows the incorrect fields   |Pass|
+
+---
+### **edit_order.html**
 
 | Element                   | Action            | Expected Result                   | Pass/Fail  |
 |:-------------             |:-------------     |:-----                             |:-----|
 | **Form**                  |                   |                                   |    |
 |All fields                 |On page open       |Pre-populated with previous inputs |Pass|
-|Collection name input field|On click           |User unable to edit                |Pass|
 |Text input fields          |Type into          |Text appears, line highlights green|Pass|
 |Text input fields          |Leave blank        |Line highlights red                |Pass|
-|Text input fields          |Just input whitespace  |Line highlights red            |Pass|
-|Tooltips                   |Hover/click        |Reveal notes/instructions          |Pass|
-|Update btn(all fields correct)|Click           |Collection updates in database     |Pass|
-|                           |                   |Redirect to all_collections page   |Pass|
-|                           |                   |"Collection Updated!" confirmation message  |Pass|
-|Update btn(some incorrect fields)|Click        |Page scrolls to incorrect fields   |Pass|
+|Confirm Change btn(all fields correct)|Click           |Order updates in database     |Pass|
+|                           |                   |Redirect to orders page   |Pass|
+|Update btn(some incorrect fields)|Click        |Page shows the incorrect fields   |Pass|
 |Cancel btn                 |Click              |No changes made to collection      |Pass|
-|                           |                   |Redirect to all_collections page   |Pass|
+|                           |                   |Redirect to orders page   |Pass|
 
 ---
-### **Error pages**
 
-*All error pages have identical functionality so all the below test apply to each error page:*
+### **cancel_order.html**
 
 | Element                   | Action            | Expected Result                   | Pass/Fail  |
 |:-------------             |:-------------     |:-----                             |:-----|
-|Home btn                   |Click              |Redirect to home page              |Pass|
+| **Form**                  |                   |                                   |    |
+|Text input field           |Type into          |Text appears, line highlights green|Pass|
+|Text input field           |Leave blank        |Line highlights red                |Pass|
+|CANCEL ORDER btn(field correct)|Click     |Order cancels in database     |Pass|
+|                           |                   |Redirect to orders page with canceled badge on order  |Pass|
+|CANCEL ORDER btn(incorrect field)|Click  |Page shows the incorrect field   |Pass|
 
 ---
+
+### **Reviews page**
+| Element                   | Action            | Expected Result                   | Pass/Fail  |
+|:-------------             |:-------------     |:-----                             |:-----|
+|Login Link                 |Click             |Redirect to Login page              |Pass|
+|                       |   |(Visible/Applicable if user not in session)  |Pass|
+|LEAVE A REVIEW btn         |Click              |Redirect to add_service page   |Pass|
+|                       |     |(Visible/Applicable if User in session)  |Pass|
+|Reviews rows               |On page load       |display All the reviews    |Pass|
+|DELETE COMMENT btn         |Click              |Open Delete Modal Window   |Pass|
+|                       |     |(Visible/Applicable if Owner of review in session)  |Pass|
+|Delete modal - delete btn  |Click              |Delete selected Review         |Pass|
+|                           |                   |Redirect to Reviews page   |Pass|
+|                       |     |(Visible/Applicable if Owner of review in session)  |Pass|
+|Delete modal - cancel btn  |Click              |Close modal with no change made    |Pass|
+|                       |     |(Visible/Applicable if Owner of review in session)  |Pass|
 ---
+
+### add_review.html
+*Applicable if User in session*
+| Element                   | Action            | Expected Result                   | Pass/Fail  |
+|:-------------             |:-------------     |:-----                             |:-----|
+| **Form**                  |                   |                                   |    |
+|Username                   |check              |Show the correct username          |Pass|
+|Service category option    |Click and select   |service category selected          |Pass|
+|Text input fields          |Type into          |Text appears, line highlights green|Pass|
+|Text input fields          |Leave blank        |Line highlights red                |Pass|
+|Star Rating                |Hover/click        |Starts colored                 |Pass|
+|ADD REVIEW btn (some incorrect fields)|Click   |Page shows incorrect fields   |Pass|
+|ADD REVIEW btn (correct fields)|Click   |New Review added and redirect to Review page   |Pass|
+
+---
+
 ## Responsive Testing
 Through devices that I have at home/readily available to me, I was able to continuously test on:
 ### Phone:
-+ Samsung Galaxy S9
++ Samsung Galaxy S23 Ultra
   + Google Chrome
   + Samsung Internet
-+ Huawei Y7
++ Google Pixel-8
   + Google Chrome
-+ iPhone 6
++ IPhone 15 Pro MAx
   + Safari
 ### Tablet
 + iPad Mini 7.9"
@@ -663,7 +612,7 @@ Through devices that I have at home/readily available to me, I was able to conti
 + iPad 9.7"
   + Safari
 ### Computer
-* Avita Pura 14" Laptop
+* Microsoft Surface Laptop 15"
   * Google Chrome
   * Microsoft Edge
   * Opera
@@ -673,255 +622,3 @@ Through devices that I have at home/readily available to me, I was able to conti
 
 ---
 ---
-## Bugs and Fixes
-
-### **Carousel Text**
-
-I used the Materialize Carousel for the home page and wanted to have the information collection name text appear over the image. However, no matter what CSS I tried to manipulate it, the text remained below the image:
-
-![carousel bug](documentation/bugs/carousel-bug.PNG)
-![carousel bug](documentation/bugs/carousel-code.PNG)
-
-On their site, Materialize have another type of carousel that allows for this but I prefer the look of this - the 3d style rotation, in my opinion, looked a lot better for this project. 
-
-I had to experiment ALOT with this but found that the below code worked great for this: 
-
-![carousel bug](documentation/bugs/carousel-code-fix-01.PNG)
-
-The above HTML with some CSS tricks helped place the text nicely over the image:
-
-![carousel bug](documentation/bugs/carousel-fix.PNG)
-
-Once I had the placement figured, I wanted to experiment further and try to create the carousel dynamically for each drinks collection. While the image and text for each element was easy enough to work through, the anchor URL proved to be tricky. I tried a couple of things and ended up with varying results: 
-
-```<a class="carousel-item" href="{{ url_for(category.category_name) }}">```
-+ This threw and error because the category name was capitalized
-
-```<a class="carousel-item" href="{{ url_for(category.category_name).lower() }}">```
-+ Worked for some of the categories but a couple of them have more than one word titles so threw another error.
-
-In the end, I created a ```key:value``` pair in MongoDB: the key was called ```page_url``` and the value matched the name of the html page to be redirected to. I was able to pull that in the HTML code:
-
-![carousel bug](documentation/bugs/carousel-code-fix-02.PNG)
-
-I have since changed how the collections pages are created - they are now dynamically created so the ```page_url``` is no longer needed.
-
----
-### **Card Overlaying**
-
-![card overlay bug](documentation/bugs/bug-01.PNG)
-
-When initially putting together the card layout, I was having an issue where the recipe card was layering on top of the previous one rather than generating it's own card
-
-![card overlay bug](documentation/bugs/bug-01-code.PNG)
-
-After a bit of experimenting, I moved the entire card div into the for loop and managed to sort this issue. 
-
-![card overlay bug](documentation/bugs/bug-01-code-fix.PNG)
-
----
-### **TypeError - length vs count()**
-
-I followed the CI task manager project for the initial stages of this project. Most things translated well except the ```length``` property. When called, it would cause a TypeError.
-
-![TypeError](documentation/bugs/bug-02.PNG)
-
-![TypeError](documentation/bugs/bug-02-code-2.PNG)
-
-![TypeError](documentation/bugs/bug-02-code.PNG)
-
-I did a lot of research on this and while there were a few different fixes, the one that worked best for this project was to change the ```recipes``` variable from a list and use the ```count()``` function instead.
-
-![TypeError](documentation/bugs/bug-02-code-fix-2.PNG)
-
-![TypeError](documentation/bugs/bug-02-code-fix.PNG)
-
----
-
-### **Side Nav Dropdown**
-
-When using the Materialize navigation bar dropdown, the side nav dropdown on mobile was covering the content below, rather than pushing the content down. 
-
-![Dropdown bug](documentation/bugs/bug-03.PNG)
-
-I believe this is expected behaviour but from a UX standpoint, I wasn't happy with this on mobile.
-As a result, I decided that it would be a better idea to use a Materialize collapsible on the side-nav instead. This allows the sub-menu to reposition all of the other elements rather than them being covered. 
-
----
-### **Hover on Mobile**
-
-I added ```hover:true``` to the dropdown menu which worked fine on desktop. But with mobile, it was causing a massive glitch - when you would click the dropdown menu, it would appear for a split second and disappear. 
-
-![Hover bug](documentation/bugs/bug-04-code.PNG)
-
-I tried removing the ```inDuration``` and ```outDuration``` but it was still happening. I decided to remove the ```hover``` option altogether and this fixed the issue. 
-
----
-### **Deleting from Modal**
-
-For defensive programming, I added a modal to the delete button for user confirmation. However, regardless of which recipe was selected to delete, it was always the first recipe on screen that would be deleted. 
-
-After talking to someone on slack who had experienced the same issue, I was informed that there needed to be a direct link between the modal and the element to be deleted. 
-
-I updated the recipe-side modal href and the actual modal ID to target the specific recipe card to be deleted. 
-
-![Deleting bug](documentation/bugs/bug-05-code-fix.jpg) 
-
----
-### **Selecting option on mobile**
-
-On mobile, the 'Choose Collection' option in both add and edit recipe wasn't working as it should. There was an issue with selecting the options - you would select 'Fruity', but 'Mocktails' would highlight, as if there had been an upwards shift in the selection area. 
-
-![Selecting bug](documentation/bugs/bug-06-code.PNG) 
-
-Originally the ```formSelect()```m function was placed above the ```dropdown()``` function, both of which were triggered by the 'Choose Collection' dropdown. I know that the order of code matters so I tried to reorder them.
-
-![Selecting bug](documentation/bugs/bug-06-code-fix.PNG)  
-
-This fixed the issue.
-
----
-
-### **Pagination in Categories Pages**
-
-When visiting a specific collection of recipes, the correct recipes for that category were displaying. However, the pagination information was displaying the total number of recipes in the database. 
-
-![Pagination bug](documentation/bugs/bug-09.jpg)
-
-![Pagination bug](documentation/bugs/bug-09-code.PNG)
-
-Because I hadn't specified the ```category_name``` in the ```find()``` function for the ```total``` variable, it was counting all recipes and then displaying this number as the total. 
-
-![Pagination bug](documentation/bugs/bug-09-code-fix.PNG)
-
-Adding the ```category_name``` key and the correct value in the ```total``` variable fixed the issue.
-
-Since then, the code has been refactored but the theory remains the same:
-
-``` 
-recipes = mongo.db.recipes.find({"category_name": category["category_name"]})
-
-total = recipes.count()
-```
----
-
-### **Input Field Dynamic ID**
-
-When dynamically adding a new input field for ingredients and method, there was an issues with clicking the input field. When the second input was clicked, the focus would jump back up to the original input. 
-
-![Input Field Dynamic ID bug](documentation/bugs/bug-10.PNG)
-
-This was because I had not been dynamically adding a new ID to the newly created input fields. Adding an incrementing variable to the ID fixed this issue. 
-
-![Input Field Dynamic ID bug](documentation/bugs/bug-10-code-fix.jpg)
-
----
-
-### **Unbalanced Tuple Unpacking**
-
-A pylint warning appeared when I added the pagination functionality:
-
-![Unbalanced Tuple Unpacking bug](documentation/bugs/bug-12.PNG)
-
-This was a non-issue as everything was working as it should, and the code worked fine.
-
-After a bit of research I learned that this is referred to as a 'false positive' and by adding the below comment, the warning would go away: 
-
-![Unbalanced Tuple Unpacking bug](documentation/bugs/bug-12-code-fix.PNG)
-
----
-
-### **Scroll-To-Top TypeError**
-
-I added a button to redirect the user back to the top of the page when they had scrolled for a certain amount of pixels. But because the button isn't present on all pages, the JS script was looking for it, not finding it and then throwing the error:
-
-![Scroll-To-Top TypeError bug](documentation/bugs/bug-13.PNG)
-
-Wrapping the whole button functionality inside an if statement allowed the script to check if the button was on that page and either run the functions if it was, and ignore them if it wasn't.
-
-![Scroll-To-Top TypeError bug](documentation/bugs/bug-13-code-fix.PNG)
-
----
-
-### **Heading Text Mobile Display**
- On mobile display, a particularly long or multiple word heading 
-
-![Heading Text Mobile Display bug](documentation/bugs/bug-14.PNG)
-![Heading Text Mobile Display bug](documentation/bugs/bug-14-02.PNG)
-
-
-Making the font responsive to the view width allowed for longer text to display properly without overflowing off the screen. I used a media query targeted specifically at smaller screens so the desktop display didn't look oversized. 
-
-![Heading Text Mobile Display bug](documentation/bugs/bug-14-code-fix.PNG)
-
-![Heading Text Mobile Display bug](documentation/bugs/bug-14-fix-01.PNG)
-
----
-
-### **Dynamic Input Pattern Attribute**
-
-When I added the ```pattern=".*\S+.*"``` attribute to the dynamically created input fields, they weren't rendering through to HTML correctly. It was rendering as ```pattern=".*S+.*"```, omitting the backslash. 
-
-To counter this, I added an extra backslash: ```pattern=".*\\S+.*"``` and this solved the issue. 
-
----
-
-### **Ingredients list issue**
-
-Not so much of a bug but an issues that needed to be addressed. I had friends upload recipes to test. One of the issues that came from this was them not adding to the fields following the instructions in the tool tips. 
-
-There's an input for the main ingredient which is displayed on the recipe card but this also needs to be input under the ingredients list (preferably with measurements). It says this in the tooltips but I get that people don't always read them. 
-
-The issue was that while the main ingredient was seen on the recipe card, once you viewed the full recipe, that was omitted:
-
-![Ingredients list issue](documentation/bugs/bug-16.png)
-
-![Ingredients list issue](documentation/bugs/bug-16-02.PNG)
-
-To fix this, I added the ```main_ingredient``` to the recipe list. This worked well for recipes that had omitted it from the main ingredients list:
-
-![Ingredients list issue](documentation/bugs/bug-16-fix-01.PNG)
-
-But on a recipe that had all of the ingredients listed as per the instructions, it looked a bit strange for it to be listed twice: 
-
-![Ingredients list issue](documentation/bugs/bug-16-fix-02.PNG)
-
-To try to remedy the issues, I decided to meet somewhere in the middle - I enlarged the ```main_ingredient``` font and made it a little bolder: 
-
-![Ingredients list issue](documentation/bugs/bug-16-correct-01.PNG)
-
-![Ingredients list issue](documentation/bugs/bug-16-correct-02.PNG)
-
-This way it's included on the ingredients list but looks more like a featured ingredient that can be overlooked if that ingredient is listed elsewhere.
-
----
----
-## Known Bugs
-
-### **URL & Username bug**
-
-When testing error pages, I was adding addition characters to the end of the URL in the account page, anything that was changed/edited was updating the username header on the page:
-
-![URL & Username bug](documentation/bugs/bug-11.PNG)
-
-I defined username as a variable in the account section of the app.py file:
-
-![URL & Username bug](documentation/bugs/bug-11-code-fix.PNG)
-
-I retested and, while it solved that issue, adding the extra characters didn't break the code. This is an issue that hasn't been resolved. 
-
-![URL & Username bug](documentation/bugs/bug-11-not-resolved.PNG)
-
----
-
-### **Passive Event Handler**
-
-From the Chrome console there are issues being reported: 
-
-![URL & Username bug](documentation/bugs/bug-15.PNG)
-
-These are coming from the ```.side-nav``` and ```.carousel``` triggers. Based on the message itself, the issue seems to be coming from Materialize rather than the script.js file.
-
-![URL & Username bug](documentation/bugs/bug-15-02.PNG)
-
-However, I spent a lot of time looking into this and trying to add the ```passive: true``` that the helper documentation pointed to but to no avail. 
