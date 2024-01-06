@@ -23,15 +23,15 @@ I checked the CSS file using [W3C CSS Markup Validation Service](https://jigsaw.
 Unfortunately, it returned 1 error:
 + the error relates to materializecss and due to I used CDN link, I cannot access to that.
 
-![css validator results](documentation/Testing/validator-css-a.png)
-![css validator results](documentation/Testing/validator-css-b.png)
+![CSS validator results](documentation/Testing/validator-css-a.png)
+![CSS validator results](documentation/Testing/validator-css-b.png)
 
 Other than that, any other warnings were related to the vendor prefixes. 
 
 ### **JavaScript**
 
-I checked the js files using [JSHint](https://jshint.com/)
-There is no error in all js files.  
+I checked the JS files using [JSHint](https://jshint.com/)
+There is no error in all JS files.  
 
 ---
 ## Lighthouse Testing
@@ -40,11 +40,11 @@ After getting the bulk of the site in place, I ran it through Chrome Lighthouse.
 
 ![initial lighthouse score](documentation/Testing/Lighthouse-a.png)
 
-By the feed back given , I made a few changes to the code to raise the scores:
+By the feedback given, I made a few changes to the code to raise the scores:
 
 ### **Performance**
 
-+ Convert all images to webp format
++ Convert all images to .webp format
 
 ### **Accessibility**
 
@@ -102,7 +102,7 @@ From the navigation bar, the user can go to the Login/Register page. From there,
  ![testing from user stories](documentation/Testing/testing-05-c.png)
 
 
-If these type of users try to book or write a review, they will be redirected to the login page.
+If these types of users try to book or write a review, they will be redirected to the login page.
 
 ---
 
@@ -113,7 +113,7 @@ As long as the user has been through the registration process, they are redirect
 
 ![testing from user stories](documentation/Testing/testing-06-a.png)
 
-or if the user has already a registered acount, they can use the login page from the navigation bar to access the login form:
+or if the user has already a registered account, they can use the login page from the navigation bar to access the login form:
 
 ![testing from user stories](documentation/Testing/testing-04.png)
 
@@ -121,7 +121,7 @@ If they use the wrong username, they will be informed and can retry:
 
 ![testing from user stories](documentation/Testing/testing-06-b.png)
 
-If they use the wrong  password, they will be informed and can retry:
+If they use the wrong password, they will be informed and can retry:
 
 ![testing from user stories](documentation/Testing/testing-06-c.png)
 
@@ -153,7 +153,7 @@ From their order page, the user will be able to view all orders that they have r
 
 + *I want to be able to add a service order (appointment).*
 
-Once the user has been directed to the order page, by clicking the button "BOOK A NEW APPOINTMENT", the form of order will be shown up, Also there are two other access buttons in home page and service page to redirect the mentioned page:
+Once the user has been directed to the order page, by clicking the button "BOOK A NEW APPOINTMENT", the form of order will be shown up, also there are two other access buttons in home page and service page to redirect the mentioned page:
 
 ![testing from user stories](documentation/Testing/testing-10-1.png)
 ![testing from user stories](documentation/Testing/testing-10-2.png)
@@ -163,7 +163,7 @@ Order Form:
 
 ![testing from user stories](documentation/Testing/testing-10-a.png)
 
-If the user need recovery services, two more rows will be pop up and they are required to be filled:
+If the user needs recovery services, two more rows will be pop up and they are required to be filled:
 
 ![testing from user stories](documentation/Testing/testing-10-b.png)
 
@@ -172,7 +172,7 @@ If the user need recovery services, two more rows will be pop up and they are re
 
 + *I want to be able to edit or cancel any orders that I have already booked.*
 
-When the new order is booked the new row will be added to the orders. From there, the user can click on any of the orders and they are presented with the order information and also edit and cancel options:
+When the new order is booked the new row will be added to the orders. From there, the user can click on any of the orders, and they are presented with the order information and also edit and cancel options:
 
 ![testing from user stories](documentation/Testing/testing-09.png)
 
@@ -199,7 +199,7 @@ From the Home page and footer link, Users can access to review page. the review 
 
 ![testing from user stories](documentation/Testing/testing-11-a.png)
 Review Form:
-Users also can choose the stars rate for their satisfication. 
+Users also can choose the stars rate for their satisfaction. 
 ![testing from user stories](documentation/Testing/testing-11-b.png)
 
 + *I want to be able to see my review and delete it.*
@@ -221,7 +221,7 @@ By clicking on "Log out" button on navbar and footer links, Users can log out fr
 
 ![testing from user stories](documentation/Testing/testing-01-a.png)
 
-As soon as the user log out, a notification will be pop up and confirm the logging out the process. also, the navar items changed and the greeting text disapeared.
+As soon as the user log out, a notification will be pop up and confirm the logging out the process. also, the navbar items changed and the greeting text disappeared.
 
 ![testing from user stories](documentation/Testing/testing-01-b.png)
 
@@ -239,7 +239,7 @@ Once they're on the 'Services' page, they'll have access to the 'Add A New Servi
 
 ![testing from user stories](documentation/Testing/testing-16.png)
 
-Once they click that, they'll be redirected to the add service page where they can fill in all of the service information.Once all of the inputs have been filled in correctly, the Admin can use the 'Add Service' button at the bottom of the page to add it to the database:
+Once they click that, they'll be redirected to the add service page where they can fill in all the service information. Once all of the inputs have been filled in correctly, the Admin can use the 'Add Service' button at the bottom of the page to add it to the database:
 
 ![testing from user stories](documentation/Testing/testing-17.png)
 
@@ -310,7 +310,7 @@ Admin can Also delete the cancel order to tidy up the orders.
 
 + *I don't Want to be able to change or delete any reviews*
 
-To respect the users rights, Admin cannot change or delete any reviews and Admin is just a viewer for this page. 
+To respect the users’ rights, Admin cannot change or delete any reviews and Admin is just a viewer for this page. 
 
 ![testing from user stories](documentation/Testing/testing-30.png)
 ---
@@ -577,7 +577,7 @@ Through devices that I have at home/readily available to me, I was able to conti
   + Samsung Internet
 + Google Pixel-8
   + Google Chrome
-+ IPhone 15 Pro MAx
++ iPhone 15 Pro Max
   + Safari
 ### Tablet
 + iPad Mini 7.9"

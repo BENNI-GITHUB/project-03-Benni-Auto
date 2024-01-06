@@ -1,6 +1,6 @@
 # Benni Auto
-benni auto is a sample website for an auto service shop to manage their orders and develope their business.
-Also, It has an oppurtunate for users to view the reviews or login to the website and book their service orders and leave comment.  
+benni auto is a sample website for an auto service shop to manage their orders and develop their business.
+Also, It has an opportunity for users to view the reviews or login to the website and book their service orders and leave comment.  
 
 You can find the live site [here](https://benniauto-b1eb6496d00c.herokuapp.com/)
 ![Main site image](./documentation/readme-view/responsive_view.png)
@@ -40,9 +40,9 @@ You can find the live site [here](https://benniauto-b1eb6496d00c.herokuapp.com/)
 ## User Stories
 ### As a casual user: 
 + I want to be able to view services without having to register and account. 
-+ I want to be able to view reviews of others users without having to register and account.
++ I want to be able to view reviews of other users without having to register and account.
 + I want to be able to access the contact information and location of service shop.
-+ I want to have the option to register an account if I want to come back at a later date. 
++ I want to have the option to register an account if I want to come back later. 
 ### As a returning user: 
 + I want to be able to log into my account.
 + I want to be able to log out from my account.
@@ -55,7 +55,7 @@ You can find the live site [here](https://benniauto-b1eb6496d00c.herokuapp.com/)
 + I want to be able to add new services to the site.
 + I want the new services to be added to the appropriate site areas.
 + I want to be able to edit or delete the pre-existing services.
-+ I want to be able to delete any orders(especially the canceled one).
++ I want to be able to delete any orders (especially the canceled one).
 + I don't want to be able to delete any reviews.
 
  
@@ -76,9 +76,9 @@ There were two font that I was interested in for the site:
 ### Imagery
 
 Imagery is an important part of the user experience.  for this website I used three types of images:
-- Graphic photo which is used for the main page photo and descibes the purpuse of the website
+- Graphic photo which is used for the main page photo and describes the purpose of the website
 - Vector image which is used in main page and for service section. it is edited and adopted to website color theme. 
-- real images which are used in service page to describe each services. 
+- real images which are used in service page to describe each service. 
 
 ## Wireframes
 ### Wireframes
@@ -92,9 +92,9 @@ Wireframes were produced using Balsamiq.
  </details>
 
  <details>
- <summary>Tablet/Ipad Wireframe of Home Page</summary>
+ <summary>Tablet/iPad Wireframe of Home Page</summary>
 
-![Tablet/Ipad Wireframe](./documentation/wireframes/Home-Page_Tablet.png)
+![Tablet/iPad Wireframe](./documentation/wireframes/Home-Page_Tablet.png)
  </details>
 
  <details>
@@ -111,9 +111,9 @@ Wireframes were produced using Balsamiq.
  </details>
 
  <details>
- <summary>Tablet/Ipad Wireframe of Service Page</summary>
+ <summary>Tablet/iPad Wireframe of Service Page</summary>
 
-![Tablet/Ipad Wireframe](./documentation/wireframes/Service-page_Tablet.png)
+![Tablet/iPad Wireframe](./documentation/wireframes/Service-page_Tablet.png)
  </details>
 
  <details>
@@ -130,9 +130,9 @@ Wireframes were produced using Balsamiq.
  </details>
 
  <details>
- <summary>Tablet/Ipad Wireframe of Login/Register Page</summary>
+ <summary>Tablet/iPad Wireframe of Login/Register Page</summary>
 
-![Tablet/Ipad Wireframe](./documentation/wireframes/login-register-page_Tablet.png)
+![Tablet/iPad Wireframe](./documentation/wireframes/login-register-page_Tablet.png)
  </details>
 
  <details>
@@ -149,9 +149,9 @@ Wireframes were produced using Balsamiq.
  </details>
 
  <details>
- <summary>Tablet/Ipad Wireframe of Service Page</summary>
+ <summary>Tablet/iPad Wireframe of Service Page</summary>
 
-![Tablet/Ipad Wireframe](./documentation/wireframes/Service-order-page_Tablet.png)
+![Tablet/iPad Wireframe](./documentation/wireframes/Service-order-page_Tablet.png)
  </details>
 
  <details>
@@ -180,53 +180,53 @@ The navigation buttons update depending on whether a user is logged in, and whet
 
 ### **All Services and reviews are accessible to users who don't want to make an account**
 
-As someone who doesn't particularly like to sign up to websites there is possibility to see the services and their contents and also the reviews page too. 
+As someone who doesn't particularly like to sign up to websites there is possibility to see the services and their contents and the reviews page too. 
 
 ### **Reviews**
 
-Anyone is able to see the users reviews. the reveiws are include title of review, Rating, Description and the username of the user who wrote that. 
-The last three weitten reviews appear in the home page. but for writting a review the users have to login first. the rebiews are sorted by date created and user can see the date of review.
+Anyone can see the users’ reviews. the reviews are included title of review, Rating, Description, and the username of the user who wrote that. 
+The last three written reviews appear in the home page. but for writing a review the users have to login first. the reviews are sorted by date created and user can see the date of review.
 
 
 ### **User account management**
 
-Anyone is able to make an account through the 'Register' page. They have to choose a username and a password. Measures have been put in place so that the user cannot choose a username or email that is already taken.
-Also users are asked to re-write their password to confirm they wrote it right. even they can cick on eye icon to unveil the password if needed. 
+Anyone can make an account through the 'Register' page. They must choose a username and a password. Measures have been put in place so that the user cannot choose a username or email that is already taken.
+Also, users are asked to re-write their password to confirm they wrote it right. even they can click on eye icon to unveil the password if needed. 
 
 
 ### **User orders management**
 
-  + **Adding**: A registered users are able to book service order to the orders page on their own names. Once they have order that they have added, all order management can be accessable there. This includes editing or canceling them. This orders can be shown just for Admin and the owner of the service orders. in order request form, the users have to determine the requested services and the brand of their car from the options.
-  Also the users are asked to choose the appointment date. if the users need the recovery service to pick up their car, they have to switch on the need recovery icon. as soon as the need recovery switched on, the users have to fill their address. 
+  + **Adding**: A registered users can book service order to the orders page on their own names. Once they have order that they have added, all order management can be accessible there. This includes editing or canceling them. These orders can be shown just for Admin and the owner of the service orders. in order request form, the users must determine the requested services and the brand of their car from the options.
+  Also, the users are asked to choose the appointment date. if the users need the recovery service to pick up their car, they must switch on the need recovery icon. as soon as the need recovery switched on, the users must fill their address. 
 
   + **Editing**: The user will have to go into the edit order page through the order page, make the necessary changes and confirm them at the bottom of the page. The user also has the option to cancel all changes. These steps assure that the user cannot do any of this by mistake.
 
-  + **Canceling**: when the order placed, The users have option to cancel their order by submitting the cancel description. After the order requested to be canceled, at the top row of the order the word "Canceled" will be shown up.
+  + **Canceling**: when the order placed, the users have option to cancel their order by submitting the cancel description. After the order requested to be canceled, at the top row of the order the word "Canceled" will be shown up.
  
 ### **User reviews management**
 
-  + **Adding**: A registered users are able to leave a comment for the services. they can rate it from 1 star to 5 stars. and describe and share their experience with others. 
+  + **Adding**: A registered users can leave a comment for the services. they can rate it from 1 star to 5 stars. and describe and share their experience with others. 
 
-  + **Deleting**: Only the user who owns that written comment is able to delete it. By pressing the delete button the confirmation box will be shown up and after clicking the delete button again the review will be deleted permanentely. this gives the users another chance to change the process if they click the button by mistake.  
+  + **Deleting**: Only the user who owns that written comment can delete it. By pressing the delete button the confirmation box will be shown up and after clicking the delete button again the review will be deleted permanently. this gives the users another chance to change the process if they click the button by mistake.  
 
 ### **Admin 'Services' management**
 
-Only the admin can manage the Services pages. This includes adding, editing and deleting. The site has been designed so that the admin only has to use the Services management page to create a new Service at this will automatically be updated on the services page and also an element in home page with the service title. Any edits or deletions to services will also apply to those elements. 
+Only the admin can manage the Services pages. This includes adding, editing, and deleting. The site has been designed so that the admin only must use the Services management page to create a new Service at this will automatically be updated on the services page and also an element in home page with the service title. Any edits or deletions to services will also apply to those elements. 
 
 ### **Admin 'Orders' management**
 
-Only the admin can delete the Service Orders in orders pages. in some circumenstances if the users request the owner to change or cancel any order, the admin is able to cancel or edit them. 
+Only the admin can delete the Service Orders in orders pages. in some circumstances if the users request the owner to change or cancel any order, the admin can cancel or edit them. 
 
 ### **Admin 'Reviews' management**
 
-Admin does not have any option to delete or edit any reviews. this right gives the users to make their decisiion fairly.
+Admin does not have any option to delete or edit any reviews. this right gives the users to make their decision fairly.
 
 
 ## Possible Future Features
 + Calculating the average rates for each services according to the user rates. 
-+ Create a new page for each services to describe more.
-+ Create a search option for the visitors to redirect to the specific otem they want to visit. 
-+ Create a profile page for the users to manage their previouse activities in one page. 
++ Create a new page for each service to describe more.
++ Create a search option for the visitors to redirect to the specific item they want to visit. 
++ Create a profile page for the users to manage their previous activities in one page. 
 + Adding an option for users to change their password or even retrieve their profile if they forget their password.
 
 
@@ -252,12 +252,12 @@ Below is the schema for my database:
 | Key                   |Value type     |Desc           |
 |:-------------         |:------------- |:------------- |
 |id                     |Integer        |
-|order_title            |Strin          |title for order
-|car_type               |string         |the brand of the car needed to be fixed
+|order_title            |String          |title for order
+|car_type               |String         |the brand of the car needed to be fixed
 |order_description      |Text           |Description for order
 |request_date           |Date           |the user proper date for service
 |need_recovery          |Boolean        |to check the user needs the recovery service
-|user_postcode          |string         |If user needs recovery services
+|user_postcode          |String         |If user needs recovery services
 |user_address           |String         |If user needs recovery services
 |user_phone             |String         |user phone number
 |service_id             |Integer        |each Service chosen by user from *Service*
@@ -268,13 +268,13 @@ Below is the schema for my database:
 | Key                   |Value type     |Desc           |
 |:-------------         |:------------- |:------------- |
 |id                     |Integer        |used in *order* and *review* arrays
-|first_name             |string         |User first name to be shown at head of the website
-|last_name              |string         |user last name
-|gender                 |string         |user gender
-|username               |string         |username to use for login
-|email                  |string         |to prevent to register users with same email
-|password               |string         |hashed password for user security
-|password_confirmation  |string         |hashed password for user security
+|first_name             |String         |User first name to be shown at head of the website
+|last_name              |String         |user last name
+|gender                 |String         |user gender
+|username               |String         |username to use for login
+|email                  |String         |to prevent to register users with same email
+|password               |String         |hashed password for user security
+|password_confirmation  |String         |hashed password for user security
 |is-admin               |Boolean        |to be admin, it can be added by admin
 
 ## Review
@@ -282,10 +282,10 @@ Below is the schema for my database:
 | Key                   |Value type     |Desc           |
 |:-------------         |:------------- |:------------- |
 |id                     |Integer        |
-|title                  |string         |review title
-|rating                 |string         |rate of the user experience
-|comment                |Text           |user coment
-|review_date            |DataTime       |added automaticly
+|title                  |String         |review title
+|rating                 |String         |rate of the user experience
+|comment                |Text           |user comment
+|review_date            |DataTime       |added automatically
 |user_id                |string         |to prevent to register users with same email
 |service_id             |Integer        |each Service chosen by user from *Service*
 
@@ -316,7 +316,7 @@ Below is the schema for my database:
 + [Postgresql](https://www.postgresql.org/) used to host database information locally.
 + [Elephantsql](https://www.elephantsql.com/) used to host database information for Heroku.
 + [GitHub](https://github.com/) used to host repository.
-+ [GitPod](https://www.gitpod.io/) used to develop project and organise version 
++ [GitPod](https://www.gitpod.io/) used to develop project and organize version 
 + [Adobe Photoshop](https://www.adobe.com/ie/products/photoshop.html) used to design logo and edit the website images. 
 + [Balsamiq](https://balsamiq.com/) used to create wireframes.
 + [CloudConvert](https://cloudconvert.com/) to convert all images to .webp format.
@@ -343,7 +343,7 @@ Heroku needs to know which technologies are being used and any requirements, so 
 + The Procfile needs to contain the following line: ```web: python app.py``` and make sure there is no additional blank line after it. 
 + Push these files to your repository.
 
-### Environmentals File
+### Environmental File
 
 Create and env.py file using the following information:
 
@@ -448,7 +448,7 @@ You will also need to install all of the packages listed in the requirements fil
 
 
 ### Text for Services
-+ I used ChatGPT to create content for each services and reviews.
++ I used ChatGPT to create content for each service and reviews.
 
 ## Acknowledgements
 + All the friends who tested the site, even in its earliest stages.
