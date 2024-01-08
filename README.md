@@ -28,12 +28,11 @@ You can find the live site [here](https://benniauto-b1eb6496d00c.herokuapp.com/)
   + [All Others](#all-others)
 + [Testing](#testing)
 + [Deployment](#deployment)
-  + [Deployment through GitHub Pages](#deployment-through-gitHub-pages)
+  + [Heroku Deployment](#heroku-deployment)
   + [Forking the Repository](#forking-the-repository)
-  + [Cloning Project](#cloning-project)
+  + [Making a Local Clone](#making-a-local-clone)
 + [Credits](#credits)
   + [Content](#content)
-  + [Media](#media)
   + [Acknowledgements](#acknowledgements)
 ---
 ---
@@ -261,6 +260,7 @@ Below is the schema for my database:
 |user_postcode          |String         |If user needs recovery services
 |user_address           |String         |If user needs recovery services
 |user_phone             |String         |user phone number
+|is_cancel              |Boolean        |true if the orders get cancel
 |service_id             |Integer        |each Service chosen by user from *Service*
 |user_id                |Integer        |user_id of the user who book the order
 
